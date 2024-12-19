@@ -40,7 +40,7 @@
     .header{
         position: sticky;
         height: 4rem;
-        padding-top: 1rem;
+        padding-top: 1.2rem;
         display: flex;
         justify-content: center;
         font-family: sans-serif;
