@@ -3,7 +3,7 @@ import Layout from '@layouts/Layout.vue';
 </script>
 <template>
 <Layout>
-    <img src="/images/fondo_main (2).png" class="main-img">
+    <img src="/images/image(1).png" class="main-img">
 </Layout>
 
 </template>
