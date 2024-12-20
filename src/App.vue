@@ -4,14 +4,15 @@ import Header from "@components/Header.vue";
 
 <!-- template renderiza el html  -->
 <template>
-  <Header />
-  
 </template>
 
-<style>
+<style  lang="css">
 body{
-  background-color: black;
+  background-color: #0e0e0e;
   margin:0;
   min-height: 100vh;
+}
+img{
+  border: solid white 1px;
 }
 </style>
