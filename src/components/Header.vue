@@ -35,10 +35,8 @@
         font-weight: 800;
         text-decoration: none;
         color:white;
-
     }
     .header{
-        position: sticky;
         height: 4rem;
         padding-top: 1.2rem;
         display: flex;
