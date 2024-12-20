@@ -5,4 +5,9 @@ import MainView from '@views/MainView.vue';
 <template>
 <MainView></MainView>
 </template>
+<style>
+*{
+    box-sizing: border-box;
+}
+</style>
 

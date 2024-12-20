@@ -1,0 +1,49 @@
+{
+ "status":"success",
+ "data":{
+     "drugs": [{
+         "name":"Red pill",
+         "description": "Your ticket to wonderland",
+         "priceBTC":0.0013,
+         "priceETH":0.0523,
+         "recomendation":"GREAT QUALITY AT AN AFFORDABLE PRICE RECOMMENDED FOR BEGINNERS, THE RED PILL WILL TAKE YOU TO WONDERLAND, AND OFFER YOU A GREAT FIRST EXPERIENCE FIND OUT HOW DEEP THE RABBIT HOLE GOES!, HIGH QUALITY",
+         "composition":"60mg MDMA",
+         "rating":4.3,
+         "drugColor":"RED",
+         "image":"/public/images/pink_pill2.png"
+        },
+        {
+            "name":"Blue cover",
+            "description":"The king of ecstasy",
+            "priceBTC":0.0029,
+            "priceETH":0.1114,
+            "recomendation":"YOU WANT TO PARTY ALL NIGHT LONG, AND THE FOLLOWING DAY AS WELL? CHECK OUT THE BLUE COVER OUR BEST-SELLING AND HIGHEST-RATED PRODUCT. WE ARE THE ONLY RESELLERS OF THIS PREMIUM PILL, SO DON'T MISS OUT ON THIS OPPORTUNITY!",
+            "composition":"100mg MDMA",
+            "rating": 5,
+            "drugColor":"BLUE",
+            "image":"/public/images/bluePill.png"
+        },
+        {
+            "name":"Green snowflake",
+            "description":"Packs a powerful punch",
+            "priceBTC":0.0044,
+            "priceETH":0.1667,
+            "recomendation":"THE GREEN CLOVER IS ONLY RECOMMENDED FOR EXPERIENCED USERS, AS IT IS THE STRONGEST PILL IN OUR SELECTION. IF YOU FEEL READY FOR IT THOUGH, IT WILL BE AN EXPERIENCE LIKE NOTHING ELSE",
+            "composition":"150MG MDMA",
+            "rating":4.5,
+            "drugColor":"GREEN",
+            "image":"/public/images/green_pill.png"
+        },
+        {
+            "name":"Purple flower",
+            "description":"A night of fluffy happiness",
+            "priceBTC":0.0021,
+            "priceETH":0.0802,
+            "recomendation": "THE PURPLE FLOWER IS OUR GO TO RECOMMENDATION FOR A NIGHT FULL OF FLUFFY HAPPINESS, WITH IT'S DOSE OPTIMIZED FOR AROUND SIX HOURS OF PERFECT ECSTASY EXPERIENCE.",
+            "composition": "70mg MDMA",
+            "rating":4,
+            "drugColor":"PURPLE",
+            "image":"/public/images/purple_pill.png"
+            }]
+    }
+}

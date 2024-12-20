@@ -37,7 +37,7 @@
         color:white;
     }
     .header{
-        height: 4rem;
+        height: 5rem;
         padding-top: 1.2rem;
         display: flex;
         justify-content: center;
