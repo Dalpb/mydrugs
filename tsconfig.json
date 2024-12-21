@@ -10,6 +10,7 @@
       "@/*": ["src/*"],
       "@components/*": ["src/components/*"],
       "@interfaces/*": ["src/interfaces/*"],
+      "@hooks/*":["src/hooks/*"],
       "@layouts/*": ["src/layouts/*"],
       "@views/*": ["src/views/*"],
       "@styles/*": ["src/styles/*"]

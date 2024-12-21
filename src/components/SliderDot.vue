@@ -2,7 +2,7 @@
 interface Props{
     quantity: number,
     actualIndex: number,
-    callback? : ()=>void,
+    callback? : (n : number) => void,
 }
 const {quantity = 0,actualIndex = 0,callback = ()=>{}} = defineProps<Props>();
 
@@ -15,7 +15,8 @@ const arrayDot : Array<string> = Array.from<string>({length:quantity}).fill("");
         <li 
         v-for="(dot,index) in arrayDot" 
         class="dot" 
-        :class="actualIndex === index ? 'selected' :''">
+        :class="actualIndex === index ? 'selected' :''"
+        @click="() => {callback(index)}">
         {{dot}}
         </li>
     </ul>

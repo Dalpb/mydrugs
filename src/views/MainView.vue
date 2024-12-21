@@ -4,9 +4,20 @@ import { Drug } from '@interfaces/models/Drug.interface';
 import { onMounted, Ref, ref } from 'vue';
 import {ChevronLeftIcon,ChevronRightIcon} from "@heroicons/vue/16/solid"
 import SliderDot from "@components/SliderDot.vue";
+import { usePagination } from '@hooks/usePagination';
+
 const id : Ref<number | null> = ref(null); 
 let currentColor : Ref<string>= ref("#0e0e0e");
-let quantity : number = 0;
+const {
+   currentPage,
+   totalPage,
+   changePage,
+   nextPage,
+   previusPage 
+} =usePagination(0,5);
+
+
+
 const data: Ref< Array<Drug> > = ref([]);
 const error = ref(null);
 const fechData = async () =>{
@@ -19,9 +30,6 @@ const fechData = async () =>{
     console.log("Error al cargar el JSON");
    }
 } 
-
-onMounted(fechData);
-
 const handleColor = (): void => {
     let pos: number = 0;
     const paint = () => {
@@ -38,20 +46,24 @@ const handleColor = (): void => {
     id.value = requestAnimationFrame(paint); 
 };
 
+onMounted(fechData);
+
+
+
 
 </script>
 
 <template> 
 <Layout>
     <main>
-        <ChevronLeftIcon class="chevron left" v-if="quantity > 0" />
+        <ChevronLeftIcon class="chevron left" v-if="totalPage > 0" @click="previusPage" />
         <div>
             <picture class="picture">
                 <img src="/images/main_page.png" class="main-img">
             </picture>
-            <SliderDot :quantity="5" :actual-index="0"  />
+            <SliderDot :quantity="totalPage" :actual-index="currentPage" :callback="changePage"  />
         </div>
-        <ChevronRightIcon class="chevron right" v-if="quantity > 0"/>
+        <ChevronRightIcon class="chevron right" v-if="totalPage > 0" @click="nextPage"/>
     </main>
 </Layout>
 </template>
@@ -94,6 +106,10 @@ picture{
     min-width: 100px;
     padding:  2rem;
     margin-right: 40px;
+    animation-name: cleanImage;
+    animation-timing-function: ease-in-out;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
 }
 .main-img{
     width: 100%;
@@ -115,6 +131,36 @@ picture{
         max-width: 300px;
     }
 }
-
+/* fuck you cleanImage, 4hours!!!! */
+@keyframes cleanImage {
+  0% {
+    clip-path: polygon(66% 0, 100% 0, 100% 100%, 37% 100%, 37% 100%, 0 100%, 0 0); 
+  }
+  16.6% {
+    clip-path: polygon(66% 0, 100% 0, 100% 100%, 37% 100%, 37% 0, 0 0, 0 0); 
+  }
+  33.3% {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 37% 100%, 37% 0, 67% 0, 67% 0); 
+  }
+  50% {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 37% 100%, 37% 100%, 67% 100%, 67% 0); 
+  }
+  66.6% {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 67% 100%, 67% 100%, 67% 0); 
+  }
+  100% {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 0, 67% 0, 67% 100%, 67% 0); 
+  }
+}
 
 </style>
+
+<!-- 
+ANIMACION!!!!!! 4HORAS GAAAAAAAA!!!
+clip-path: polygon(66% 0, 100% 0, 100% 100%, 37% 100%, 37% 100%, 0 100%, 0 0);
+clip-path: polygon(66% 0, 100% 0, 100% 100%, 37% 100%, 37% 0, 0 0, 0 0);
+clip-path: polygon(100% 0, 100% 0, 100% 100%, 37% 100%, 37% 0, 67% 0, 67% 0); //acomo
+clip-path: polygon(100% 0, 100% 0, 100% 100%, 37% 100%, 37% 100%, 67% 100%, 67% 0); //baja
+clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 67% 100%, 67% 100%, 67% 0);//acomoda
+clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 0, 67% 0, 67% 100%, 67% 0); //sube
+-->
