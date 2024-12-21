@@ -2,8 +2,11 @@
 import Layout from '@layouts/Layout.vue';
 import { Drug } from '@interfaces/models/Drug.interface';
 import { onMounted, Ref, ref } from 'vue';
+import {ChevronLeftIcon,ChevronRightIcon} from "@heroicons/vue/16/solid"
+import SliderDot from "@components/SliderDot.vue";
 const id : Ref<number | null> = ref(null); 
 let currentColor : Ref<string>= ref("#0e0e0e");
+let quantity : number = 0;
 const data: Ref< Array<Drug> > = ref([]);
 const error = ref(null);
 const fechData = async () =>{
@@ -41,26 +44,52 @@ const handleColor = (): void => {
 <template> 
 <Layout>
     <main>
-        <picture class="picture">
-            <img src="/images/main_page.png" class="main-img">
-        </picture>
+        <ChevronLeftIcon class="chevron left" v-if="quantity > 0" />
+        <div>
+            <picture class="picture">
+                <img src="/images/main_page.png" class="main-img">
+            </picture>
+            <SliderDot :quantity="5" :actual-index="0"  />
+        </div>
+        <ChevronRightIcon class="chevron right" v-if="quantity > 0"/>
     </main>
 </Layout>
 </template>
 
 
 <style lang="css" scoped>
+.chevron{
+    width: 3.5rem; 
+    position:absolute;
+    cursor:pointer;
+    color:rgba(255, 255, 255, 0.657);   
+    transition: color ease-in-out .2s;
+}
+.chevron:hover{
+    color:white;
+}
+.left,.right{
+    top:45%;
+}
+.left{
+    left:0;
+}
+.right{
+    right: 0;
+}
+
 main{
-    margin: 2rem 2rem 1rem;
-    height: calc(100vh - 8rem);
+    margin: 2rem 1rem 1rem;
+    height: calc(100vh - 10rem);
     display: flex;
     justify-content: center;
+    position: relative;
 }
 picture{
     display:flex;
-    align-items: flex-start;
+    align-items: center;
     width: 80vw;
-    height: 80%;
+    height: 100%;
     max-width: 650px;
     min-width: 100px;
     padding:  2rem;
