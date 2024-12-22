@@ -9,8 +9,8 @@
          "recomendation":"GREAT QUALITY AT AN AFFORDABLE PRICE RECOMMENDED FOR BEGINNERS, THE RED PILL WILL TAKE YOU TO WONDERLAND, AND OFFER YOU A GREAT FIRST EXPERIENCE FIND OUT HOW DEEP THE RABBIT HOLE GOES!, HIGH QUALITY",
          "composition":"60mg MDMA",
          "rating":4.3,
-         "drugColor":"RED",
-         "image":"/public/images/pink_pill2.png"
+         "drugColor":"PINK",
+         "image":"/images/pink_pill2.png"
         },
         {
             "name":"Blue cover",
@@ -21,7 +21,7 @@
             "composition":"100mg MDMA",
             "rating": 5,
             "drugColor":"BLUE",
-            "image":"/public/images/bluePill.png"
+            "image":"/images/bluePill.png"
         },
         {
             "name":"Green snowflake",
@@ -32,7 +32,7 @@
             "composition":"150MG MDMA",
             "rating":4.5,
             "drugColor":"GREEN",
-            "image":"/public/images/green_pill.png"
+            "image":"/images/green_pill.png"
         },
         {
             "name":"Purple flower",
@@ -43,7 +43,7 @@
             "composition": "70mg MDMA",
             "rating":4,
             "drugColor":"PURPLE",
-            "image":"/public/images/purple_pill.png"
+            "image":"/images/purple_pill.png"
             }]
     }
 }
