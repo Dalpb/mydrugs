@@ -17,7 +17,8 @@ import { usePagination } from '@hooks/usePagination';
 import { DrugColor } from '@/interfaces/enums/DrugColor';
 
 const id : Ref<number | null> = ref(null); 
-    
+const currentImage : Ref<string> = ref("/images/main_page.png");
+const changing : Ref<boolean> = ref(false);
 const {
    currentPage,
    totalPage,
@@ -66,21 +67,29 @@ watch(data,(newData,oldData) =>{
     totalPage.value = newData.length;
 })
 
-const doTransition = (index : number) =>{
+const doTransition = (index : number) : void =>{
     console.log(data.value[index]?.drugColor);
     handleColor(data.value[currentPage.value]?.drugColor,data.value[index]?.drugColor);
     changePage(index);
+    manageImage(data.value[index]?.image);
 }
-const doPrevTransition = () =>{
+const doPrevTransition = () : void =>{
     const prev = getPreviusPage();
-    handleColor(data.value[currentPage.value]?.drugColor,data.value[prev]?.drugColor);
-    changePage(prev);
+    doTransition(prev);
 }
-const doNextTransition = () =>{
+const doNextTransition = () :void  =>{
     const next = getNextPage();
-    handleColor(data.value[currentPage.value]?.drugColor,data.value[next]?.drugColor);
-    changePage(next);
+    doTransition(next);
 }
+
+const manageImage = (newImage: string) : void =>{
+    changing.value = true;
+    setTimeout(()=>{
+        currentImage.value = newImage;
+        changing.value = false;
+    },850);
+}
+
 </script>
 
 <template> 
@@ -92,7 +101,7 @@ const doNextTransition = () =>{
         @click="doPrevTransition"/>
             <div>
                 <picture class="picture">
-                    <img :src="data[currentPage]?.image" class="main-img" >
+                    <img :src="currentImage" class="main-img" :class="changing && 'img-animation' " >
                 </picture>
                 <SliderDot v-if="totalPage > 0" :quantity="totalPage" :actual-index="currentPage" :callback="doTransition"  />
             </div>
@@ -149,18 +158,12 @@ picture{
     width: 100%;
     height: auto;
     object-fit: cover;
-    /* animation-name: cleanImage;
-    animation-timing-function: ease-in;
-    animation-duration: .7s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards; */
+    animation-fill-mode: forwards;  /*JSAJDJASDJSAJD YA TE ENCONTREEEE*/
 }
 .img-animation{
     animation-name: cleanImage;
     animation-timing-function: ease-in;
     animation-duration: .7s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
 }
 @media screen and (width <= 1600px) {
     picture{

@@ -15,7 +15,7 @@ const arrayDot : Array<string> = Array.from<string>({length:quantity}).fill("");
         <li 
         v-for="(dot,index) in arrayDot" 
         class="dot" 
-        :class="actualIndex === index ? 'selected' :''"
+        :class="actualIndex === index && 'selected' "
         @click="() => {callback(index)}">
         {{dot}}
         </li>
