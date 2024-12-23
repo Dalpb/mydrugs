@@ -15,6 +15,7 @@ const arrayDot : Array<string> = Array.from<string>({length:quantity}).fill("");
         <li 
         v-for="(dot,index) in arrayDot" 
         class="dot" 
+        :key="index"
         :class="actualIndex === index && 'selected' "
         @click="() => {callback(index)}">
         {{dot}}
@@ -23,6 +24,7 @@ const arrayDot : Array<string> = Array.from<string>({length:quantity}).fill("");
 </template>
 <style lang="css" scoped>
 .my-list-dot{
+    position: absolute;
     height: 1.5rem;
     margin: 0;
     padding: 0;
@@ -30,6 +32,7 @@ const arrayDot : Array<string> = Array.from<string>({length:quantity}).fill("");
     gap:1rem;
     margin-right: 40px;
     justify-content: center;
+    bottom: 0;
 }
 
 .dot{
