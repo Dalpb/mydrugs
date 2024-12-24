@@ -1,9 +1,17 @@
 <script setup lang="ts">
+import { changeFirstChildColor } from '@/utils/colorHandlers';
+interface Props{
+    color: string
+}
+const {color = "#000"} = defineProps<Props>();
+
 </script>
 
 <template>
     <header class="header">
-        <button class="login">
+        <button class="login"
+        @mouseover="e =>changeFirstChildColor(e,color)"
+        @mouseleave="e => changeFirstChildColor(e,'white')">
             <a href="#">LOGIN</a>
         </button>
         <nav class="navbar">

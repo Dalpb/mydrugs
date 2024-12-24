@@ -9,9 +9,10 @@ import {
     ChevronLeftIcon,
     ChevronRightIcon,
     PlusIcon,
+    StarIcon as StarIconSolid
 } from "@heroicons/vue/16/solid"
 import {
-    StarIcon
+    StarIcon as StarIconOutline
 }from "@heroicons/vue/24/outline"
 import Layout from '@layouts/Layout.vue';
 import { Drug } from '@interfaces/models/Drug.interface';
@@ -19,10 +20,13 @@ import SliderDot from "@components/SliderDot.vue";
 import RangeStar from '@/components/RangeStar.vue';
 import { usePagination } from '@hooks/usePagination';
 import { DrugColor } from '@/interfaces/enums/DrugColor';
+import { changeFirstChildColor,doTransitionLeftColor } from '@/utils/colorHandlers';
 
 const id : Ref<number | null> = ref(null); 
 const currentImage : Ref<string> = ref("/images/main_page.png");
 const changing : Ref<boolean> = ref(false);
+
+
 const {
    currentPage,
    totalPage,
@@ -48,22 +52,6 @@ const fechData = async () =>{
     console.log("Error al cargar el JSON");
    }
 } 
-const handleColor = (currentColor: DrugColor, nextColor: DrugColor): void => {
-    console.log(currentColor,nextColor);
-    let pos: number = 0;
-    const paint = () => {
-        if (pos > 100) {
-            if (id.value) cancelAnimationFrame(id.value!);
-        } else {
-            pos +=3;
-            const color = `radial-gradient(circle,rgba(255, 255, 255, 0.35) 0%, transparent ${pos>=72 ? 70 : pos}%),linear-gradient(to left,${nextColor}  ${pos}%, ${currentColor} ${pos}% )`;
-            window.document.body.style.backgroundImage = color;
-            id.value = requestAnimationFrame(paint);
-        }
-    };
-    if (id.value) cancelAnimationFrame(id.value);
-    id.value = requestAnimationFrame(paint); 
-};
 
 onMounted(fechData);
 
@@ -73,7 +61,7 @@ watch(data,(newData,oldData) =>{
 
 const doTransition = (index : number): void  =>{
     if(index === currentPage.value)return;
-    handleColor(data.value[currentPage.value]?.drugColor,data.value[index]?.drugColor);
+    doTransitionLeftColor(id.value,data.value[currentPage.value]?.drugColor,data.value[index]?.drugColor,2);
     changePage(index);
     manageImage(data.value[index]?.image);
 }
@@ -85,13 +73,12 @@ const doNextTransition = () :void  =>{
     const next = getNextPage();
     doTransition(next);
 }
-
 const manageImage = (newImage: string) : void =>{
     changing.value = true;
     setTimeout(()=>{
-        currentImage.value = newImage;
         changing.value = false;
-    },850);
+        currentImage.value = newImage;
+    },700);
 }
 
 
@@ -99,30 +86,35 @@ const manageImage = (newImage: string) : void =>{
 </script>
 
 <template> 
-<Layout>
+<Layout :color="data[currentPage]?.drugColor">
     <main>
         <ChevronLeftIcon
         v-if="totalPage > 0"
         class="chevron left"
         @click="doPrevTransition"/>
             <section>
-                <div v-if="currentPage !== 0">
+                <div 
+                v-if="currentPage !== 0">
                     <span class="title-pill">{{ data[currentPage]?.name }}</span>
-                    <p class="des-pill">{{ data[currentPage].description }}</p>
-                    <RangeStar />
+                    <span class="des-pill">{{ data[currentPage].description }}</span>
+                    <RangeStar :rating="data[currentPage]?.rating"/>
                 </div>
-                <picture class="picture">
+                <picture class="picture ">
                     <img :src="currentImage" class="main-img" :class="changing && 'img-animation' " >
                 </picture>
-                <div v-if="currentPage !== 0">
+                <div
+                v-if="currentPage !== 0">
                     <span class="price-pill">
                         {{ data[currentPage]?.priceBTC  }}BTC / {{ data[currentPage]?.priceETH }}ETH
                     </span>
                     <p class="rec-pill">
                         {{ data[currentPage]?.recomendation }}
                     </p>
-                    <div class="square" @mouseover="">
-                        <PlusIcon class="plus"  />
+                    <div
+                    class="square"
+                    @mouseover="(e) => changeFirstChildColor(e,data[currentPage]?.drugColor)"
+                    @mouseleave="(e) => changeFirstChildColor(e,'white')">
+                        <PlusIcon id="plus" class="plus"  />
                     </div>
                 </div>
             </section>
@@ -138,7 +130,8 @@ const manageImage = (newImage: string) : void =>{
 
 <style lang="css" scoped>
 .chevron{
-    width: 3.5rem; 
+    height: 7rem;
+    aspect-ratio: 2/3;
     position:relative;
     cursor:pointer;
     color:rgba(255, 255, 255, 0.657);   
@@ -148,7 +141,7 @@ const manageImage = (newImage: string) : void =>{
     color:white;
 }
 .left,.right{
-    top:0%;
+    top:30%;
 }
 .left{
     left:0;
@@ -158,19 +151,16 @@ const manageImage = (newImage: string) : void =>{
 }
 .title-pill{
     font-weight: 800;
+    font-size: 4rem;
+    text-shadow: 0px 0px 15px  rgba(0, 0, 0, 0.347);
 }
-.title-pill,.des-pill,.price-pill{
+.des-pill,.price-pill{
     font-size: xx-large;
 
 }
 .des-pill{
  font-weight: 100;
-}
-.price-pill{
-
-}
-.rec-pill{
-
+ text-align: end;
 }
 main{
     margin: 2rem 1rem 1rem;
@@ -195,16 +185,23 @@ section > picture{
     grid-column: 2/3;
 }
 section > div:first-child{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: flex-end;
     padding-top: 2rem;
     padding-left:2rem;
+    justify-self: end; */
+    align-self: center;
     justify-self: end;
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20rem;
+    
 }
 section > div:last-child{
-    align-content: end;
-    padding-bottom: 2rem;
+    place-self: center;
+    padding-top: 15rem;
 }
 .square{
     outline: 2px solid white;
@@ -245,6 +242,15 @@ section > div:last-child{
     animation-timing-function: ease-out;
     animation-duration: .7s;
 }
+.info-animation{
+    animation-name: decorationText;
+    animation-timing-function: ease-out;
+    animation-duration: 2s;
+}
+.rotate{
+    animation: rotate 10s infinite alternate ease-in-out;
+}
+
 @media screen and (width <= 1600px) {
     picture{
         max-width: 500px;
@@ -281,7 +287,32 @@ section > div:last-child{
     clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 0, 67% 0, 67% 100%, 67% 0); 
   }
 }
-
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    33.3%{
+        transform: rotate(10deg);
+    }
+    66.6%{
+        transform: rotate(-10deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+@keyframes decorationText{
+    from{
+        opacity: 100%;
+    }
+    50% {
+        opacity: 0;
+    }
+    to{
+        opacity: 100%;
+    }
+}
+    
 </style>
 
 <!-- 
@@ -292,4 +323,6 @@ clip-path: polygon(100% 0, 100% 0, 100% 100%, 37% 100%, 37% 0, 67% 0, 67% 0); //
 clip-path: polygon(100% 0, 100% 0, 100% 100%, 37% 100%, 37% 100%, 67% 100%, 67% 0); //baja
 clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 67% 100%, 67% 100%, 67% 0);//acomoda
 clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 0, 67% 0, 67% 100%, 67% 0); //sube
+
+
 -->
