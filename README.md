@@ -9,3 +9,13 @@ Este proyecto aún se encuentra en proceso de desarrollo... PAM PIM PAM
 ## 📸 Vista Previa
 ![imagen](https://github.com/user-attachments/assets/37905125-5491-4b8d-8d57-8f4a983b7638)
 
+
+## Dale un vistaso :D :
+- **Clonación:**
+  - `git clone https://github.com/Dalpb/mydrugs.git `
+- **Instalación:**
+  - `npm install`
+  
+- **Ejecución en Desarrollo:**
+  - `npm run dev`.
+
