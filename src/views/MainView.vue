@@ -4,17 +4,13 @@ import {
     Ref,
     watch,
     onMounted,
+    onUnmounted,
 } from 'vue';
 import {
     ChevronLeftIcon,
     ChevronRightIcon,
     PlusIcon,
-    StarIcon as StarIconSolid
 } from "@heroicons/vue/16/solid"
-import {
-    StarIcon as StarIconOutline
-}from "@heroicons/vue/24/outline"
-import Layout from '@layouts/Layout.vue';
 import { Drug } from '@interfaces/models/Drug.interface';
 import SliderDot from "@components/SliderDot.vue";
 import RangeStar from '@/components/RangeStar.vue';
@@ -53,11 +49,6 @@ const fechData = async () =>{
    }
 } 
 
-onMounted(fechData);
-
-watch(data,(newData,oldData) =>{
-    totalPage.value = newData.length;
-})
 
 const doTransition = (index : number): void  =>{
     if(index === currentPage.value)return;
@@ -80,30 +71,44 @@ const manageImage = (newImage: string) : void =>{
         currentImage.value = newImage;
     },700);
 }
+onMounted(fechData);
+onUnmounted(()=>{
+    window.document.body.style.backgroundImage = "none";
+})
 
+watch(data,(newData,oldData) =>{
+    totalPage.value = newData.length;
+})
 
 
 </script>
 
 <template> 
-<Layout :color="data[currentPage]?.drugColor">
     <main>
         <ChevronLeftIcon
         v-if="totalPage > 0"
         class="chevron left"
         @click="doPrevTransition"/>
             <section>
-                <div 
-                v-if="currentPage !== 0">
-                    <span class="title-pill">{{ data[currentPage]?.name }}</span>
-                    <span class="des-pill">{{ data[currentPage].description }}</span>
+                <div v-if="currentPage !== 0">
+                        <span class="title-pill">{{ data[currentPage]?.name }}</span>
+                        <span class="des-pill">{{ data[currentPage].description }}</span>
                     <RangeStar :rating="data[currentPage]?.rating"/>
+                </div>
+                <div v-else class="presentation">
+                    <div>
+                        <span class="title-pill">SHOP</span><br>
+                        <span class="des-pill">ALL THE DRUGS <br> YOU WANT</span>
+                    </div>
+                    <div>
+                        <span class="title-pill">SAFETY</span><br>
+                        <span class="des-pill">IMPORTANT <br> INFORMATION</span>
+                    </div>
                 </div>
                 <picture class="picture ">
                     <img :src="currentImage" class="main-img" :class="changing && 'img-animation' " >
                 </picture>
-                <div
-                v-if="currentPage !== 0">
+                <div v-if="currentPage !== 0">
                     <span class="price-pill">
                         {{ data[currentPage]?.priceBTC  }}BTC / {{ data[currentPage]?.priceETH }}ETH
                     </span>
@@ -117,6 +122,16 @@ const manageImage = (newImage: string) : void =>{
                         <PlusIcon id="plus" class="plus"  />
                     </div>
                 </div>
+                <div v-else class="presentation">
+                    <div>
+                        <span class="title-pill">FAQ</span><br>
+                        <span class="des-pill">ANSWERING <br> YOUR QUESTIONS </span>
+                    </div>
+                    <div>
+                        <span class="title-pill">CONTACT</span><br>
+                        <span class="des-pill">SUGGESTIONS AND <br> FEEDBACK</span>
+                    </div>
+                 </div>
             </section>
             <SliderDot v-if="totalPage > 0" :quantity="totalPage" :actual-index="currentPage" :callback="doTransition"  />
         <ChevronRightIcon 
@@ -124,7 +139,6 @@ const manageImage = (newImage: string) : void =>{
         class="chevron right"
         @click="doNextTransition"/>
     </main>
-</Layout>
 </template>
 
 
@@ -156,7 +170,6 @@ const manageImage = (newImage: string) : void =>{
 }
 .des-pill,.price-pill{
     font-size: xx-large;
-
 }
 .des-pill{
  font-weight: 100;
@@ -175,40 +188,53 @@ main{
 
 
 section{
-    align-self: flex-start;
     width: 100%;
     height: 100%;
+    align-self: flex-start;
     display: grid;
     grid-template-columns: repeat(3,minmax(200px,1fr));
 }
 section > picture{
     grid-column: 2/3;
 }
-section > div:first-child{
-    /* display: flex;
+
+section > div:last-child.presentation{
+    justify-self: start;
+}
+
+section > div:first-child.presentation,
+section > div:last-child.presentation{
+    height: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
     flex-direction: column;
-    align-items: flex-end;
-    padding-top: 2rem;
-    padding-left:2rem;
-    justify-self: end; */
-    align-self: center;
-    justify-self: end;
-    text-align: end;
+
+}
+
+
+section > div:first-child{
+    padding-bottom: 20rem;
     display: flex;
     flex-direction: column;
-    padding-bottom: 20rem;
-    
+    text-align: end;
+    justify-self: end;
+    align-self: center;
 }
 section > div:last-child{
     place-self: center;
     padding-top: 15rem;
+
 }
+
+
 .square{
-    outline: 2px solid white;
-    aspect-ratio: 1;
     height: 4rem;
+    aspect-ratio: 1;
     display: flex;
     justify-content: center;
+    outline: 2px solid white;
+    cursor: pointer;
 
 }
 .square:hover{

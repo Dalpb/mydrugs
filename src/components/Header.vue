@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { changeFirstChildColor } from '@/utils/colorHandlers';
+import { RouterLink } from 'vue-router';
 interface Props{
     color: string
 }
@@ -17,21 +18,21 @@ const {color = "#000"} = defineProps<Props>();
         <nav class="navbar">
             <ul class="nav-list">
                 <li>
-                    <a href="#">SHOP</a>
+                    <RouterLink to="/shop">SHOP</RouterLink>
                 </li>
                 <li>
-                    <a href="#">FAQ</a>
+                    <RouterLink to="/faq">FAQ</RouterLink>
                 </li>
                 <li>
-                    <a href="/">
+                    <RouterLink to="/">
                         <img src="/images/mydrugslogo.png">
-                    </a>
+                    </RouterLink>
                 </li>
                 <li>
-                    <a href="">SAFETY</a>
+                    <RouterLink to="/safety">SAFETY</RouterLink>
                 </li>
                 <li>
-                    <a href="">CONTACT</a>
+                    <RouterLink to="/contact">CONTACT</RouterLink>
                 </li>
             </ul>
         </nav>
