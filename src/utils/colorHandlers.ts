@@ -4,6 +4,11 @@ export const changeFirstChildColor = (e : Event, newColor: string): void =>{
     child.style.color = newColor;
 }
 
+export const changeColorPropety = (elem : HTMLElement,propety:string,color : string): void =>{
+    console.log(propety,color)
+    elem.style.setProperty(propety,color);
+}
+
 export const doTransitionLeftColor = (id: number,oldColor: string, newColor: string,speed : number = 1): void => {
     let pos: number = 0;
     const paint = () => {

@@ -1,49 +1,52 @@
 {
- "status":"success",
- "data":{
-     "drugs": [{
-         "name":"Red pill",
-         "description": "Your ticket to wonderland",
-         "priceBTC":0.0013,
-         "priceETH":0.0523,
-         "recomendation":"GREAT QUALITY AT AN AFFORDABLE PRICE RECOMMENDED FOR BEGINNERS, THE RED PILL WILL TAKE YOU TO WONDERLAND, AND OFFER YOU A GREAT FIRST EXPERIENCE FIND OUT HOW DEEP THE RABBIT HOLE GOES!, HIGH QUALITY",
-         "composition":"60mg MDMA",
-         "rating":4,
-         "drugColor":"PINK",
-         "image":"/images/pink_pill2.png"
+    "status": "success",
+    "data": {
+      "drugs": [
+        {
+          "name": "Red Pill",
+          "description": "Your ticket to wonderland",
+          "priceBTC": 0.0013,
+          "priceETH": 0.0523,
+          "recomendation": "Great quality at an affordable price recommended for beginners, the red pill will take you to wonderland, and offer you a great first experience find out how deep the rabbit hole goes!, high quality",
+          "composition": "60MG MDMA",
+          "rating": 4,
+          "drugColor": "PINK",
+          "image": "/images/pink_pill2.png"
         },
         {
-            "name":"Blue cover",
-            "description":"The king of ecstasy",
-            "priceBTC":0.0029,
-            "priceETH":0.1114,
-            "recomendation":"YOU WANT TO PARTY ALL NIGHT LONG, AND THE FOLLOWING DAY AS WELL? CHECK OUT THE BLUE COVER OUR BEST-SELLING AND HIGHEST-RATED PRODUCT. WE ARE THE ONLY RESELLERS OF THIS PREMIUM PILL, SO DON'T MISS OUT ON THIS OPPORTUNITY!",
-            "composition":"100mg MDMA",
-            "rating": 5,
-            "drugColor":"BLUE",
-            "image":"/images/bluePill.png"
+          "name": "Blue cover",
+          "description": "The king of ecstasy",
+          "priceBTC": 0.0029,
+          "priceETH": 0.1114,
+          "recomendation": "You want to party all night long, and the following day as well? check out the blue cover our best-selling and highest-rated product. we are the only resellers of this premium pill, so don't miss out on this opportunity!",
+          "composition": "100MG MDMA",
+          "rating": 5,
+          "drugColor": "BLUE",
+          "image": "/images/bluePill.png"
         },
         {
-            "name":"Green snowflake",
-            "description":"Packs a powerful punch",
-            "priceBTC":0.0044,
-            "priceETH":0.1667,
-            "recomendation":"THE GREEN CLOVER IS ONLY RECOMMENDED FOR EXPERIENCED USERS, AS IT IS THE STRONGEST PILL IN OUR SELECTION. IF YOU FEEL READY FOR IT THOUGH, IT WILL BE AN EXPERIENCE LIKE NOTHING ELSE",
-            "composition":"150MG MDMA",
-            "rating":5,
-            "drugColor":"GREEN",
-            "image":"/images/green_pill.png"
+          "name": "Green snowflake",
+          "description": "Packs a powerful punch",
+          "priceBTC": 0.0044,
+          "priceETH": 0.1667,
+          "recomendation": "The green clover is only recommended for experienced users, as it is the strongest pill in our selection. if you feel ready for it though, it will be an experience like nothing else",
+          "composition": "150MG MDMA",
+          "rating": 5,
+          "drugColor": "GREEN",
+          "image": "/images/green_pill.png"
         },
         {
-            "name":"Purple flower",
-            "description":"A night of fluffy happiness",
-            "priceBTC":0.0021,
-            "priceETH":0.0802,
-            "recomendation": "THE PURPLE FLOWER IS OUR GO TO RECOMMENDATION FOR A NIGHT FULL OF FLUFFY HAPPINESS, WITH IT'S DOSE OPTIMIZED FOR AROUND SIX HOURS OF PERFECT ECSTASY EXPERIENCE.",
-            "composition": "70mg MDMA",
-            "rating":4,
-            "drugColor":"PURPLE",
-            "image":"/images/purple_pill2.png"
-            }]
+          "name": "Purple flower",
+          "description": "A night of fluffy happiness",
+          "priceBTC": 0.0021,
+          "priceETH": 0.0802,
+          "recomendation": "The purple flower is our go to recommendation for a night full of fluffy happiness, with it's dose optimized for around six hours of perfect ecstasy experience.",
+          "composition": "70MG MDMA",
+          "rating": 4,
+          "drugColor": "PURPLE",
+          "image": "/images/purple_pill2.png"
+        }
+      ]
     }
-}
+  }
+  

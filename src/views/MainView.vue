@@ -93,7 +93,7 @@ watch(data,(newData,oldData) =>{
                 <div v-if="currentPage !== 0">
                         <span class="title-pill">{{ data[currentPage]?.name }}</span>
                         <span class="des-pill">{{ data[currentPage].description }}</span>
-                    <RangeStar :rating="data[currentPage]?.rating"/>
+                        <RangeStar :rating="data[currentPage]?.rating"/>
                 </div>
                 <div v-else class="presentation">
                     <div>
@@ -179,11 +179,10 @@ main{
     margin: 2rem 1rem 1rem;
     height: calc(100vh - 8rem);
     display: flex;
-    color:white;
-    font-family: sans-serif;
     justify-content: center;
     position: relative;
     text-transform: uppercase;
+    color:white;
 }
 
 

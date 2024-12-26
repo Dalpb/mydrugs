@@ -16,6 +16,6 @@ Este proyecto aún se encuentra en proceso de desarrollo... PAM PIM PAM
 - **Instalación:**
   - `npm install`
   
-- **Ejecución en Desarrollo:**
+- **Ejecución del proyecto**
   - `npm run dev`.
 

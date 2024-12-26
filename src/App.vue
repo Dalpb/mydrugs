@@ -12,6 +12,10 @@ import Layout from '@layouts/Layout.vue';
 <style>
 *{
     box-sizing: border-box;
+    font-family: sans-serif;
+}
+p{
+    margin:0;
 }
 body{
     background-color : #0e0e0e;
