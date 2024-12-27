@@ -171,6 +171,9 @@ watch(data,(newData,oldData) =>{
 .des-pill,.price-pill{
     font-size: xx-large;
 }
+.rec-pill{
+    margin-bottom: 1rem;
+}
 .des-pill{
  font-weight: 100;
  text-align: end;

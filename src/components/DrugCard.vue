@@ -44,6 +44,7 @@ article{
 .title{
     font-weight: 800;
     font-size: 2rem;
+    text-transform: uppercase;
 }
 .txt{
     color:rgba(156, 163, 175, 0.722);
@@ -72,7 +73,7 @@ article{
 }
 .init-animation{
     /* mejorar animacion  */
-    animation : show 1s linear  1 forwards;
+    animation : show .7s linear  1 forwards;
 }
 article:hover .product-img{
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
