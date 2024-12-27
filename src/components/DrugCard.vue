@@ -7,7 +7,6 @@ interface Props{
     drug: Drug
 }
 const { drug } = defineProps<Props>(); 
-const inicio : Ref<boolean> = ref(false);
 
 const colorEffect =(e : Event) =>{
     const elem = e.currentTarget as HTMLElement;
@@ -37,6 +36,7 @@ v-on:animationend="removeInit">
 </template>
 
 <style lang="css" scoped>
+
 article{
     --local-color :#138acafd;
     --local-seccolor: #138aca40;
@@ -71,28 +71,47 @@ article{
     cursor: pointer;
 }
 .init-animation{
-    animation : init 1s ease-out 1 forwards;
+    /* mejorar animacion  */
+    animation : show 1s linear  1 forwards;
+}
+article:hover .product-img{
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    animation: drop-shadow-lamp .3s ease-in-out  1 forwards;
 }
 article:hover{
     animation: lamp .3s ease-in-out  1 forwards;
+}
 
+@keyframes drop-shadow-lamp {
+    0%{
+        filter: drop-shadow(0 0 0px rgba(0, 0, 0, 0.5));
+    }
+    40%{
+    filter: drop-shadow(0 0 10px var(--local-color));
+    }
+    60%{
+        filter: drop-shadow(0 0 0px rgba(0, 0, 0, 0.5));
+    }
+    100%{
+        filter: drop-shadow(0 0 10px var(--local-color));
+    }  
 }
 @keyframes lamp {
     0%{
         box-shadow: none;
     }
     40%{
-    box-shadow: 0 0 30px var(--local-color), 0 0 50px var(--local-seccolor) inset;
+    box-shadow: 0 0 20px var(--local-color)
     }
     60%{
         box-shadow: none;
     }
     100%{
-        box-shadow: 0 0 30px var(--local-color), 0 0 50px  var(--local-seccolor) inset;
+        box-shadow: 0 0 20px var(--local-color)
     
     }
 }
-@keyframes init {
+@keyframes show {
     from{
         opacity: 0;
         transform: translateY(5rem);
@@ -100,6 +119,8 @@ article:hover{
     to{
         opacity: 1;
         transform: translateY(0);
+
     }
 }
+
 </style>

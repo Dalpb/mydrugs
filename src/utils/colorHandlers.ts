@@ -5,7 +5,6 @@ export const changeFirstChildColor = (e : Event, newColor: string): void =>{
 }
 
 export const changeColorPropety = (elem : HTMLElement,propety:string,color : string): void =>{
-    console.log(propety,color)
     elem.style.setProperty(propety,color);
 }
 

@@ -11,10 +11,10 @@
           "composition": "50MG MDMA",
           "rating": 5,
           "drugColor": "WHITE",
-          "image": "/images/100_pill.png"
+          "image": "/images/100.png"
         },
         {
-          "name": "Yellow Great Again ",
+          "name": "Pink Great Again",
           "description": "Freedom in a pill",
           "priceBTC": 0.0030,
           "priceETH": 0.115,
@@ -44,7 +44,7 @@
           "composition": "140MG MDMA",
           "rating": 5,
           "drugColor": "YELLOW",
-          "image": "/images/granade_pill.png"
+          "image": "/images/granade_pill2.png"
         },
         {
             "name": "Green snowflake",

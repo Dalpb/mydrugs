@@ -3,6 +3,7 @@ import DrugCard from '@components/DrugCard.vue';
 import { Drug } from '@/interfaces/models/Drug.interface';
 import { DrugColor } from '@/interfaces/enums/DrugColor';
 import { onMounted,ref,Ref } from 'vue';
+import Input from '@components/Input.vue';
 const data: Ref< Array<Drug> > = ref([]);
 
 
