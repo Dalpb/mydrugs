@@ -5,6 +5,7 @@ import { DrugColor } from '@/interfaces/enums/DrugColor';
 import { onMounted,ref,Ref } from 'vue';
 import Input from '@components/Input.vue';
 import Select from '@components/Select.vue';
+import Option from '@components/Option.vue';
 import { MagnifyingGlassIcon } from '@heroicons/vue/24/outline';
 const data: Ref< Array<Drug> > = ref([]);
 
@@ -43,21 +44,20 @@ onMounted(fechData);
         </div>
         <div>
             <div>
-            <Select
-            value=""
-            class-new="add">
+            <Select class-new="add">
+                <Option value="" label="All Products"/>
+                <Option 
+                v-for="clr in DrugColor"
+                :key="clr" 
+                :value="Object.entries(DrugColor).find(entry => entry[1] === clr)[0]"
+                :label="Object.entries(DrugColor).find(entry => entry[1] === clr)[0]" />
             </Select>
-            <!-- <Input select width="12rem">
-                <option value="">All Products</option>
-                <option v-for="drugcolor in DrugColor">Color {{Object.entries(DrugColor).find(entry => entry[1] === drugcolor)[0] }}</option>
-            </Input>
-            <Input select width="12rem">
-                <li>Most Popular</li>
-                <option>Price: High to Low</option>
-                <option>Price: Low to High </option>
-                <option> MDMA: High to Low </option>
-                <option> MDMA: Low to High</option>
-            </Input> -->
+            <Select class-new="add">
+                <Option value="1" label="Most Popular"/>
+                <Option value="2" label="Price: Low to High"/>
+                <Option value="3" label="MDMA: High to Low"/>
+                <Option value="4" label="MDMA: Low to High"/>
+            </Select>
             </div>
         </div>
         <hr/>
