@@ -27,7 +27,7 @@ v-on:animationend="removeInit">
        <img :src="drug.image" alt=" "/>
     </div> 
     <p class="title ">{{ drug.name }}</p>
-    <span class="info txt">{{ drug.composition }} PER PILL</span>
+    <span class="info txt">{{ drug.composition }}MG MDMA PER PILL</span>
     <RangeStar :rating="drug.rating" width="1.5rem"/>
     <p class="txt">{{ drug.recomendation.length > 65 ? drug.recomendation.slice(0,65)+"..." : drug.recomendation }}</p>
     <span>{{ drug.priceBTC }} BTC</span>
@@ -62,7 +62,7 @@ img{
     object-fit: contain;
 }
 article{
-    width: 20rem;
+    width: 18rem;
     padding: .7rem;
     border:1px solid white;
     border-radius: 15px;

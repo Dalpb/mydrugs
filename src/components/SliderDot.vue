@@ -56,5 +56,6 @@ const arrayDot : Array<string> = Array.from<string>({length:quantity}).fill("");
 .selected{
     border:2px solid white;
     border-radius: 50%;
+    background-color: transparent;
 }
 </style>

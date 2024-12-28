@@ -8,6 +8,6 @@ export interface Drug{
    priceETH? : number,
    description?: string,
    recomendation?:string,
-   composition?: string,
+   composition?: number,
    rating?: number,   
 }

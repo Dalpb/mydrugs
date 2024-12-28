@@ -6,6 +6,7 @@ type SelectTrigger = {
   currentValue: string;
   updateValue: (value: string,label:string) => void;
   handleDropdown: ()=>void
+  onchange: ()=>{}
 };
 interface Props{
     value: string,
@@ -16,11 +17,13 @@ const {
 currentLabel,
 currentValue,
 handleDropdown,
-updateValue
+updateValue,
+onchange,
 } = inject<SelectTrigger>('selecTrigger');
 
 const handleClick =() =>{
     updateValue(value,label);
+    onchange();
     handleDropdown();
 }
 

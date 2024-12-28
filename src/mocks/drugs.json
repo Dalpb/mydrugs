@@ -8,7 +8,7 @@
           "priceBTC": 0.0015,
           "priceETH": 0.058,
           "recomendation": "Perfect for newcomers seeking a mild yet enjoyable experience. The 100 Pill offers a gentle introduction with a balanced effect that enhances your mood without overwhelming intensity. Ideal for social gatherings or a relaxed evening, this pill provides a steady and safe journey into euphoria. Highly recommended for those trying MDMA for the first time.",
-          "composition": "50MG MDMA",
+          "composition": 100,
           "rating": 5,
           "drugColor": "WHITE",
           "image": "/images/100.png"
@@ -19,7 +19,7 @@
           "priceBTC": 0.0030,
           "priceETH": 0.115,
           "recomendation": "For those who want to feel unstoppable, the America Great Again Pill delivers an electrifying boost of energy and confidence. Perfect for large events, festivals, or intense dance parties. Experience the rush of euphoria while staying in control. A favorite among thrill-seekers who crave excitement and boldness.",
-          "composition": "120MG MDMA",
+          "composition": 120,
           "rating": 5,
           "drugColor": "PINK",
           "image": "/images/america_great_again.png"
@@ -36,7 +36,7 @@
             "image": "/images/bluePill.png"
           },
         {
-          "name": "Grenade Pill",
+          "name": "Yellow Granade",
           "description": "Explosive energy boost",
           "priceBTC": 0.0040,
           "priceETH": 0.153,
@@ -52,7 +52,7 @@
             "priceBTC": 0.0044,
             "priceETH": 0.1667,
             "recomendation": "The green clover is only recommended for experienced users, as it is the strongest pill in our selection. if you feel ready for it though, it will be an experience like nothing else",
-            "composition": "150MG MDMA",
+            "composition": 150,
             "rating": 5,
             "drugColor": "GREEN",
             "image": "/images/green_pill.png"
@@ -63,7 +63,7 @@
           "priceBTC": 0.0035,
           "priceETH": 0.134,
           "recomendation": "Step into the world of Mario with this playful and energizing pill. Packed with a balanced blend of joy and vigor, it's a fun choice for nostalgic partygoers or anyone looking for a memorable adventure. Turn your night into a video game-inspired journey, where each moment feels like a power-up.",
-          "composition": "110MG MDMA",
+          "composition": 110,
           "rating": 5,
           "drugColor": "BLUE",
           "image": "/images/mario_pill.png"
@@ -74,7 +74,7 @@
           "priceBTC": 0.0018,
           "priceETH": 0.069,
           "recomendation": "The Pink Pill is perfect for a gentle and heartwarming experience. Its soft touch enhances your mood, making it a fantastic option for cozy nights, romantic evenings, or small social gatherings. Expect a wave of sweet sensations that will leave you with a warm, fuzzy feeling.",
-          "composition": "50MG MDMA",
+          "composition": 50,
           "rating": 4,
           "drugColor": "PINK",
           "image": "/images/pink_pill.png"
@@ -85,7 +85,7 @@
             "priceBTC": 0.0013,
             "priceETH": 0.0523,
             "recomendation": "Great quality at an affordable price recommended for beginners, the red pill will take you to wonderland, and offer you a great first experience find out how deep the rabbit hole goes!, high quality",
-            "composition": "60MG MDMA",
+            "composition": 60,
             "rating": 4,
             "drugColor": "PINK",
             "image": "/images/pink_pill2.png"
@@ -96,7 +96,7 @@
             "priceBTC": 0.0021,
             "priceETH": 0.0802,
             "recomendation": "The purple flower is our go to recommendation for a night full of fluffy happiness, with it's dose optimized for around six hours of perfect ecstasy experience.",
-            "composition": "70MG MDMA",
+            "composition": 70,
             "rating": 4,
             "drugColor": "PURPLE",
             "image": "/images/purple_pill2.png"
@@ -107,7 +107,7 @@
           "priceBTC": 0.0013,
           "priceETH": 0.052,
           "recomendation": "Great quality at an affordable price, recommended for beginners. Discover how deep the rabbit hole goes with the Red Pill, an exciting introduction to a world of wonder. Its smooth effects make it a versatile choice for both new and experienced users seeking joy and connection.",
-          "composition": "60MG MDMA",
+          "composition": 60,
           "rating": 4,
           "drugColor": "RED",
           "image": "/images/red_pill.png"
@@ -118,7 +118,7 @@
           "priceBTC": 0.0038,
           "priceETH": 0.145,
           "recomendation": "Elevate your experience to superhuman levels. Designed for high-energy parties and intense dance floors, this pill unleashes your full potential, making you the life of the party. Its powerful effects ensure an unforgettable night filled with confidence and euphoria.",
-          "composition": "130MG MDMA",
+          "composition": 90,
           "rating": 5,
           "drugColor": "BLUE",
           "image": "/images/super_man_pill.png"
@@ -129,7 +129,7 @@
           "priceBTC": 0.0023,
           "priceETH": 0.087,
           "recomendation": "Brighten up your mood with the Dont Matter Yellow. A burst of energy and happiness awaits as this pill fills your evening with vibrant positivity. Perfect for daytime festivals or casual get-togethers, it guarantees a cheerful and lighthearted experience from start to finish.",
-          "composition": "70MG MDMA",
+          "composition": 70,
           "rating": 4,
           "drugColor": "YELLOW",
           "image": "/images/yellow_pill.png"

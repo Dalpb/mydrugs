@@ -4,26 +4,19 @@ interface Props{
     type?:string
     placeholder? : string
     width: string
-    select?:boolean
-    classNew?: string 
+    classNew?: string
+    onchange : (e:Event)=>void
 }
-const {type = "text",placeholder= "",width= "100%",select= false,classNew=""} = defineProps<Props>();
+const {type = "text",placeholder= "",width= "100%",classNew="",onchange =()=>{}} = defineProps<Props>();
 </script>
 <template>
     <input 
-    v-if="!select"
     class="my-input"
     :class="classNew"
     :style="{width}"
     :type="type"
     :placeholder="placeholder"
+    @input="onchange"
     />
-    <select
-    v-else
-    class="my-input my-select"
-    :class="classNew"
-    :style="{width}">
-        <slot/>
-    </select>
     
 </template>
