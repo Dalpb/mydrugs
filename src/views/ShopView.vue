@@ -1,16 +1,15 @@
 <script lang="ts" setup>
 import DrugCard from '@components/DrugCard.vue';
-import { Drug } from '@/interfaces/models/Drug.interface';
-import { DrugColor } from '@/interfaces/enums/DrugColor';
-import { onMounted,ref,Ref } from 'vue';
+import { Drug } from '@interfaces/models/Drug.interface';
+import { DrugColor } from '@interfaces/enums/DrugColor';
+import { onMounted,ref,Ref,watch } from 'vue';
 import Input from '@components/Input.vue';
 import Select from '@components/Select.vue';
 import Option from '@components/Option.vue';
 import { MagnifyingGlassIcon } from '@heroicons/vue/24/outline';
-import { filterByColor } from '@utils/filter';
-const data: Ref< Drug[] > = ref([]);
-const copydata : Ref<Drug[]> = ref([]);
-
+import { useFilterDrug } from '@hooks/useDrugFilter';
+import { useSortDrug } from '@hooks/useDrugSort';
+let data = ref<Drug[]>([]);
 //copio el mismo codigo ,por ahora 
 const fechData = async () =>{
    try{
@@ -21,25 +20,46 @@ const fechData = async () =>{
         drugColor:item.drugColor in DrugColor ? DrugColor[item.drugColor as unknown  as keyof typeof DrugColor] : DrugColor.DARK
     }))
     data.value = [...data.value ,...drugs];
-    copydata.value = [...data.value];
    }
    catch(error){
     console.log("Error al cargar el JSON");
    }
 } 
 onMounted(fechData);
+const{
+    filterData,
+    filterByName,
+    filterByColor
+    }  = useFilterDrug(data);
 
-const search=(e: Event ) => {
-    const text = (e.currentTarget as HTMLInputElement).value;
-    console.log("dasdsad");
-    if(!text){
-        copydata.value = data.value;
-        return;
+const {
+    sortedData,
+    sortByPrice,
+    sortByPopularity,
+    sortByMDMA
+} = useSortDrug(filterData);
+
+
+const manageSort =(value : string)=>{
+    switch(value){
+        case "1":
+            sortByPopularity();
+
+        break;
+        case "2":
+            sortByPrice("asc");
+        break;
+        case "3":
+            sortByPrice("desc");
+        break;
+        case "4":
+            sortByMDMA("asc");
+        break;
+        case "5":
+            sortByMDMA("desc");
+        break;
     }
-    copydata.value = data.value.filter(drug => drug.name.toLowerCase().includes(text.toLowerCase()));
 }
-
-
 
 </script>
 <template>
@@ -54,13 +74,13 @@ const search=(e: Event ) => {
                 class-new="add-input"
                 placeholder="Search products... "
                 width="100%"
-                :onchange="search"
+                :oninput="(e:Event)=>filterByName((e.currentTarget as HTMLInputElement).value)"
                 />
             </div>
         </div>
         <div>
             <div class="filters">
-            <Select class-new="add" name="color">
+            <Select class-new="add" name="color" :onchange="(value:string)=>filterByColor(value)">
                 <Option value="" label="All Products"/>
                 <Option 
                 v-for="clr in DrugColor"
@@ -68,7 +88,7 @@ const search=(e: Event ) => {
                 :value="Object.entries(DrugColor).find(entry => entry[1] === clr)[1]"
                 :label="Object.entries(DrugColor).find(entry => entry[1] === clr)[0]" />
             </Select>
-            <Select class-new="add" name="filter">
+            <Select class-new="add" name="filter" :onchange="manageSort">
                 <Option value="1" label="Most Popular"/>
                 <Option value="2" label="Price: High to Low"/>
                 <Option value="3" label="Price: Low to High"/>
@@ -79,7 +99,7 @@ const search=(e: Event ) => {
         </div>
         <hr/>
         <section >
-            <DrugCard v-for="drug of copydata" :drug="drug"/> 
+            <DrugCard v-for="drug of sortedData" :drug="drug"/> 
         </section>
     </main>
 </template>

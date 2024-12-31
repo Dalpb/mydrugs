@@ -1,13 +1,16 @@
 <script lang="ts" setup>
 import { Ref, ref,inject, onMounted, onBeforeMount } from 'vue';
 import "../style.css"
+
 type SelectTrigger = {
   currentLabel: string;
   currentValue: string;
   updateValue: (value: string,label:string) => void;
   handleDropdown: ()=>void
-  onchange: ()=>{}
+  onchange: (value : string)=>void
 };
+
+
 interface Props{
     value: string,
     label: string
@@ -22,8 +25,11 @@ onchange,
 } = inject<SelectTrigger>('selecTrigger');
 
 const handleClick =() =>{
+    if(value === currentValue)return;
+    
     updateValue(value,label);
-    onchange();
+    console.log("dsadsa");
+    onchange(value);
     handleDropdown();
 }
 

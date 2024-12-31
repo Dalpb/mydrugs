@@ -5,9 +5,10 @@ interface Props{
     placeholder? : string
     width: string
     classNew?: string
-    onchange : (e:Event)=>void
+    oninput?:(e:Event) => void
+    onchange?: (e:Event)=>void
 }
-const {type = "text",placeholder= "",width= "100%",classNew="",onchange =()=>{}} = defineProps<Props>();
+const {type = "text",placeholder= "",width= "100%",classNew="",onchange =()=>{},oninput =()=>{}} = defineProps<Props>();
 </script>
 <template>
     <input 
@@ -16,7 +17,8 @@ const {type = "text",placeholder= "",width= "100%",classNew="",onchange =()=>{}}
     :style="{width}"
     :type="type"
     :placeholder="placeholder"
-    @input="onchange"
+    @input="oninput"
+    @change="onchange"
     />
     
 </template>

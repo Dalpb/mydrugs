@@ -30,7 +30,7 @@
             "priceBTC": 0.0029,
             "priceETH": 0.1114,
             "recomendation": "You want to party all night long, and the following day as well? check out the blue cover our best-selling and highest-rated product. we are the only resellers of this premium pill, so don't miss out on this opportunity!",
-            "composition": "100MG MDMA",
+            "composition": 100,
             "rating": 5,
             "drugColor": "BLUE",
             "image": "/images/bluePill.png"
@@ -41,7 +41,7 @@
           "priceBTC": 0.0040,
           "priceETH": 0.153,
           "recomendation": "Unleash your wild side with the Grenade Pill. Not for the faint-hearted, this explosive option provides an intense and thrilling experience like no other. Designed for seasoned users who crave an adrenaline-filled night. Expect waves of powerful sensations and a ride full of surprises. Handle with care, as this pill is as strong as it sounds!",
-          "composition": "140MG MDMA",
+          "composition": 140,
           "rating": 5,
           "drugColor": "YELLOW",
           "image": "/images/granade_pill2.png"
@@ -102,15 +102,15 @@
             "image": "/images/purple_pill2.png"
           },
         {
-          "name": "Red Pill",
+          "name": "Red Heart",
           "description": "Your ticket to wonderland",
           "priceBTC": 0.0013,
           "priceETH": 0.052,
-          "recomendation": "Great quality at an affordable price, recommended for beginners. Discover how deep the rabbit hole goes with the Red Pill, an exciting introduction to a world of wonder. Its smooth effects make it a versatile choice for both new and experienced users seeking joy and connection.",
+          "recomendation":  "A vibrant choice for those seeking to explore new horizons. The Red Heart offers a captivating experience that combines quality and adventure, perfect for anyone ready to embark on a journey of discovery and passion.",
           "composition": 60,
           "rating": 4,
           "drugColor": "RED",
-          "image": "/images/red_pill.png"
+          "image": "/images/Red Heart.png"
         },
         {
           "name": "SuperJAK",

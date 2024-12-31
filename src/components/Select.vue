@@ -12,9 +12,9 @@ interface Props{
     classNew? : string,
     value?:string,
     name:string,
-    onchange?:()=>{}
+    onchange?:(value : string)=>void
 }
-const {classNew = "",name="",onchange=()=>{}} = defineProps<Props>();
+const {classNew = "",name="",onchange = ()=>{}} = defineProps<Props>();
 const isOpen = ref(false);
 const currentValue = ref("");
 const currentLabel = ref("");
