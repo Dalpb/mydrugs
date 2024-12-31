@@ -30,7 +30,7 @@ const{
     filterData,
     filterByName,
     filterByColor
-    }  = useFilterDrug(data);
+}  = useFilterDrug(data);
 
 const {
     sortedData,
@@ -146,7 +146,7 @@ section{
     display: grid;
     margin-top: 1rem;
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    gap:5rem 3rem;
+    gap:2rem 3rem;
 }
 
 

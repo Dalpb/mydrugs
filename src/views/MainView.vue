@@ -16,7 +16,7 @@ import SliderDot from "@components/SliderDot.vue";
 import RangeStar from '@/components/RangeStar.vue';
 import { usePagination } from '@hooks/usePagination';
 import { DrugColor } from '@/interfaces/enums/DrugColor';
-import { changeFirstChildColor,doTransitionLeftColor } from '@/utils/colorHandlers';
+import { changeColorPropety, changeFirstChildColor,doTransitionLeftColor } from '@/utils/colorHandlers';
 
 const id : Ref<number | null> = ref(null); 
 const currentImage : Ref<string> = ref("/images/main_page.png");
@@ -54,6 +54,7 @@ const doTransition = (index : number): void  =>{
     if(index === currentPage.value)return;
     doTransitionLeftColor(id.value,data.value[currentPage.value]?.drugColor,data.value[index]?.drugColor,2);
     changePage(index);
+    changeColorPropety(window.document.documentElement,"--main-color",data.value[index]?.drugColor);
     manageImage(data.value[index]?.image);
 }
 const doPrevTransition = () : void =>{
@@ -74,6 +75,7 @@ const manageImage = (newImage: string) : void =>{
 onMounted(fechData);
 onUnmounted(()=>{
     window.document.body.style.backgroundImage = "none";
+    changeColorPropety(window.document.documentElement,"--main-color","#0e0e0e");
 })
 
 watch(data,(newData,oldData) =>{

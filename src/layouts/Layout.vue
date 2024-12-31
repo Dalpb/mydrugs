@@ -1,14 +1,10 @@
 <script setup  lang="ts">
 
 import Header from '@components/Header.vue';
-interface Props{
-    color: string
-}
-const {color = "#000"} = defineProps<Props>();
 
 </script>
 <template>
-    <Header :color="color" />
+    <Header />
     <slot />
 </template>
 <style lang="css">

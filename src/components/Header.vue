@@ -1,17 +1,18 @@
 <script setup lang="ts">
 import { changeFirstChildColor } from '@/utils/colorHandlers';
 import { RouterLink } from 'vue-router';
-interface Props{
-    color: string
+
+const getNewColor =(e:Event)=>{
+    const color =window.document.documentElement.style.getPropertyValue("--main-color");
+    changeFirstChildColor(e,color);
 }
-const {color = "#000"} = defineProps<Props>();
 
 </script>
 
 <template>
     <header class="header">
         <button class="login"
-        @mouseover="e =>changeFirstChildColor(e,color)"
+        @mouseover="getNewColor"
         @mouseleave="e => changeFirstChildColor(e,'white')">
             <a href="#">LOGIN</a>
         </button>
