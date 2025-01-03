@@ -4,18 +4,18 @@
       "drugs": [
         {
           "name": "Red Pill",
-          "description": "Your ticket to wonderland",
+          "description": "Your ticket to\nwonderland",
           "priceBTC": 0.0013,
           "priceETH": 0.0523,
           "recomendation": "Great quality at an affordable price recommended for beginners, the red pill will take you to wonderland, and offer you a great first experience find out how deep the rabbit hole goes!, high quality",
           "composition": 60,
           "rating": 4,
-          "drugColor": "PINK",
-          "image": "/images/pink_pill2.png"
+          "drugColor": "RED",
+          "image": "/images/red_pill2.png"
         },
         {
-          "name": "Blue cover",
-          "description": "The king of ecstasy",
+          "name": "Blue\ncover",
+          "description": "The king\nof ecstasy",
           "priceBTC": 0.0029,
           "priceETH": 0.1114,
           "recomendation": "You want to party all night long, and the following day as well? check out the blue cover our best-selling and highest-rated product. we are the only resellers of this premium pill, so don't miss out on this opportunity!",
@@ -25,9 +25,10 @@
           "image": "/images/bluePill.png"
         },
         {
-          "name": "Green snowflake",
-          "description": "Packs a powerful punch",
+          "name": "Green\nsnowflake",
+          "description": "Packs a\npowerful punch",
           "priceBTC": 0.0044,
+
           "priceETH": 0.1667,
           "recomendation": "The green clover is only recommended for experienced users, as it is the strongest pill in our selection. if you feel ready for it though, it will be an experience like nothing else",
           "composition": 150,
@@ -36,8 +37,8 @@
           "image": "/images/green_pill.png"
         },
         {
-          "name": "Purple flower",
-          "description": "A night of fluffy happiness",
+          "name": "Purple\nflower",
+          "description": "A night of\nfluffy happiness",
           "priceBTC": 0.0021,
           "priceETH": 0.0802,
           "recomendation": "The purple flower is our go to recommendation for a night full of fluffy happiness, with it's dose optimized for around six hours of perfect ecstasy experience.",

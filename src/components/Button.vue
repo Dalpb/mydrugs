@@ -27,8 +27,8 @@ const {addClass= "", onclick = ()=>{}, onmouseover= ()=>{}, onmouseleave = ()=>{
     padding: 9px .9rem;
     height: 2.5rem;
     color:white;
-    border:2px solid white;
-    border-radius: .6rem;
+    border:1.8px solid white;
+    border-radius: .5rem;
     text-transform: uppercase;
     font-weight: 600;
     font-size: large;

@@ -1,5 +1,5 @@
 export  enum DrugColor{
-    RED = "#ff3535",
+    RED = "#dc2852",
     PURPLE = "#7900ff",
     BLUE = "#138aca",
     YELLOW = "#ff942a",

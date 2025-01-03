@@ -165,38 +165,46 @@ watch(data,(newData,oldData) =>{
 .right{
     right: 0;
 }
+.title-pill,.des-pill{
+    text-transform: uppercase;
+}
+
 .title-pill{
     font-weight: 800;
     font-size: 4rem;
+    white-space: pre;
     text-shadow: 0px 0px 15px  rgba(0, 0, 0, 0.347);
 }
 .des-pill,.price-pill{
     font-size: xx-large;
+    white-space: pre;
+
 }
 .rec-pill{
-    margin-bottom: 1rem;
+    margin: 1rem 0;
 }
 .des-pill{
  font-weight: 100;
  text-align: end;
 }
 main{
-    margin: 2rem 1rem 1rem;
+    margin: 2rem 0rem 1rem;
+    width: 100%;
     height: calc(100vh - 8rem);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     position: relative;
-    text-transform: uppercase;
     color:white;
 }
 
 
 section{
     width: 100%;
-    height: 100%;
+    height: 90%;
     align-self: flex-start;
     display: grid;
-    grid-template-columns: repeat(3,minmax(200px,1fr));
+    grid-template-columns:  minmax(100px,.8fr) minmax(100px,1fr) minmax(100px,.8fr);
+    column-gap: 1rem;
 }
 section > picture{
     grid-column: 2/3;
@@ -218,16 +226,15 @@ section > div:last-child.presentation{
 
 
 section > div:first-child{
-    padding-bottom: 20rem;
     display: flex;
     flex-direction: column;
     text-align: end;
-    justify-self: end;
+    padding-bottom: 20rem;
     align-self: center;
 }
 section > div:last-child{
-    place-self: center;
-    padding-top: 15rem;
+    align-self: center;
+    padding-top: 10rem;
 
 }
 
@@ -256,7 +263,7 @@ section > div:last-child{
     display:flex;
     align-items: center;
     justify-self: center;
-    width: 95%;
+    width: 100%;
     height: 100%;
     max-width: 650px;
     min-width: 100px;

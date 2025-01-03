@@ -33,6 +33,7 @@ const arrayDot : Array<string> = Array.from<string>({length:quantity}).fill("");
     margin-right: 40px;
     justify-content: center;
     bottom: 0;
+    left: 45%;
 }
 
 .dot{
