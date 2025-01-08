@@ -93,27 +93,27 @@ watch(data,(newData,oldData) =>{
         @click="doPrevTransition"/>
             <section>
                 <div v-if="currentPage !== 0">
-                        <span class="title-pill">{{ data[currentPage]?.name }}</span>
-                        <span class="des-pill">{{ data[currentPage].description }}</span>
+                        <p class="title-pill">{{ data[currentPage]?.name }}</p>
+                        <p class="des-pill">{{ data[currentPage].description }}</p>
                         <RangeStar :rating="data[currentPage]?.rating"/>
                 </div>
                 <div v-else class="presentation">
                     <div>
-                        <span class="title-pill">SHOP</span><br>
-                        <span class="des-pill">ALL THE DRUGS <br> YOU WANT</span>
+                        <p class="title-pill info-animation dlay-1">SHOP</p><br>
+                        <p class="des-pill info-animation dlay-2">ALL THE DRUGS <br> YOU WANT</p>
                     </div>
                     <div>
-                        <span class="title-pill">SAFETY</span><br>
-                        <span class="des-pill">IMPORTANT <br> INFORMATION</span>
+                        <p class="title-pill info-animation dlay-3">SAFETY</p><br>
+                        <p class="des-pill info-animation dlay-4">IMPORTANT <br> INFORMATION</p>
                     </div>
                 </div>
                 <picture class="picture ">
                     <img :src="currentImage" class="main-img" :class="changing && 'img-animation' " >
                 </picture>
                 <div v-if="currentPage !== 0">
-                    <span class="price-pill">
+                    <p class="price-pill">
                         {{ data[currentPage]?.priceBTC  }}BTC / {{ data[currentPage]?.priceETH }}ETH
-                    </span>
+                    </p>
                     <p class="rec-pill">
                         {{ data[currentPage]?.recomendation }}
                     </p>
@@ -126,12 +126,12 @@ watch(data,(newData,oldData) =>{
                 </div>
                 <div v-else class="presentation">
                     <div>
-                        <span class="title-pill">FAQ</span><br>
-                        <span class="des-pill">ANSWERING <br> YOUR QUESTIONS </span>
+                        <p class="title-pill info-animation dlay-5">FAQ</p><br>
+                        <p class="des-pill info-animation dlay-6">ANSWERING <br> YOUR QUESTIONS </p>
                     </div>
                     <div>
-                        <span class="title-pill">CONTACT</span><br>
-                        <span class="des-pill">SUGGESTIONS AND <br> FEEDBACK</span>
+                        <p class="title-pill info-animation dlay-7">CONTACT</p><br>
+                        <p class="des-pill info-animation dlay-8">SUGGESTIONS AND <br> FEEDBACK</p>
                     </div>
                  </div>
             </section>
@@ -223,8 +223,6 @@ section > div:last-child.presentation{
     flex-direction: column;
 
 }
-
-
 section > div:first-child{
     display: flex;
     flex-direction: column;
@@ -279,30 +277,44 @@ section > div:last-child{
     animation-timing-function: ease-out;
     animation-duration: .7s;
 }
-.info-animation{
+/* .info-animation{
     animation-name: decorationText;
-    animation-timing-function: ease-out;
-    animation-duration: 2s;
-}
-.rotate{
-    animation: rotate 10s infinite alternate ease-in-out;
+    animation-timing-function: ease-in;
+    animation-duration: .25s;
 }
 
-@media screen and (width <= 1600px) {
-    picture{
-        max-width: 500px;
-    }
+.dlay-1{
+    animation-delay: .25s;
 }
-@media screen and (width <= 1300px){
-    picture{
-        max-width: 400px;
-    }
+.dlay-2{
+    animation-delay: .5s;
+    
 }
-@media screen and (width <=1100px) {
-    picture{
-        max-width: 300px;
-    }
+.dlay-3{
+    animation-delay: .3s;
+    
 }
+.dlay-4{
+    animation-delay: .4s;
+
+}
+.dlay-5{
+    animation-delay: .5s;
+
+}
+.dlay-6{
+    animation-delay: .6s;
+
+}
+.dlay-7{
+    animation-delay: .7s;
+
+}
+.dlay-8{
+    animation-delay: .8s;
+
+} */
+
 /* fuck you cleanImage, 4hours!!!! */
 @keyframes cleanImage {
   0% {
@@ -324,31 +336,34 @@ section > div:last-child{
     clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 0, 67% 0, 67% 100%, 67% 0); 
   }
 }
-@keyframes rotate{
+
+/* @keyframes decorationText{
     from{
-        transform: rotate(0deg);
-    }
-    33.3%{
-        transform: rotate(10deg);
-    }
-    66.6%{
-        transform: rotate(-10deg);
-    }
-    to{
-        transform: rotate(0deg);
-    }
-}
-@keyframes decorationText{
-    from{
-        opacity: 100%;
-    }
-    50% {
+        transform: translateY(100px);
         opacity: 0;
     }
     to{
-        opacity: 100%;
+        transform: translateX(0);
+        opacity: 1;
+    }
+} */
+@media screen and (width <= 1600px) {
+    picture{
+        max-width: 500px;
     }
 }
+@media screen and (width <= 1300px){
+    picture{
+        max-width: 400px;
+    }
+}
+@media screen and (width <=1100px) {
+    picture{
+        max-width: 300px;
+    }
+}
+
+
     
 </style>
 

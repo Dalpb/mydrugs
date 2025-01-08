@@ -115,7 +115,7 @@ article:hover{
 @keyframes show {
     from{
         opacity: 0;
-        transform: translateY(5rem);
+        transform: translateY(3rem);
     }
     to{
         opacity: 1;
