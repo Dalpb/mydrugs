@@ -1,0 +1,75 @@
+@keyframes clean {
+    0% {
+      clip-path: polygon(66% 0, 100% 0, 100% 100%, 37% 100%, 37% 100%, 0 100%, 0 0); 
+    }
+    16.6% {
+      clip-path: polygon(66% 0, 100% 0, 100% 100%, 37% 100%, 37% 0, 0 0, 0 0); 
+    }
+    33.3% {
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 37% 100%, 37% 0, 67% 0, 67% 0); 
+    }
+    50% {
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 37% 100%, 37% 100%, 67% 100%, 67% 0); 
+    }
+    66.6% {
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 67% 100%, 67% 100%, 67% 0); 
+    }
+    100% {
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 0, 67% 0, 67% 100%, 67% 0); 
+    }
+}
+
+@keyframes show-text{
+    from{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.show-text-animation{
+    opacity: 0;
+    animation-name: show-text;
+    animation-timing-function: ease;
+    animation-duration: .15s;
+    animation-fill-mode: forwards;
+}
+
+.dly-1{
+    animation-delay: .0s;
+}
+.dly-2{
+    animation-delay: .15s;
+    
+}
+.dly-3{
+    animation-delay: .30s;
+    
+}
+.dly-4{
+    animation-delay: .45s;
+}
+.dly-5{
+    animation-delay: .60s;
+
+}
+.dly-6{
+    animation-delay: 1s;
+
+}
+.dly-7{
+    animation-delay: 1.15s;
+
+}
+.dly-8{
+    animation-delay: 1.30s;
+
+}
+.clean-animation{
+    animation-name: clean;
+    animation-timing-function: ease-out;
+    animation-duration: .7s;
+}

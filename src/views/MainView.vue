@@ -6,25 +6,17 @@ import {
     onMounted,
     onUnmounted,
 } from 'vue';
-import {
-    ChevronLeftIcon,
-    ChevronRightIcon,
-    PlusIcon,
-} from "@heroicons/vue/16/solid"
 import { Drug } from '@interfaces/models/Drug.interface';
-import SliderDot from "@components/SliderDot.vue";
 import SliderContainer from '@/components/SliderContainer.vue';
 import DrugSection from "@components/DrugSection.vue"
 import MainSection from '@/components/MainSection.vue';
-import RangeStar from '@/components/RangeStar.vue';
 import { usePagination } from '@hooks/usePagination';
 import { DrugColor } from '@/interfaces/enums/DrugColor';
-import { changeColorPropety, changeFirstChildColor,doTransitionLeftColor } from '@/utils/colorHandlers';
+import { changeColorPropety,doTransitionLeftColor } from '@/utils/colorHandlers';
 
 const id : Ref<number | null> = ref(null); 
-const currentImage : Ref<string> = ref("/images/main_page.png");
 const changing : Ref<boolean> = ref(false);
-
+const currentScreen : Ref<Drug> = ref({image:"/images/main_page.png",drugColor:DrugColor.DARK});
 
 const {
    currentPage,
@@ -55,10 +47,15 @@ const fechData = async () =>{
 
 const doTransition = (index : number): void  =>{
     if(index === currentPage.value)return;
-    doTransitionLeftColor(id.value,data.value[currentPage.value]?.drugColor,data.value[index]?.drugColor,2,index !==0);
+
+    const oldColor = currentScreen.value.drugColor;
+    const newColor = data.value[index]?.drugColor;
+
+    currentScreen.value = data.value[index];
+    doTransitionLeftColor(id.value,oldColor,newColor,2,index !==0);
     changePage(index);
-    changeColorPropety(window.document.documentElement,"--main-color",data.value[index]?.drugColor);
-    manageImage(data.value[index]?.image);
+    changeColorPropety(window.document.documentElement,"--main-color",newColor);
+    // manageImage(data.value[index]?.image);
 }
 const doPrevTransition = () : void =>{
     const prev = getPreviusPage();
@@ -68,13 +65,13 @@ const doNextTransition = () :void  =>{
     const next = getNextPage();
     doTransition(next);
 }
-const manageImage = (newImage: string) : void =>{
-    changing.value = true;
-    setTimeout(()=>{
-        changing.value = false;
-        currentImage.value = newImage;
-    },700);
-}
+// const manageImage = (newImage: string) : void =>{
+//     changing.value = true;
+//     setTimeout(()=>{
+//         changing.value = false;
+//         currentImage.value = newImage;
+//     },700);
+// }
 onMounted(fechData);
 onUnmounted(()=>{
     window.document.body.style.backgroundImage = "none";
@@ -84,7 +81,6 @@ onUnmounted(()=>{
 watch(data,(newData,oldData) =>{
     totalPage.value = newData.length;
 })
-
 
 </script>
 
@@ -100,12 +96,13 @@ watch(data,(newData,oldData) =>{
 
             <main-section
             v-if="currentPage == 0"
-            :img="data[currentPage].image">
+            :img="currentScreen.image">
             </main-section>
             
             <drug-section 
             v-else
-            :drug-info="data[currentPage]"
+            :key="currentScreen.name"
+            :drug-info="currentScreen"
             </drug-section>
         </slider-container>
     </main>
@@ -147,7 +144,7 @@ main{
 }
 
 
-section{
+/* section{
     width: 100%;
     height: 90%;
     align-self: flex-start;
@@ -183,7 +180,7 @@ section > div:last-child{
     align-self: center;
     padding-top: 10rem;
 
-}
+} */
 
 
 .square{

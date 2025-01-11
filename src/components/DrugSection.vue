@@ -4,20 +4,23 @@ import RangeStar from './RangeStar.vue';
 import { PlusIcon } from '@heroicons/vue/24/solid';
 import { changeFirstChildColor } from '@/utils/colorHandlers';
 import { Drug } from '@/interfaces/models/Drug.interface';
+import { watch } from 'vue';
 interface Props{
     drugInfo:Drug,
 }
 const {drugInfo} = defineProps<Props>();
 const {name,description,recomendation,image,priceBTC,priceETH,rating,drugColor} = drugInfo;
+
+
 </script>
 <template>
-    <section>
+    <section class="main-section">
         <div>
             <p>{{ name }}</p>
             <p>{{ description }}</p>
             <RangeStar :rating="rating" />
         </div>
-        <picture >
+        <picture>
             <img :src="image" alt="" />
         </picture>
         <div>
@@ -33,7 +36,6 @@ const {name,description,recomendation,image,priceBTC,priceETH,rating,drugColor} 
     </section>
 </template>
 <style lang="css">
-
 
 
 

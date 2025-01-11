@@ -41,7 +41,7 @@ const {quantity = 0,actualIndex = 0,callback = ()=>{},onclickNext= ()=>{},onclic
     color:white;
 }
 .left,.right{
-    top:30%;
+    top:35%;
 }
 .left{
     left:0;
