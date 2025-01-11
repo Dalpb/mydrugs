@@ -56,10 +56,9 @@ const getNewColor =(e:Event)=>{
         padding-top: 1.2rem;
         padding-left:1rem ;
         padding-right:1rem ;
-
         display: flex;
         justify-content: space-between;
-        font-family: sans-serif;
+        font-family: "Roboto",sans-serif;
     }
     .btn-login,.shop-car{
         align-self: center;

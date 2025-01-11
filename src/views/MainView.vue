@@ -13,6 +13,9 @@ import {
 } from "@heroicons/vue/16/solid"
 import { Drug } from '@interfaces/models/Drug.interface';
 import SliderDot from "@components/SliderDot.vue";
+import SliderContainer from '@/components/SliderContainer.vue';
+import DrugSection from "@components/DrugSection.vue"
+import MainSection from '@/components/MainSection.vue';
 import RangeStar from '@/components/RangeStar.vue';
 import { usePagination } from '@hooks/usePagination';
 import { DrugColor } from '@/interfaces/enums/DrugColor';
@@ -52,7 +55,7 @@ const fechData = async () =>{
 
 const doTransition = (index : number): void  =>{
     if(index === currentPage.value)return;
-    doTransitionLeftColor(id.value,data.value[currentPage.value]?.drugColor,data.value[index]?.drugColor,2);
+    doTransitionLeftColor(id.value,data.value[currentPage.value]?.drugColor,data.value[index]?.drugColor,2,index !==0);
     changePage(index);
     changeColorPropety(window.document.documentElement,"--main-color",data.value[index]?.drugColor);
     manageImage(data.value[index]?.image);
@@ -87,90 +90,36 @@ watch(data,(newData,oldData) =>{
 
 <template> 
     <main>
-        <ChevronLeftIcon
+        <slider-container
         v-if="totalPage > 0"
-        class="chevron left"
-        @click="doPrevTransition"/>
-            <section>
-                <div v-if="currentPage !== 0">
-                        <p class="title-pill">{{ data[currentPage]?.name }}</p>
-                        <p class="des-pill">{{ data[currentPage].description }}</p>
-                        <RangeStar :rating="data[currentPage]?.rating"/>
-                </div>
-                <div v-else class="presentation">
-                    <div>
-                        <p class="title-pill info-animation dlay-1">SHOP</p><br>
-                        <p class="des-pill info-animation dlay-2">ALL THE DRUGS <br> YOU WANT</p>
-                    </div>
-                    <div>
-                        <p class="title-pill info-animation dlay-3">SAFETY</p><br>
-                        <p class="des-pill info-animation dlay-4">IMPORTANT <br> INFORMATION</p>
-                    </div>
-                </div>
-                <picture class="picture ">
-                    <img :src="currentImage" class="main-img" :class="changing && 'img-animation' " >
-                </picture>
-                <div v-if="currentPage !== 0">
-                    <p class="price-pill">
-                        {{ data[currentPage]?.priceBTC  }}BTC / {{ data[currentPage]?.priceETH }}ETH
-                    </p>
-                    <p class="rec-pill">
-                        {{ data[currentPage]?.recomendation }}
-                    </p>
-                    <div
-                    class="square"
-                    @mouseover="(e) => changeFirstChildColor(e,data[currentPage]?.drugColor)"
-                    @mouseleave="(e) => changeFirstChildColor(e,'white')">
-                        <PlusIcon id="plus" class="plus"  />
-                    </div>
-                </div>
-                <div v-else class="presentation">
-                    <div>
-                        <p class="title-pill info-animation dlay-5">FAQ</p><br>
-                        <p class="des-pill info-animation dlay-6">ANSWERING <br> YOUR QUESTIONS </p>
-                    </div>
-                    <div>
-                        <p class="title-pill info-animation dlay-7">CONTACT</p><br>
-                        <p class="des-pill info-animation dlay-8">SUGGESTIONS AND <br> FEEDBACK</p>
-                    </div>
-                 </div>
-            </section>
-            <SliderDot v-if="totalPage > 0" :quantity="totalPage" :actual-index="currentPage" :callback="doTransition"  />
-        <ChevronRightIcon 
-        v-if="totalPage > 0"
-        class="chevron right"
-        @click="doNextTransition"/>
+        :actual-index="currentPage"
+        :quantity="totalPage"
+        :callback="doTransition"
+        :onclick-next="doNextTransition"
+        :onclick-prev="doPrevTransition">
+
+            <main-section
+            v-if="currentPage == 0"
+            :img="data[currentPage].image">
+            </main-section>
+            
+            <drug-section 
+            v-else
+            :drug-info="data[currentPage]"
+            </drug-section>
+        </slider-container>
     </main>
 </template>
 
 
 <style lang="css" scoped>
-.chevron{
-    height: 7rem;
-    aspect-ratio: 2/3;
-    position:relative;
-    cursor:pointer;
-    color:rgba(255, 255, 255, 0.657);   
-    transition: color ease-in-out .2s;
-}
-.chevron:hover{
-    color:white;
-}
-.left,.right{
-    top:30%;
-}
-.left{
-    left:0;
-}
-.right{
-    right: 0;
-}
+
 .title-pill,.des-pill{
     text-transform: uppercase;
 }
 
 .title-pill{
-    font-weight: 800;
+    font-weight: 900;
     font-size: 4rem;
     white-space: pre;
     text-shadow: 0px 0px 15px  rgba(0, 0, 0, 0.347);
@@ -184,7 +133,7 @@ watch(data,(newData,oldData) =>{
     margin: 1rem 0;
 }
 .des-pill{
- font-weight: 100;
+ font-weight: 400;
  text-align: end;
 }
 main{
@@ -204,6 +153,7 @@ section{
     align-self: flex-start;
     display: grid;
     grid-template-columns:  minmax(100px,.8fr) minmax(100px,1fr) minmax(100px,.8fr);
+    grid-template-rows: 1fr;
     column-gap: 1rem;
 }
 section > picture{
@@ -221,7 +171,6 @@ section > div:last-child.presentation{
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-
 }
 section > div:first-child{
     display: flex;
@@ -262,14 +211,14 @@ section > div:last-child{
     align-items: center;
     justify-self: center;
     width: 100%;
-    height: 100%;
+    height: 90%;
     max-width: 650px;
     min-width: 100px;
 }
 .main-img{
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain;
     animation-fill-mode: forwards;  /*JSAJDJASDJSAJD YA TE ENCONTREEEE*/
 }
 .img-animation{

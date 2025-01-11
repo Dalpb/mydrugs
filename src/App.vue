@@ -16,7 +16,7 @@ import Layout from '@layouts/Layout.vue';
 
 *{
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: "Roboto",sans-serif;
 }
 p{
     margin:0;

@@ -8,14 +8,15 @@ export const changeColorPropety = (elem : HTMLElement,propety:string,color : str
     elem.style.setProperty(propety,color);
 }
 
-export const doTransitionLeftColor = (id: number,oldColor: string, newColor: string,speed : number = 1): void => {
+export const doTransitionLeftColor = (id: number,oldColor: string, newColor: string,speed : number = 1,Itsradial:boolean = true): void => {
     let pos: number = 0;
     const paint = () => {
         if (pos > 100) {
             if (id) cancelAnimationFrame(id);
         } else {
             pos +=speed;
-            const color = `radial-gradient(circle,rgba(255, 255, 255, 0.35) 0%, transparent ${pos>=72 ? 70 : pos}%),linear-gradient(to left,${newColor}  ${pos}%, ${oldColor} ${pos}% )`;
+            const radial = Itsradial ? `radial-gradient(circle,rgba(255, 255, 255, 0.35) 0%, transparent ${pos>=72 ? 70 : pos}%),`: '';
+            const color = radial+`linear-gradient(to left,${newColor}  ${pos}%, ${oldColor} ${pos}% )`;
             window.document.body.style.backgroundImage = color;
             id = requestAnimationFrame(paint);
         }
