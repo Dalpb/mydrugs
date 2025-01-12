@@ -11,7 +11,7 @@ import BasicForm from "@/components/BasicForm.vue";
     </main>
 </template>
 
-<style>
+<style scoped>
 main {
     display: flex;
     justify-content: center;
