@@ -7,7 +7,8 @@ Este es un proyecto personal que replica el estilo y concepto ficticio inspirado
 Este proyecto aún se encuentra en proceso de desarrollo... PAM PIM PAM
 
 ## 📸 Vista Previa
-![image](https://github.com/user-attachments/assets/59d27236-8682-4d16-b0ce-43f4ed952e99)
+![image](https://github.com/user-attachments/assets/37763884-5e62-451e-a270-594d0fce4048)
+
 ![image](https://github.com/user-attachments/assets/b74648fe-4399-478b-9664-7c0ce19d0462)
 
 
