@@ -52,6 +52,19 @@ import Button from '@components/Button.vue';
         justify-content: space-between;
         font-family: "Roboto",sans-serif;
     }
+    .btn-login {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        border: 1px solid white;
+        border-radius: 1.5rem;
+        cursor: pointer;
+        background-color: transparent;
+        transition: background-color ease-in-out .15s, color ease-in-out .15s;
+    }
+    .btn-login:hover {
+        background-color: white;
+        color: var(--main-color);
+    }
     .btn-login,.shop-car{
         align-self: center;
     }
