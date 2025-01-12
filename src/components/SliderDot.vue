@@ -30,10 +30,10 @@ const arrayDot : Array<string> = Array.from<string>({length:quantity}).fill("");
     padding: 0;
     display: flex;
     gap:1rem;
-    margin-right: 40px;
     justify-content: center;
     bottom: 0;
-    left: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .dot{

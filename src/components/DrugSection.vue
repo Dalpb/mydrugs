@@ -36,7 +36,7 @@ const {name,description,recomendation,image,priceBTC,priceETH,rating,drugColor} 
         </article>
     </section>
 </template>
-<style lang="css">
+<style lang="css" scoped>
 /* content styles */
 .show-animation{
     animation-duration: .45s;
@@ -81,7 +81,6 @@ const {name,description,recomendation,image,priceBTC,priceETH,rating,drugColor} 
     font-weight: 900;
     font-size: 3.5rem;
     text-shadow: 0px 0px 15px  rgba(0, 0, 0, 0.347);
-
 }
 .inf-2{
     display: flex;
@@ -117,4 +116,37 @@ const {name,description,recomendation,image,priceBTC,priceETH,rating,drugColor} 
     width: 3.2rem;
 }
 /* end of decoration */
+
+/* responsive desgin */
+@media screen and (max-width: 1100px) {
+    .main-section{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr;
+        row-gap: 1rem;
+        column-gap: 0rem;
+    }
+    .main-picture{
+        grid-row: 2/3;
+        grid-column: 1/2;
+        align-self: flex-start;
+    }
+    .main-section article:first-of-type{
+        grid-row: 1/2;
+        grid-column: 1/2;
+        align-self: end;
+        text-align: center;
+    }
+    .main-section article:last-of-type{
+    display: none;
+    }
+
+    .inf-1 p:first-child{
+        font-size: 2.8rem;
+    }
+    .inf-1 p{
+    font-size: 2rem;
+    }
+
+}
 </style>

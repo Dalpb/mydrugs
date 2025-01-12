@@ -97,6 +97,7 @@ watch(data,(newData,oldData) =>{
             v-if="currentPage == 0 && !changing"
             :img="currentScreen.image">
             </main-section>
+
             <drug-section 
             v-else
             :key="currentScreen.name"
@@ -110,29 +111,6 @@ watch(data,(newData,oldData) =>{
 
 
 <style lang="css" scoped>
-
-.title-pill,.des-pill{
-    text-transform: uppercase;
-}
-
-.title-pill{
-    font-weight: 900;
-    font-size: 4rem;
-    white-space: pre;
-    text-shadow: 0px 0px 15px  rgba(0, 0, 0, 0.347);
-}
-.des-pill,.price-pill{
-    font-size: xx-large;
-    white-space: pre;
-
-}
-.rec-pill{
-    margin: 1rem 0;
-}
-.des-pill{
- font-weight: 400;
- text-align: end;
-}
 main{
     margin: 2rem 0rem 1rem;
     width: 100%;
@@ -141,24 +119,6 @@ main{
     justify-content: space-between;
     position: relative;
     color:white;
-}
-
-
-
-
-
-
-    
+} 
 </style>
 
-<!-- 
-ANIMACION!!!!!! 4HORAS GAAAAAAAA!!!
-clip-path: polygon(66% 0, 100% 0, 100% 100%, 37% 100%, 37% 100%, 0 100%, 0 0);
-clip-path: polygon(66% 0, 100% 0, 100% 100%, 37% 100%, 37% 0, 0 0, 0 0);
-clip-path: polygon(100% 0, 100% 0, 100% 100%, 37% 100%, 37% 0, 67% 0, 67% 0); //acomo
-clip-path: polygon(100% 0, 100% 0, 100% 100%, 37% 100%, 37% 100%, 67% 100%, 67% 0); //baja
-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 67% 100%, 67% 100%, 67% 0);//acomoda
-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 0, 67% 0, 67% 100%, 67% 0); //sube
-
-
--->

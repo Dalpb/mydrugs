@@ -30,7 +30,8 @@ const {quantity = 0,actualIndex = 0,callback = ()=>{},onclickNext= ()=>{},onclic
 </script>
 <style lang="css" scoped>
 .chevron{
-    height: 7rem;
+    flex-shrink: 0;
+    height: 3rem;
     aspect-ratio: 2/3;
     position:relative;
     cursor:pointer;

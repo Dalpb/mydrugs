@@ -105,7 +105,11 @@ const getNewColor =(e:Event)=>{
     .nav-list li:hover::after{
         width: 100%;
     }
-
+    @media screen and (max-width: 1100px){
+        .navbar{
+            display: none;
+        }
+    }
 </style>
 <!-- 
 -------------
