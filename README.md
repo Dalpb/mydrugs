@@ -9,6 +9,8 @@ Este proyecto aún se encuentra en proceso de desarrollo... PAM PIM PAM
 ## 📸 Vista Previa
 ![image](https://github.com/user-attachments/assets/37763884-5e62-451e-a270-594d0fce4048)
 
+![image](https://github.com/user-attachments/assets/bf977ba2-48ca-462f-af63-b90cf420c772)
+
 ![image](https://github.com/user-attachments/assets/b74648fe-4399-478b-9664-7c0ce19d0462)
 
 
