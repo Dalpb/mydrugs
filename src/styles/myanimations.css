@@ -1,3 +1,14 @@
+/* fuck you clean, 4hours!!!! 
+ANIMACION!!!!!! 4HORAS GAAAAAAAA!!!
+clip-path: polygon(66% 0, 100% 0, 100% 100%, 37% 100%, 37% 100%, 0 100%, 0 0);
+clip-path: polygon(66% 0, 100% 0, 100% 100%, 37% 100%, 37% 0, 0 0, 0 0);
+clip-path: polygon(100% 0, 100% 0, 100% 100%, 37% 100%, 37% 0, 67% 0, 67% 0); //acomo
+clip-path: polygon(100% 0, 100% 0, 100% 100%, 37% 100%, 37% 100%, 67% 100%, 67% 0); //baja
+clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 67% 100%, 67% 100%, 67% 0);//acomoda
+clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 0, 67% 0, 67% 100%, 67% 0); //sube
+*/
+
+
 @keyframes clean {
     0% {
       clip-path: polygon(66% 0, 100% 0, 100% 100%, 37% 100%, 37% 100%, 0 100%, 0 0); 
@@ -19,7 +30,7 @@
     }
 }
 
-@keyframes show-text{
+@keyframes show{
     from{
         transform: translateY(100px);
         opacity: 0;
@@ -29,12 +40,28 @@
         opacity: 1;
     }
 }
+@keyframes hide {
+    0%{
+        transform: translate(0);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+}
 
-.show-text-animation{
+.show-animation{
     opacity: 0;
-    animation-name: show-text;
+    animation-name: show;
     animation-timing-function: ease;
     animation-duration: .15s;
+    animation-fill-mode: forwards;
+}
+.hide-animation{
+    animation-name: hide;
+    animation-timing-function: ease;
+    animation-duration: .3s;
     animation-fill-mode: forwards;
 }
 
@@ -72,4 +99,17 @@
     animation-name: clean;
     animation-timing-function: ease-out;
     animation-duration: .7s;
+    animation-fill-mode: forwards;
 }
+/* 
+<!-- 
+-------------
+   ( (
+    ) )
+  ........
+  |      |]   DALPB
+  \      /  
+   `----'    
+-------------
+-->
+ */
