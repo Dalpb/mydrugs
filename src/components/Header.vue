@@ -109,6 +109,9 @@ const getNewColor =(e:Event)=>{
         .navbar{
             display: none;
         }
+        .header{
+            height: 4rem;
+        }
     }
 </style>
 <!-- 

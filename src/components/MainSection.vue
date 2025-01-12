@@ -42,7 +42,7 @@ const {img} = defineProps<Props>();
 .main-picture{
     grid-column: 2/3;
     grid-row: 1/7;
-    width: 100%;
+    width: 99%;
 }
 .main-picture img{
     width: 100%;

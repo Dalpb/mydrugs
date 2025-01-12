@@ -112,9 +112,9 @@ watch(data,(newData,oldData) =>{
 
 <style lang="css" scoped>
 main{
-    margin: 2rem 0rem 1rem;
+    margin: 1rem 0rem 1rem;
     width: 100%;
-    height: calc(100vh - 8rem);
+    height: calc(100% - 8rem);
     display: flex;
     justify-content: space-between;
     position: relative;

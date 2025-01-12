@@ -59,4 +59,10 @@ const arrayDot : Array<string> = Array.from<string>({length:quantity}).fill("");
     border-radius: 50%;
     background-color: transparent;
 }
+/* I guees that there's a better way to manage this */
+@media screen and (max-height: 600px){
+    .my-list-dot{
+        bottom: -13%;
+    }
+}
 </style>

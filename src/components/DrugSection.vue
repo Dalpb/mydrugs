@@ -122,14 +122,15 @@ const {name,description,recomendation,image,priceBTC,priceETH,rating,drugColor} 
     .main-section{
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 2fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
         row-gap: 1rem;
         column-gap: 0rem;
     }
     .main-picture{
-        grid-row: 2/3;
+        grid-row: 2/5;
         grid-column: 1/2;
         align-self: flex-start;
+        width: 85%;
     }
     .main-section article:first-of-type{
         grid-row: 1/2;
@@ -145,8 +146,15 @@ const {name,description,recomendation,image,priceBTC,priceETH,rating,drugColor} 
         font-size: 2.8rem;
     }
     .inf-1 p{
-    font-size: 2rem;
+    font-size: 1.8rem;
     }
-
+}
+@media screen and (max-height: 600px){
+    .inf-1 p:first-child{
+        font-size: 1.8rem;
+    }
+    .inf-1 p{
+    font-size: 1rem;
+    }
 }
 </style>

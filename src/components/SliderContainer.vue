@@ -31,7 +31,7 @@ const {quantity = 0,actualIndex = 0,callback = ()=>{},onclickNext= ()=>{},onclic
 <style lang="css" scoped>
 .chevron{
     flex-shrink: 0;
-    height: 3rem;
+    height: 5rem;
     aspect-ratio: 2/3;
     position:relative;
     cursor:pointer;
@@ -50,4 +50,5 @@ const {quantity = 0,actualIndex = 0,callback = ()=>{},onclickNext= ()=>{},onclic
 .right{
     right: 0;
 }
+
 </style>

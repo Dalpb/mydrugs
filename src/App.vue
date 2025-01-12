@@ -24,5 +24,8 @@ p{
 body{
     background-color :var(--main-color);
 }
+#app{
+    height: 100%;
+}
 </style>
 
