@@ -4,21 +4,13 @@ import { Bars3Icon,ShoppingCartIcon,ShoppingBagIcon } from '@heroicons/vue/16/so
 import { changeFirstChildColor } from '@utils/colorHandlers';
 import { RouterLink } from 'vue-router';
 import Button from '@components/Button.vue';
-const getNewColor =(e:Event)=>{
-    const color =window.document.documentElement.style.getPropertyValue("--main-color");
-    changeFirstChildColor(e,color);
-}
-
 </script>
 
 <template>
     <header class="header">
-        <Button
-        add-class="btn-login"
-        :onmouseover="getNewColor"
-        :onmouseleave="e => changeFirstChildColor(e,'white')">
+        <RouterLink to="/login" class="btn-login">
             Login
-        </Button>
+        </RouterLink>
         <nav class="navbar">
             <ul class="nav-list">
                 <li>
