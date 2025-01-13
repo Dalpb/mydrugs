@@ -1,6 +1,7 @@
 import type { DrugColor } from "../enums/DrugColor";
 
 export interface Drug{
+   id?:string,
    name?: string,
    image?:string,
    drugColor?: DrugColor,

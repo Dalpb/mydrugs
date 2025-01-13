@@ -108,6 +108,10 @@ const manageSort =(value : string)=>{
 .add-input{
     padding-left: 2.5rem;
 }
+h1{
+    text-shadow: 0px 0px 15px  rgba(254, 239, 239, 0.347);
+    font-size: 3.5rem;
+}
 main{
     margin: 2rem 5rem 1rem;
     color: white;
@@ -149,8 +153,13 @@ section{
     gap:2rem 3rem;
 }
 
-
-@media screen and (width <= 900px) {
+@media screen and ( 340px < width <= 500px) {
+    section{
+    justify-items: center;
+    }
+    main{
+        margin: 2rem 1.5rem 1rem;
+    }
     h1{
         text-align: center;
     }
@@ -158,4 +167,19 @@ section{
         flex-grow: 1
     }
 }
+@media screen and ( width <= 340px) {
+    section{
+    justify-items: center;
+    }
+    main{
+        margin: 2rem .5rem 1rem;
+    }
+    h1{
+        text-align: center;
+    }
+    .add,.search,h1{
+        flex-grow: 1
+    }
+}
+
 </style>

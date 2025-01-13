@@ -3,8 +3,10 @@ export  enum DrugColor{
     PURPLE = "#7900ff",
     BLUE = "#138aca",
     YELLOW = "#ff942a",
-    GREEN = "#97fe01",
+    GREEN = "#AACC50",
     PINK = "#9f6983",
-    DARK = "#0e0e0e",
+    DARK = "#0D151A",
     WHITE = "#7da69d"
 }
+// #0E1719 nuevo
+// antes #292B2F

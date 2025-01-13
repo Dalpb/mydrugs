@@ -20,19 +20,22 @@ const removeInit = (e :Event) =>{
 
 </script>
 <template>
-<article class="init-animation" 
-:onmouseover="colorEffect"
-v-on:animationend="removeInit">
-   <div class="product-img">
-       <img :src="drug.image" alt=" "/>
-    </div> 
-    <p class="title ">{{ drug.name }}</p>
-    <span class="info txt">{{ drug.composition }}MG MDMA PER PILL</span>
-    <RangeStar :rating="drug.rating" width="1.5rem"/>
-    <p class="txt">{{ drug.recomendation.length > 65 ? drug.recomendation.slice(0,65)+"..." : drug.recomendation }}</p>
-    <span>{{ drug.priceBTC }} BTC</span>
-    <span>{{ drug.priceETH }} ETH</span>
-</article>
+    <router-link :to="{name:'Products', params:{id: drug.id}}" >
+        <article class="init-animation" 
+        :onmouseover="colorEffect"
+        v-on:animationend="removeInit">
+            <picture class="product-img">
+                <img :src="drug.image" alt=" "/>
+            </picture> 
+            <p class="title ">{{ drug.name }}</p>
+                <span class="info txt">{{ drug.composition }}MG MDMA PER PILL</span>
+                <RangeStar :rating="drug.rating" width="1.5rem"/>
+            <div class="prices">
+                <span>{{ drug.priceBTC }} BTC</span>
+                <span>{{ drug.priceETH }} ETH</span>
+            </div>
+        </article>
+    </router-link>
 </template>
 
 <style lang="css" scoped>
@@ -41,9 +44,30 @@ article{
     --local-color :#138acafd;
     --local-seccolor: #138aca40;
 }
+.prices{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap:.6rem;
+    bottom: 10px;
+    left: -.3px;
+}
+.prices > span{
+    background-color: #538FD8;
+    height: 2.2rem;
+    width: 7rem;
+    padding: 0 5px;
+    align-content: center;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.prices > span:first-of-type {
+    background-color:#FF8C00 ;
+}
 .title{
     font-weight: 800;
     font-size: 2rem;
+    text-shadow: 0px 0px 15px  rgba(249, 240, 240, 0.347);
     text-transform: uppercase;
 }
 .txt{
@@ -53,16 +77,21 @@ article{
     font-weight: 600;
 }
 .product-img{
-    height: 40%;
-    width: 100%;
+    height: 100%;
+    width: 80%;
+    max-height: 230px;
+    align-self: center;
 }
 img{
     height: 100%;
     width: 100%;
     object-fit: contain;
 }
+
 article{
+    position: relative;
     width: 18rem;
+    height: 31rem;
     padding: .7rem;
     border:1px solid white;
     border-radius: 15px;
@@ -71,6 +100,7 @@ article{
     gap: .5rem;
     cursor: pointer;
 }
+
 .init-animation{
     /* mejorar animacion  */
     animation : show .7s linear  1 forwards;

@@ -17,7 +17,7 @@ const {rating = 0,width = "2.5rem"} = defineProps<Props>();
 <style lang="css">
 @media screen and (max-height:600px){
     .star-rating > *{
-        height: 1.5rem;
+        height: 2rem;
     }
 }
 </style>

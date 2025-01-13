@@ -18,7 +18,7 @@ const {name,description,recomendation,image,priceBTC,priceETH,rating,drugColor} 
     <section class="main-section">
         <article class="inf-1 "  v-bind:class="changing ? 'hide-animation' : 'show-animation' ">
             <p>{{ name }}</p>
-            <p>{{ description }}</p>
+            <p class="a">{{ description }}</p>
             <RangeStar :rating="rating"/>
         </article>
         <picture class="main-picture" v-bind:class="changing && 'clean-animation'">
@@ -37,6 +37,9 @@ const {name,description,recomendation,image,priceBTC,priceETH,rating,drugColor} 
     </section>
 </template>
 <style lang="css" scoped>
+.a{
+    color:#ffffff93;
+}
 /* content styles */
 .show-animation{
     animation-duration: .45s;
@@ -89,7 +92,7 @@ const {name,description,recomendation,image,priceBTC,priceETH,rating,drugColor} 
     align-items: start;
 }
 .inf-2 p{
-    font-size: 1.4rem;
+    font-size: 1.25rem;
 }
 .inf-2 p:first-child{
     font-weight: 300;
@@ -122,7 +125,7 @@ const {name,description,recomendation,image,priceBTC,priceETH,rating,drugColor} 
     .main-section{
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr ;
         row-gap: 1rem;
         column-gap: 0rem;
     }
