@@ -4,13 +4,13 @@ import { RouterLink } from 'vue-router';
 </script>
 <template>
     <main>
-        <BasicForm title="Registrar" :inputs="[
+        <basic-form title="Registrar" :inputs="[
             { 'label': 'Nombre de usuario', 'type': 'text', 'name': 'username' },
             { 'label': 'Correo electrónico', 'type': 'email', 'name': 'email' },
             { 'label': 'Contraseña', 'type': 'password', 'name': 'password' },
             { 'label': 'Confirmar contraseña', 'type': 'password', 'name': 'confirm-password' },]">
-            <RouterLink to="/login">¿Ya tienes una cuenta? Inicie sesión aquí</RouterLink>
-        </BasicForm>
+            <router-link to="/login">¿Ya tienes una cuenta? Inicie sesión aquí</router-link>
+        </basic-form>
     </main>
 </template>
 

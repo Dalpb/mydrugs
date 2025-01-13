@@ -2,7 +2,7 @@
 import DrugCard from '@components/DrugCard.vue';
 import { Drug } from '@interfaces/models/Drug.interface';
 import { DrugColor } from '@interfaces/enums/DrugColor';
-import { onMounted,ref,Ref,watch } from 'vue';
+import { onMounted,ref } from 'vue';
 import Input from '@components/Input.vue';
 import Select from '@components/Select.vue';
 import Option from '@components/Option.vue';
@@ -44,7 +44,6 @@ const manageSort =(value : string)=>{
     switch(value){
         case "1":
             sortByPopularity();
-
         break;
         case "2":
             sortByPrice("asc");
@@ -96,6 +95,9 @@ const manageSort =(value : string)=>{
                 <Option value="5" label="MDMA: Low to High"/>
             </Select>
             </div>
+            <div class="results">
+                Showing {{ data.length }} results
+            </div>
         </div>
         <hr/>
         <section >
@@ -104,7 +106,11 @@ const manageSort =(value : string)=>{
     </main>
 </template>
 <style lang="css" scoped>
-
+.results{
+    font-size: 1.1rem;
+    color:rgba(255, 255, 255, 0.755);
+    align-self: flex-end;
+}
 .add-input{
     padding-left: 2.5rem;
 }
@@ -153,33 +159,31 @@ section{
     gap:2rem 3rem;
 }
 
-@media screen and ( 340px < width <= 500px) {
-    section{
-    justify-items: center;
+@media screen and (max-width: 500px) {
+    section {
+        justify-items: center;
     }
-    main{
+    main {
         margin: 2rem 1.5rem 1rem;
     }
-    h1{
+    h1 {
         text-align: center;
     }
-    .add,.search,h1{
-        flex-grow: 1
+    .add, .search, h1 {
+        flex-grow: 1;
     }
-}
-@media screen and ( width <= 340px) {
-    section{
-    justify-items: center;
-    }
-    main{
-        margin: 2rem .5rem 1rem;
-    }
-    h1{
+    .results {
+        width: 100%;
+        margin-top: 10px;
         text-align: center;
     }
-    .add,.search,h1{
-        flex-grow: 1
+}
+
+@media screen and (max-width: 340px) {
+    main {
+        margin: 2rem 0.5rem 1rem;
     }
 }
+
 
 </style>

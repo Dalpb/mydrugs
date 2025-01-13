@@ -1,11 +1,10 @@
 <script lang="ts" setup>
 import "../styles/myanimations.css"
-import { DrugColor } from '@/interfaces/enums/DrugColor';
 import RangeStar from './RangeStar.vue';
 import { PlusIcon } from '@heroicons/vue/24/solid';
 import { changeFirstChildColor } from '@/utils/colorHandlers';
 import { Drug } from '@/interfaces/models/Drug.interface';
-import { watch } from "vue";
+
 interface Props{
     drugInfo:Drug,
     changing:boolean
@@ -38,7 +37,7 @@ const {name,description,recomendation,image,priceBTC,priceETH,rating,drugColor} 
 </template>
 <style lang="css" scoped>
 .a{
-    color:#ffffff93;
+    color:#ffffffb3;
 }
 /* content styles */
 .show-animation{

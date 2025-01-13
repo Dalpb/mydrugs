@@ -8,15 +8,14 @@ import Button from '@components/Button.vue';
 
 <template>
     <header class="header">
-        <RouterLink to="/login" class="btn-login">
-        <Button
-        add-class="btn-login"
-        :onmouseover="getNewColor"
-        :onmouseleave="e => changeFirstChildColor(e,'white')"
-        class="btn-log">
-
-            Login
-        </RouterLink>
+        <router-link to="/login" >
+            <Button
+            add-class="btn-login"
+            :onmouseleave="e => changeFirstChildColor(e,'white')"
+            class="btn-log" >
+                Login
+            </Button>
+        </router-link>
         <nav class="navbar">
             <ul class="nav-list">
                 <li>
