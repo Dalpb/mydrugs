@@ -4,22 +4,19 @@ import { Bars3Icon,ShoppingCartIcon,ShoppingBagIcon } from '@heroicons/vue/16/so
 import { changeFirstChildColor } from '@utils/colorHandlers';
 import { RouterLink } from 'vue-router';
 import Button from '@components/Button.vue';
-const getNewColor =(e:Event)=>{
-    const color =window.document.documentElement.style.getPropertyValue("--main-color");
-    changeFirstChildColor(e,color);
-}
-
 </script>
 
 <template>
     <header class="header">
+        <RouterLink to="/login" class="btn-login">
         <Button
         add-class="btn-login"
         :onmouseover="getNewColor"
         :onmouseleave="e => changeFirstChildColor(e,'white')"
         class="btn-log">
+
             Login
-        </Button>
+        </RouterLink>
         <nav class="navbar">
             <ul class="nav-list">
                 <li>
@@ -54,6 +51,19 @@ const getNewColor =(e:Event)=>{
         font-family: "Roboto",sans-serif;
         font-weight: 800;
         color:white;
+    }
+    .btn-login {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        border: 1px solid white;
+        border-radius: 1.5rem;
+        cursor: pointer;
+        background-color: transparent;
+        transition: background-color ease-in-out .15s, color ease-in-out .15s;
+    }
+    .btn-login:hover {
+        background-color: white;
+        color: var(--main-color);
     }
     .btn-login,.shop-car{
         align-self: center;
