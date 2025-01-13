@@ -9,48 +9,48 @@ import Button from '@components/Button.vue';
 <template>
     <header class="header">
         <RouterLink to="/login" class="btn-login">
+        <Button
+        add-class="btn-login"
+        :onmouseover="getNewColor"
+        :onmouseleave="e => changeFirstChildColor(e,'white')"
+        class="btn-log">
+
             Login
         </RouterLink>
         <nav class="navbar">
             <ul class="nav-list">
                 <li>
-                    <RouterLink to="/shop">SHOP</RouterLink>
+                    <router-link to="/shop">SHOP</router-link>
                 </li>
                 <li>
-                    <RouterLink to="/faq">FAQ</RouterLink>
+                    <router-link to="/faq">FAQ</router-link>
                 </li>
-                <li>
-                    <RouterLink to="/">
+                <li class="logo">
+                    <router-link to="/">
                         <img src="/images/mydrugslogo.png">
-                    </RouterLink>
+                    </router-link>
                 </li>
                 <li>
-                    <RouterLink to="/safety">SAFETY</RouterLink>
+                    <router-link to="/safety">SAFETY</router-link>
                 </li>
                 <li>
-                    <RouterLink to="/contact">CONTACT</RouterLink>
+                    <router-link to="/contact">CONTACT</router-link>
                 </li>
             </ul>
         </nav>
-            <ShoppingCartIcon class="shop-car"></ShoppingCartIcon>
+            <bars-3-icon class="shop-car"></bars-3-icon>
     </header>
 
 </template>
 <style scoped lang="css">
-    a{
-        font-weight: 800;
-        text-decoration: none;
-        color:white;
-    }
     .header{
         height: 5rem;
-        color:white;
-        padding-top: 1.2rem;
-        padding-left:1rem ;
-        padding-right:1rem ;
+        padding:1.2rem 1rem 0;
         display: flex;
         justify-content: space-between;
         font-family: "Roboto",sans-serif;
+        font-weight: 800;
+        color:white;
     }
     .btn-login {
         font-size: 1.2rem;
@@ -69,7 +69,7 @@ import Button from '@components/Button.vue';
         align-self: center;
     }
     .shop-car{
-        height: 60%;
+        height: 100%;
         cursor: pointer;
     }
     .navbar{
@@ -110,9 +110,21 @@ import Button from '@components/Button.vue';
     .nav-list li:hover::after{
         width: 100%;
     }
+    .btn-log{
+        border-radius: 3px;
+    }
     @media screen and (max-width: 1100px){
-        .navbar{
+        .nav-list{
+         justify-content: space-between;
+        }
+        .btn-log{
             display: none;
+        }
+        .nav-list > li {
+            display: none;
+        }
+        .nav-list > .logo{
+            display: block;
         }
         .header{
             height: 4rem;

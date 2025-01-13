@@ -11,12 +11,14 @@ import Layout from '@layouts/Layout.vue';
 </template>
 <style>
 :root{
-    --main-color: #0e0e0e;
+    --main-color: #0D151A;
 }
-
 *{
     box-sizing: border-box;
     font-family: "Roboto",sans-serif;
+}
+#app{
+    height: 100%;
 }
 p{
     margin:0;
@@ -24,8 +26,9 @@ p{
 body{
     background-color :var(--main-color);
 }
-#app{
-    height: 100%;
+a{
+    color:white;
+    text-decoration: none;
 }
 </style>
 

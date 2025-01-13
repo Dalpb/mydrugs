@@ -42,7 +42,8 @@ const {img} = defineProps<Props>();
 .main-picture{
     grid-column: 2/3;
     grid-row: 1/7;
-    width: 99%;
+    place-content: center;
+    width: 100%;
 }
 .main-picture img{
     width: 100%;
@@ -67,12 +68,15 @@ grid-row: 2/3;
 @media screen and (max-width: 1100px) {
     .main-section{
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
+        grid-template-rows: 1fr;
     }
     .main-picture{
         grid-column: 1/2;
         grid-row: 1/2;
         align-self: center;
+        justify-self: center;
+        width: 150%;
+
     }
     .opt{
        display: none; 

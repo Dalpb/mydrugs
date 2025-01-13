@@ -6,12 +6,12 @@ import {
     onMounted,
     onUnmounted,
 } from 'vue';
-import { Drug } from '@interfaces/models/Drug.interface';
-import SliderContainer from '@/components/SliderContainer.vue';
+import { usePagination } from '@hooks/usePagination';
 import DrugSection from "@components/DrugSection.vue"
 import MainSection from '@/components/MainSection.vue';
-import { usePagination } from '@hooks/usePagination';
+import SliderContainer from '@/components/SliderContainer.vue';
 import { DrugColor } from '@/interfaces/enums/DrugColor';
+import { Drug } from '@interfaces/models/Drug.interface';
 import { changeColorPropety,doTransitionLeftColor } from '@/utils/colorHandlers';
 
 const id : Ref<number | null> = ref(null); 
@@ -28,7 +28,6 @@ const {
 
 
 const data: Ref< Array<Drug> > = ref([{image:"/images/main_page.png",drugColor:DrugColor.DARK}]);
-const error = ref(null);
 const fechData = async () =>{
    try{
     const response = await fetch("/src/mocks/drugsPopularity.json");
@@ -74,7 +73,7 @@ const manageImage = (newDrug: Drug) : void =>{
 onMounted(fechData);
 onUnmounted(()=>{
     window.document.body.style.backgroundImage = "none";
-    changeColorPropety(window.document.documentElement,"--main-color","#0e0e0e");
+    changeColorPropety(window.document.documentElement,"--main-color","#0D151A");
 })
 
 watch(data,(newData,oldData) =>{
@@ -112,6 +111,7 @@ watch(data,(newData,oldData) =>{
 
 <style lang="css" scoped>
 main{
+    overflow: hidden;
     margin: 1rem 0rem 1rem;
     width: 100%;
     height: calc(100% - 8rem);
