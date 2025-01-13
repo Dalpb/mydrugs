@@ -102,6 +102,7 @@ const manageSort =(value : string)=>{
         <hr/>
         <section >
             <DrugCard v-for="drug of sortedData" :drug="drug"/> 
+
         </section>
     </main>
 </template>
@@ -155,7 +156,7 @@ main > div{
 section{
     display: grid;
     margin-top: 1rem;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
     gap:2rem 3rem;
 }
 

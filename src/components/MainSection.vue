@@ -43,7 +43,7 @@ const {img} = defineProps<Props>();
     grid-column: 2/3;
     grid-row: 1/7;
     place-content: center;
-    width: 100%;
+    width: 97.5%;
 }
 .main-picture img{
     width: 100%;

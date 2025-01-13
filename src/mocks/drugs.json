@@ -16,7 +16,7 @@
         },
         {
           "id":"p11",
-          "name": "Pink Great Again",
+          "name": "Stable Genius",
           "description": "Freedom in a pill",
           "priceBTC": 0.0030,
           "priceETH": 0.115,
@@ -40,11 +40,11 @@
         },
         {
           "id":"p7",
-          "name": "Yellow Granade",
+          "name": "Big boomer",
           "description": "Explosive energy boost",
           "priceBTC": 0.0040,
           "priceETH": 0.153,
-          "recomendation": "Unleash your wild side with the Grenade Pill. Not for the faint-hearted, this explosive option provides an intense and thrilling experience like no other. Designed for seasoned users who crave an adrenaline-filled night. Expect waves of powerful sensations and a ride full of surprises. Handle with care, as this pill is as strong as it sounds!",
+          "recomendation": "Unleash your wild side with the big boomer. Not for the faint-hearted, this explosive option provides an intense and thrilling experience like no other. Designed for seasoned users who crave an adrenaline-filled night. Expect waves of powerful sensations and a ride full of surprises. Handle with care, as this pill is as strong as it sounds!",
           "composition": 140,
           "rating": 5,
           "drugColor": "YELLOW",

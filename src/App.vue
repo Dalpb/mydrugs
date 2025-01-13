@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import MainView from '@views/MainView.vue';
 import { RouterView } from 'vue-router';  
 import Layout from '@layouts/Layout.vue';
 </script>

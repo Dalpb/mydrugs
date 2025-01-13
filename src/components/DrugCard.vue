@@ -3,11 +3,13 @@ import { Drug } from '@interfaces/models/Drug.interface';
 import RangeStar from './RangeStar.vue';
 import { changeColorPropety } from '@/utils/colorHandlers';
 import { onMounted, ref, Ref } from 'vue';
+import { useRouter } from 'vue-router';
 interface Props{
     drug: Drug
 }
 const { drug } = defineProps<Props>(); 
 
+const router = useRouter();
 const colorEffect =(e : Event) =>{
     const elem = e.currentTarget as HTMLElement;
     changeColorPropety(elem,'--local-color',drug.drugColor+"fd");
@@ -18,98 +20,88 @@ const removeInit = (e :Event) =>{
     elem.classList.remove("init-animation");
 }
 
+const goToProducts =()=> router.push({name:"Products",params:{id:drug.id}})
+
 </script>
 <template>
-    <router-link :to="{name:'Products', params:{id: drug.id}}" >
-        <article class="init-animation" 
-        :onmouseover="colorEffect"
-        v-on:animationend="removeInit">
-            <picture class="product-img">
-                <img :src="drug.image" alt=" "/>
-            </picture> 
-            <p class="title ">{{ drug.name }}</p>
-                <span class="info txt">{{ drug.composition }}MG MDMA PER PILL</span>
-                <RangeStar :rating="drug.rating" width="1.5rem"/>
-            <div class="prices">
-                <span>{{ drug.priceBTC }} BTC</span>
-                <span>{{ drug.priceETH }} ETH</span>
-            </div>
-        </article>
-    </router-link>
+    <article class="my-drug-card init-animation" 
+    :onmouseover="colorEffect"
+    v-on:animationend="removeInit"
+    @click="goToProducts">
+        <picture class="product-img">
+            <img :src="drug.image" alt=" "/>
+        </picture> 
+        <div>
+            <p class="title ">{{ drug.name.replace(' ','\n') }}</p>
+            <span class="info txt">{{ drug.composition }}MG MDMA PER PILL</span>
+            <span class="price">{{ drug.priceBTC }} BTC</span>
+            <RangeStar :rating="drug.rating" width="1.5rem" />
+        </div>
+    </article>
 </template>
 
 <style lang="css" scoped>
 
-article{
+.my-drug-card{
     --local-color :#138acafd;
     --local-seccolor: #138aca40;
 }
-.prices{
-    position: absolute;
+.my-drug-card{
+    position: relative;
+    width: 25rem;
+    height: 11rem;
+    padding: .7rem;
+    border:.1px solid rgba(255, 255, 255, 0.204);
+    border-radius: 8px;
     display: flex;
-    flex-direction: column;
-    gap:.6rem;
-    bottom: 10px;
-    left: -.3px;
+    flex-flow: row nowrap;
+    cursor: pointer;
+    justify-content: center;
 }
-.prices > span{
-    background-color: #538FD8;
-    height: 2.2rem;
-    width: 7rem;
-    padding: 0 5px;
-    align-content: center;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-.prices > span:first-of-type {
-    background-color:#FF8C00 ;
+.my-drug-card > div{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5,1fr);
 }
 .title{
     font-weight: 800;
-    font-size: 2rem;
-    text-shadow: 0px 0px 15px  rgba(249, 240, 240, 0.347);
-    text-transform: uppercase;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    place-content: center;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
-.txt{
-    color:rgba(156, 163, 175, 0.722);
+.price{
+    font-style: italic;
+    place-content: end;
+    grid-row: 4/5;
+    color: rgba(255, 255, 255, 0.744);
+    font-size: 1.1rem;
 }
-.info{
-    font-weight: 600;
-}
-.product-img{
-    height: 100%;
-    width: 80%;
-    max-height: 230px;
-    align-self: center;
+.price + *{
+    grid-row: 5/6;
 }
 img{
-    height: 100%;
+    height: 85%;
     width: 100%;
     object-fit: contain;
 }
-
-article{
-    position: relative;
-    width: 18rem;
-    height: 31rem;
-    padding: .7rem;
-    border:1px solid white;
-    border-radius: 15px;
-    display: flex;
-    flex-flow: column nowrap;
-    gap: .5rem;
-    cursor: pointer;
+.product-img{
+    width: 50%;
+    place-content: center;
+    min-width: 180px;
+    max-width: 180px;
 }
 
 .init-animation{
     /* mejorar animacion  */
     animation : show .7s linear  1 forwards;
 }
-article:hover .product-img{
+.my-drug-card:hover .product-img{
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
     animation: drop-shadow-lamp .3s ease-in-out  1 forwards;
 }
-article:hover{
+.my-drug-card:hover{
     animation: lamp .3s ease-in-out  1 forwards;
 }
 

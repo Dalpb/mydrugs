@@ -51,6 +51,9 @@ import Button from '@components/Button.vue';
         font-weight: 800;
         color:white;
     }
+    a{
+        align-self: center;
+    }
     .btn-login {
         font-size: 1.2rem;
         padding: 0.5rem 1rem;
@@ -116,14 +119,15 @@ import Button from '@components/Button.vue';
         .nav-list{
          justify-content: space-between;
         }
-        .btn-log{
+
+        .btn-log,a{
             display: none;
         }
         .nav-list > li {
             display: none;
         }
         .nav-list > .logo{
-            display: block;
+            display: inline;
         }
         .header{
             height: 4rem;

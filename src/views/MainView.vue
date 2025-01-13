@@ -9,6 +9,7 @@ import {
 import { usePagination } from '@hooks/usePagination';
 import DrugSection from "@components/DrugSection.vue"
 import MainSection from '@/components/MainSection.vue';
+import DrugService from '@/service/drug.service';
 import SliderContainer from '@/components/SliderContainer.vue';
 import { DrugColor } from '@/interfaces/enums/DrugColor';
 import { Drug } from '@interfaces/models/Drug.interface';
@@ -30,12 +31,10 @@ const {
 const data: Ref< Array<Drug> > = ref([{image:"/images/main_page.png",drugColor:DrugColor.DARK}]);
 const fechData = async () =>{
    try{
-    const response = await fetch("/src/mocks/drugsPopularity.json");
-    const responseJson = await response.json();
-    let drugs : Drug[] = responseJson.data.drugs.map((item : Drug) =>({
+    let drugs : Drug[] = (await DrugService.getDrugFamous()).map((item : Drug) =>({
         ...item,
         drugColor:item.drugColor in DrugColor ? DrugColor[item.drugColor as unknown  as keyof typeof DrugColor] : DrugColor.DARK
-    }))
+    }));
     data.value = [...data.value ,...drugs];
    }
    catch(error){
@@ -50,7 +49,7 @@ const doTransition = (index : number): void  =>{
     const oldColor = currentScreen.value.drugColor;
     const newColor = data.value[index]?.drugColor;
 
-    doTransitionLeftColor(id.value,oldColor,newColor,4,index !==0);
+    doTransitionLeftColor(id.value,oldColor,newColor,3,index !==0);
     changePage(index);
     changeColorPropety(window.document.documentElement,"--main-color",newColor);
     manageImage(data.value[index]);
@@ -111,7 +110,6 @@ watch(data,(newData,oldData) =>{
 
 <style lang="css" scoped>
 main{
-    overflow: hidden;
     margin: 1rem 0rem 1rem;
     width: 100%;
     height: calc(100% - 8rem);
