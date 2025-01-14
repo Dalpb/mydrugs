@@ -87,14 +87,15 @@ const {name,description,recomendation,image,priceBTC,priceETH,rating,drugColor} 
 .inf-2{
     display: flex;
     flex-direction: column;
-    gap:.5rem;
+    gap:1rem;
     align-items: start;
 }
 .inf-2 p{
     font-size: 1.25rem;
 }
 .inf-2 p:first-child{
-    font-weight: 300;
+    font-weight: 400;
+    font-size: 2rem;
 }
 /* end letter styles */
 
@@ -115,7 +116,7 @@ const {name,description,recomendation,image,priceBTC,priceETH,rating,drugColor} 
     color:transparent;
 }
 .plus{
-    width: 3.2rem;
+    width: 2rem;
     height: 100%;
 }
 /* end of decoration */
