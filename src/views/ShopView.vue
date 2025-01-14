@@ -163,6 +163,7 @@ section{
 @media screen and (max-width: 500px) {
     section {
         justify-items: center;
+        grid-template-columns: minmax(300px,1fr);
     }
     main {
         margin: 2rem 1.5rem 1rem;

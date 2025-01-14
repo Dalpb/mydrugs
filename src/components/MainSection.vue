@@ -56,6 +56,10 @@ const {img} = defineProps<Props>();
     font-weight: 900;
     font-size: 3.3rem;
 }
+.opt p:last-child{
+    color:#ffffffb3;
+}
+
 .shp,.faq{
 grid-row: 2/3;
 }

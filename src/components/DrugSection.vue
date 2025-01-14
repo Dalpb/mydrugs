@@ -1,10 +1,9 @@
 <script lang="ts" setup>
 import "../styles/myanimations.css"
 import RangeStar from './RangeStar.vue';
-import { PlusIcon } from '@heroicons/vue/24/solid';
 import { changeFirstChildColor } from '@/utils/colorHandlers';
 import { Drug } from '@/interfaces/models/Drug.interface';
-
+import plusIcon from "./plusIcon.vue";
 interface Props{
     drugInfo:Drug,
     changing:boolean
@@ -18,7 +17,7 @@ const {name,description,recomendation,image,priceBTC,priceETH,rating,drugColor} 
         <article class="inf-1 "  v-bind:class="changing ? 'hide-animation' : 'show-animation' ">
             <p>{{ name }}</p>
             <p class="a">{{ description }}</p>
-            <RangeStar :rating="rating"/>
+            <range-star :rating="rating"/>
         </article>
         <picture class="main-picture" v-bind:class="changing && 'clean-animation'">
             <img :src="image" :alt="image" />
@@ -30,7 +29,8 @@ const {name,description,recomendation,image,priceBTC,priceETH,rating,drugColor} 
             class="square"
             @mouseover="(e)=>changeFirstChildColor(e,drugColor)"
             @mouseleave="(e)=>changeFirstChildColor(e,'white')">
-                <PlusIcon id="plus" class="plus"/>
+                <plus-icon id="plus" class="plus"/>
+                <!-- <PlusIcon id="plus" class="plus"/> -->
             </div>
         </article>
     </section>
@@ -114,8 +114,9 @@ const {name,description,recomendation,image,priceBTC,priceETH,rating,drugColor} 
 .square:hover .plus{
     color:transparent;
 }
-.star,.plus{
+.plus{
     width: 3.2rem;
+    height: 100%;
 }
 /* end of decoration */
 

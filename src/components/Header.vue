@@ -4,6 +4,13 @@ import { Bars3Icon,ShoppingCartIcon,ShoppingBagIcon } from '@heroicons/vue/16/so
 import { changeFirstChildColor } from '@utils/colorHandlers';
 import { RouterLink } from 'vue-router';
 import Button from '@components/Button.vue';
+
+const getNewColor =(e:Event)=>{
+    const color =window.document.documentElement.style.getPropertyValue("--main-color");
+    changeFirstChildColor(e,color);
+}
+
+
 </script>
 
 <template>
@@ -12,6 +19,7 @@ import Button from '@components/Button.vue';
             <Button
             add-class="btn-login"
             :onmouseleave="e => changeFirstChildColor(e,'white')"
+            :onmouseover="getNewColor"
             class="btn-log" >
                 Login
             </Button>

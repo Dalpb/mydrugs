@@ -1,7 +1,13 @@
 <template>
     <main>
+        <picture>
+            <img :src="drug.image" :alt="drug.name" />
+        </picture>
+        
+        <section class="others-products">
+
+        </section>
     </main>
-    <p>{{ drug.composition }}</p>
 </template>
 
 
@@ -35,6 +41,7 @@ onBeforeRouteUpdate(async(to,from)=>{
 </script>
 <style lang="css" scoped>
 main{
+    display: grid;
 
 }
 </style>

@@ -33,7 +33,7 @@ const goToProducts =()=> router.push({name:"Products",params:{id:drug.id}})
         </picture> 
         <div>
             <p class="title ">{{ drug.name.replace(' ','\n') }}</p>
-            <span class="info txt">{{ drug.composition }}MG MDMA PER PILL</span>
+            <span class="info">{{ drug.composition }} MG MDMA / PILL</span>
             <span class="price">{{ drug.priceBTC }} BTC</span>
             <RangeStar :rating="drug.rating" width="1.5rem" />
         </div>
@@ -41,12 +41,9 @@ const goToProducts =()=> router.push({name:"Products",params:{id:drug.id}})
 </template>
 
 <style lang="css" scoped>
-
 .my-drug-card{
-    --local-color :#138acafd;
     --local-seccolor: #138aca40;
-}
-.my-drug-card{
+    --local-color :#138acafd;
     position: relative;
     width: 25rem;
     height: 11rem;
@@ -58,11 +55,13 @@ const goToProducts =()=> router.push({name:"Products",params:{id:drug.id}})
     cursor: pointer;
     justify-content: center;
 }
+
 .my-drug-card > div{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5,1fr);
 }
+
 .title{
     font-weight: 800;
     font-size: 1.6rem;
@@ -146,4 +145,26 @@ img{
     }
 }
 
+@media screen and (max-width:500px) {
+    .my-drug-card{
+        width: 100%;
+    } 
+    .info{
+        font-size: .8rem;
+    }
+}
+@media screen and (max-width:340px) {
+    .my-drug-card{
+        gap:1rem;
+    }
+    img{
+    height: 95%;
+    width: 100%;
+    object-fit: contain;
+    }
+    .product-img{
+        min-width: 130px;
+        max-width: 130px;
+    }
+}
 </style>
