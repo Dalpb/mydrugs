@@ -11,7 +11,8 @@
           "composition": 60,
           "rating": 4,
           "drugColor": "RED",
-          "image": "/images/red_pill2.png"
+          "image": "/images/red_pill2.png",
+          "isNew": false
         },
         {
           "name": "Blue\ncover",
@@ -22,19 +23,22 @@
           "composition": 100,
           "rating": 5,
           "drugColor": "BLUE",
-          "image": "/images/bluePill.png"
+          "image": "/images/bluePill.png",
+          "isNew": false
+
         },
         {
           "name": "Green\nsnowflake",
           "description": "Packs a\npowerful punch",
           "priceBTC": 0.0044,
-
           "priceETH": 0.1667,
           "recomendation": "The green clover is only recommended for experienced users, as it is the strongest pill in our selection. if you feel ready for it though, it will be an experience like nothing else",
           "composition": 150,
           "rating": 5,
           "drugColor": "GREEN",
-          "image": "/images/green_pill.png"
+          "image": "/images/green_pill.png",
+          "isNew": false
+          
         },
         {
           "name": "Purple\nflower",
@@ -45,7 +49,9 @@
           "composition": 70,
           "rating": 4,
           "drugColor": "PURPLE",
-          "image": "/images/purple_pill2.png"
+          "image": "/images/purple_pill2.png",
+          "isNew": false
+
         }
       ]
     }

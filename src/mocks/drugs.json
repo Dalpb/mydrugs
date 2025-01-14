@@ -12,7 +12,9 @@
           "composition": 100,
           "rating": 5,
           "drugColor": "WHITE",
-          "image": "/images/100.png"
+          "image": "/images/100.png",
+          "isNew": true
+
         },
         {
           "id":"p11",
@@ -24,7 +26,9 @@
           "composition": 120,
           "rating": 5,
           "drugColor": "PINK",
-          "image": "/images/america_great_again.png"
+          "image": "/images/america_great_again.png",
+          "isNew": true
+
         },
         {
           "id":"p10",
@@ -36,7 +40,9 @@
           "composition": 100,
           "rating": 5,
           "drugColor": "BLUE",
-          "image": "/images/bluePill.png"
+          "image": "/images/bluePill.png",
+          "isNew": false
+
         },
         {
           "id":"p7",
@@ -48,7 +54,9 @@
           "composition": 140,
           "rating": 5,
           "drugColor": "YELLOW",
-          "image": "/images/granade_pill2.png"
+          "image": "/images/granade_pill2.png",
+          "isNew": true
+
         },
         {
           "id":"p3",
@@ -60,7 +68,9 @@
           "composition": 150,
           "rating": 5,
           "drugColor": "GREEN",
-          "image": "/images/green_pill.png"
+          "image": "/images/green_pill.png",
+          "isNew": false
+
         },
         {
           "id":"p8",
@@ -72,7 +82,9 @@
           "composition": 110,
           "rating": 5,
           "drugColor": "BLUE",
-          "image": "/images/mario_pill.png"
+          "image": "/images/mario_pill.png",
+          "isNew": false
+
         },
         {
           "id":"p9",
@@ -84,7 +96,9 @@
           "composition": 50,
           "rating": 4,
           "drugColor": "PINK",
-          "image": "/images/pink_pill.png"
+          "image": "/images/pink_pill.png",
+          "isNew": false
+
         },
         {
             "id":"p1",
@@ -96,7 +110,8 @@
             "composition": 60,
             "rating": 4,
             "drugColor": "PINK",
-            "image": "/images/pink_pill2.png"
+            "image": "/images/pink_pill2.png",
+            "isNew": false
           },
           {
             "id":"p2",
@@ -108,7 +123,8 @@
             "composition": 70,
             "rating": 4,
             "drugColor": "PURPLE",
-            "image": "/images/purple_pill2.png"
+            "image": "/images/purple_pill2.png",
+            "isNew": false
           },
         {
           "id":"p4",
@@ -120,7 +136,9 @@
           "composition": 60,
           "rating": 4,
           "drugColor": "RED",
-          "image": "/images/Red Heart.png"
+          "image": "/images/Red Heart.png",
+          "isNew": true
+
         },
         {
           "id":"p0",
@@ -132,7 +150,9 @@
           "composition": 90,
           "rating": 5,
           "drugColor": "BLUE",
-          "image": "/images/super_man_pill.png"
+          "image": "/images/super_man_pill.png",
+          "isNew": false
+
         },
         {
           "id":"p5",
@@ -144,7 +164,9 @@
           "composition": 70,
           "rating": 4,
           "drugColor": "YELLOW",
-          "image": "/images/yellow_pill.png"
+          "image": "/images/yellow_pill.png",
+          "isNew": false
+
         }
       ]
     }

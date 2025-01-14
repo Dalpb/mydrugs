@@ -11,4 +11,5 @@ export interface Drug{
    recomendation?:string,
    composition?: number,
    rating?: number,   
+   isNew?:boolean
 }
