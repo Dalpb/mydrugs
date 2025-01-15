@@ -3,12 +3,12 @@ import {
     createWebHistory
 } from "vue-router";
 
-import MainView from "../views/MainView.vue";
-import LoginView from "../views/LoginView.vue";
-import FaqView from "../views/FaqView.vue";
-import ShopView from "../views/ShopView.vue";
-import RegisterView from "../views/RegisterView.vue";
-import ProductView from "../views/ProductView.vue";
+import FaqView from "@/views/FaqView.vue";
+import ShopView from "@/views/ShopView.vue";
+import MainView from "@/views/MainView.vue";
+import LoginView from "@/views/LoginView.vue";
+import ProductView from "@/views/ProductView.vue";
+import RegisterView from "@/views/RegisterView.vue";
 
 
 const routes  = [

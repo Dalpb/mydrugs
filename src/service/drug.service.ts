@@ -1,4 +1,4 @@
-import { Drug } from "../interfaces/models/Drug.interface";
+import type { Drug } from "@/interfaces/models/Drug.interface";
 
 class DrugService{
 

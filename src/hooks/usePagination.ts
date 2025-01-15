@@ -1,8 +1,8 @@
-import {ref,Ref} from "vue"
+import {ref} from "vue"
 
 export function usePagination(initialPage : number = 0){
-    const currentPage : Ref<number> = ref(initialPage);
-    const totalPage : Ref<number | null> = ref(null);
+    const currentPage  = ref<number>(initialPage);
+    const totalPage = ref<number | null>(null);
 
     const changePage = (index : number ): void => {
         currentPage.value = index;

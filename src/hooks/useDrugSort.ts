@@ -1,5 +1,5 @@
-import { Drug } from "../interfaces/models/Drug.interface";
-import {Ref,ref,watch} from "vue"
+import { type Drug } from "../interfaces/models/Drug.interface";
+import {type Ref,ref,watch} from "vue"
 export function useSortDrug (data: Ref<Drug[]>){
     const sortedData : Ref<Drug[]> = ref([...data.value]);
 

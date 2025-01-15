@@ -1,9 +1,8 @@
-import { Ref,ref,watch } from "vue";
-import { Drug } from "../interfaces/models/Drug.interface";
+import { type Ref,ref,watch } from "vue";
+import { type Drug } from "@/interfaces/models/Drug.interface";
 
 export function useFilterDrug(data: Ref<Drug[]>){
-    console.log(data.value);
-    const filterData : Ref<Drug []> = ref([...data.value]);
+    const filterData = ref<Drug []>([...data.value]);
 
     const resetData = () =>{
         filterData.value = [...data.value];

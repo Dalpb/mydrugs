@@ -17,7 +17,7 @@ import {
     ChevronLeftIcon,
     ChevronRightIcon
 } from "@heroicons/vue/16/solid"
-import SliderDot from "@components/SliderDot.vue";
+import SliderDot from "@/components/SliderDot.vue";
 interface Props{
     quantity: number,
     actualIndex: number,

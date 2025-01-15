@@ -2,7 +2,7 @@
 import "../styles/myanimations.css"
 import RangeStar from './RangeStar.vue';
 import { changeFirstChildColor } from '@/utils/colorHandlers';
-import { Drug } from '@/interfaces/models/Drug.interface';
+import type { Drug } from '@/interfaces/models/Drug.interface';
 import plusIcon from "./plusIcon.vue";
 interface Props{
     drugInfo:Drug,
@@ -27,7 +27,7 @@ const {name,description,recomendation,image,priceBTC,priceETH,rating,drugColor} 
             <p>{{ recomendation }}</p>
             <div 
             class="square"
-            @mouseover="(e)=>changeFirstChildColor(e,drugColor)"
+            @mouseover="(e)=>changeFirstChildColor(e,drugColor!)"
             @mouseleave="(e)=>changeFirstChildColor(e,'white')">
                 <plus-icon id="plus" class="plus"/>
             </div>

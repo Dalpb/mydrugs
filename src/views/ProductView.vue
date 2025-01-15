@@ -12,10 +12,10 @@
 
 
 <script lang="ts" setup>
-import {onMounted, ref,Ref} from "vue"
+import {onMounted, ref,type Ref} from "vue"
 import DrugService from '@/service/drug.service';
-import { Drug } from "@/interfaces/models/Drug.interface";
-import { useRoute,onBeforeRouteLeave,onBeforeRouteUpdate } from 'vue-router';
+import { type Drug } from "@/interfaces/models/Drug.interface";
+import { useRoute,onBeforeRouteUpdate } from 'vue-router';
 const route = useRoute();
 const drug : Ref<Drug> = ref<Drug>({});
 
@@ -25,7 +25,7 @@ onMounted(async()=>{
         drug.value= await DrugService.getDrugById(route.params.id);
     }
     catch(e){
-        console.log(e.message);
+        console.log((e as Error ).message);
     }
 })
 
@@ -35,7 +35,7 @@ onBeforeRouteUpdate(async(to,from)=>{
         drug.value = await DrugService.getDrugById(to.params.id);
     }
     catch(e){
-        console.log(e.message);
+        console.log((e as Error).message);
     }
 })
 </script>

@@ -10,8 +10,8 @@ const {rating = 0,width = "2.5rem"} = defineProps<Props>();
 </script>
 <template>
     <div class="star-rating" >
-        <StarIconSolid v-for="n in rating "  :style="`width:${width}`" />
-        <StarIconOutline v-for="n in 5-rating"  :style="`width:${width}`"/>
+        <StarIconSolid v-for=" in rating "  :style="`width:${width}`" />
+        <StarIconOutline v-for=" in 5-rating"  :style="`width:${width}`"/>
     </div>
 </template>
 <style lang="css">

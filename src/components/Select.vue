@@ -28,12 +28,12 @@ const handleDropdown =() => isOpen.value = !isOpen.value;
 onMounted(async () => {
     isOpen.value = true;
     await nextTick();
-    const ul: HTMLElement  = document.getElementById(name);
+    const ul: HTMLElement  = document.getElementById(name)!;
     if (!ul || !ul.firstElementChild) return;
     const firstChild = ul.firstElementChild as HTMLElement;
     const newValue = firstChild.getAttribute("id");
     const newLabel = firstChild.textContent?.trim();
-    updateValue(newValue, newLabel);
+    updateValue(newValue!, newLabel!);
     isOpen.value = false; 
 });
 

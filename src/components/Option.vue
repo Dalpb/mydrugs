@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Ref, ref,inject, onMounted, onBeforeMount } from 'vue';
+import {inject} from 'vue';
 import "../style.css"
 
 type SelectTrigger = {
@@ -17,12 +17,11 @@ interface Props{
 }
 const {value,label} = defineProps<Props>();
 const {
-currentLabel,
 currentValue,
 handleDropdown,
 updateValue,
 onchange,
-} = inject<SelectTrigger>('selecTrigger');
+} = inject<SelectTrigger>('selecTrigger')!;
 
 const handleClick =() =>{
     if(value === currentValue)return;

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { Bars3Icon,ShoppingCartIcon,ShoppingBagIcon } from '@heroicons/vue/16/solid';
+import { Bars3Icon} from '@heroicons/vue/16/solid';
 
-import { changeFirstChildColor } from '@utils/colorHandlers';
+import { changeFirstChildColor } from '@/utils/colorHandlers';
 import { RouterLink } from 'vue-router';
-import Button from '@components/Button.vue';
+import Button from '@/components/Button.vue';
 
 const getNewColor =(e:Event)=>{
     const color =window.document.documentElement.style.getPropertyValue("--main-color");

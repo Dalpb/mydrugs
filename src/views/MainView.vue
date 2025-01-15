@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import { 
     ref,
-    Ref,
+    type Ref,
     watch,
     onMounted,
     onUnmounted,
 } from 'vue';
-import { usePagination } from '@hooks/usePagination';
-import DrugSection from "@components/DrugSection.vue"
+import { usePagination } from '@/hooks/usePagination';
+import DrugSection from "@/components/DrugSection.vue"
 import MainSection from '@/components/MainSection.vue';
 import DrugService from '@/service/drug.service';
 import SliderContainer from '@/components/SliderContainer.vue';
 import { DrugColor } from '@/interfaces/enums/DrugColor';
-import { Drug } from '@interfaces/models/Drug.interface';
+import type { Drug } from '@/interfaces/models/Drug.interface';
 import { changeColorPropety,doTransitionLeftColor } from '@/utils/colorHandlers';
 
 const id : Ref<number | null> = ref(null); 
@@ -33,7 +33,7 @@ const fechData = async () =>{
    try{
     let drugs : Drug[] = (await DrugService.getDrugFamous()).map((item : Drug) =>({
         ...item,
-        drugColor:item.drugColor in DrugColor ? DrugColor[item.drugColor as unknown  as keyof typeof DrugColor] : DrugColor.DARK
+        drugColor:item.drugColor! in DrugColor ? DrugColor[item.drugColor as unknown  as keyof typeof DrugColor] : DrugColor.DARK
     }));
     data.value = [...data.value ,...drugs];
    }
@@ -46,10 +46,10 @@ const fechData = async () =>{
 const doTransition = (index : number): void  =>{
     if(index === currentPage.value)return;
 
-    const oldColor = currentScreen.value.drugColor;
-    const newColor = data.value[index]?.drugColor;
+    const oldColor = currentScreen.value.drugColor!;
+    const newColor = data.value[index]?.drugColor!;
 
-    doTransitionLeftColor(id.value,oldColor,newColor,3,index !==0);
+    doTransitionLeftColor(id.value!,oldColor,newColor,3,index !==0);
     changePage(index);
     changeColorPropety(window.document.documentElement,"--main-color",newColor);
     manageImage(data.value[index]);
@@ -75,7 +75,7 @@ onUnmounted(()=>{
     changeColorPropety(window.document.documentElement,"--main-color","#0D151A");
 })
 
-watch(data,(newData,oldData) =>{
+watch(data,(newData) =>{
     totalPage.value = newData.length;
 })
 
@@ -84,9 +84,9 @@ watch(data,(newData,oldData) =>{
 <template> 
     <main>
         <slider-container
-        v-if="totalPage > 0"
+        v-if="totalPage! > 0"
         :actual-index="currentPage"
-        :quantity="totalPage"
+        :quantity="totalPage!"
         :callback="doTransition"
         :onclick-next="doNextTransition"
         :onclick-prev="doPrevTransition">

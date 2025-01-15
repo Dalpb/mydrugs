@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import DrugCard from '@components/DrugCard.vue';
-import { Drug } from '@interfaces/models/Drug.interface';
-import { DrugColor } from '@interfaces/enums/DrugColor';
+import DrugCard from '@/components/DrugCard.vue';
+import type { Drug } from '@/interfaces/models/Drug.interface';
+import { DrugColor } from '@/interfaces/enums/DrugColor';
 import { onMounted,ref } from 'vue';
-import Input from '@components/Input.vue';
-import Select from '@components/Select.vue';
-import Option from '@components/Option.vue';
+import Input from '@/components/Input.vue';
+import Select from '@/components/Select.vue';
+import Option from '@/components/Option.vue';
 import { MagnifyingGlassIcon } from '@heroicons/vue/24/outline';
-import { useFilterDrug } from '@hooks/useDrugFilter';
-import { useSortDrug } from '@hooks/useDrugSort';
+import { useFilterDrug } from '@/hooks/useDrugFilter';
+import { useSortDrug } from '@/hooks/useDrugSort';
 let data = ref<Drug[]>([]);
 //copio el mismo codigo ,por ahora 
 const fechData = async () =>{
@@ -17,7 +17,7 @@ const fechData = async () =>{
     const responseJson = await response.json();
     let drugs : Drug[] = responseJson.data.drugs.map((item : Drug) =>({
         ...item,
-        drugColor:item.drugColor in DrugColor ? DrugColor[item.drugColor as unknown  as keyof typeof DrugColor] : DrugColor.DARK
+        drugColor:item.drugColor! in DrugColor ? DrugColor[item.drugColor as unknown  as keyof typeof DrugColor] : DrugColor.DARK
     }))
     data.value = [...data.value ,...drugs];
    }
@@ -100,7 +100,7 @@ const manageSort =(value : string)=>{
             </div>
         </div>
         <hr/>
-        <section >
+        <section>
             <DrugCard v-for="drug of sortedData" :drug="drug"/> 
         </section>
     </main>

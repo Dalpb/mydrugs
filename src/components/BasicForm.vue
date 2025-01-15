@@ -23,7 +23,7 @@ const submitHandler = (event: Event) => {
 </script>
 
 <template>
-    <form method="post" @submit.prevent="submitHandler">
+    <!-- <form method="post" @submit.prevent="submitHandler">
         <h2>
             {{ title }}
         </h2>
@@ -35,7 +35,7 @@ const submitHandler = (event: Event) => {
         <button type="submit">
             Enviar
         </button>
-    </form>
+    </form> -->
 </template>
 
 <style>

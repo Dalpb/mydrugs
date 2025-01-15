@@ -1,8 +1,9 @@
 <script lang="ts" setup>
-import { Drug } from '@interfaces/models/Drug.interface';
+/// <reference types="../../node_modules/.vue-global-types/vue_3.5_false.d.ts" />
+import type { Drug } from '@/interfaces/models/Drug.interface';
 import RangeStar from './RangeStar.vue';
 import { changeColorPropety } from '@/utils/colorHandlers';
-import { onMounted, ref, Ref } from 'vue';
+import type { onMounted, ref, Ref } from 'vue';
 import { useRouter } from 'vue-router';
 interface Props{
     drug: Drug
@@ -32,7 +33,7 @@ const goToProducts =()=> router.push({name:"Products",params:{id:drug.id}})
             <img :src="drug.image" alt=" "/>
         </picture> 
         <div>
-            <p class="title ">{{ drug.name.replace(' ','\n') }}</p>
+            <p class="title ">{{ drug.name!.replace(' ','\n') }}</p>
             <span class="info">{{ drug.composition }} MG MDMA / PILL</span>
             <span class="price">{{ drug.priceBTC }} BTC</span>
             <RangeStar :rating="drug.rating" width="1.5rem" />
