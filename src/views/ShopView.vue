@@ -9,16 +9,15 @@ import Option from '@/components/Option.vue';
 import { MagnifyingGlassIcon } from '@heroicons/vue/24/outline';
 import { useFilterDrug } from '@/hooks/useDrugFilter';
 import { useSortDrug } from '@/hooks/useDrugSort';
+import DrugService from '@/service/drug.service';
 let data = ref<Drug[]>([]);
 //copio el mismo codigo ,por ahora 
 const fechData = async () =>{
    try{
-    const response = await fetch("/src/mocks/drugs.json");
-    const responseJson = await response.json();
-    let drugs : Drug[] = responseJson.data.drugs.map((item : Drug) =>({
+    let drugs : Drug[] = (await DrugService.getDrugs()).map((item : Drug) =>({
         ...item,
         drugColor:item.drugColor! in DrugColor ? DrugColor[item.drugColor as unknown  as keyof typeof DrugColor] : DrugColor.DARK
-    }))
+    }));
     data.value = [...data.value ,...drugs];
    }
    catch(error){
