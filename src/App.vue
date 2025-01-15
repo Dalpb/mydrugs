@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { RouterView } from 'vue-router';  
-import Layout from '@/layouts/Layout.vue';
+import Layout from '@layouts/Layout.vue';
 </script>
 <!-- template renderiza el html  -->
 <template> 
