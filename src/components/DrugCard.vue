@@ -48,7 +48,7 @@ const goToProducts =()=> router.push({name:"Products",params:{id:drug.id}})
     width: 25rem;
     height: 11rem;
     padding: .7rem;
-    border:.1px solid rgba(255, 255, 255, 0.204);
+    border:2px solid var(--line-color);
     border-radius: 8px;
     display: flex;
     flex-flow: row nowrap;

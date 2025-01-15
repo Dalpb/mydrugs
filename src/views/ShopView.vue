@@ -102,11 +102,13 @@ const manageSort =(value : string)=>{
         <hr/>
         <section >
             <DrugCard v-for="drug of sortedData" :drug="drug"/> 
-
         </section>
     </main>
 </template>
 <style lang="css" scoped>
+hr{
+    border-color: var(--line-color);
+}
 .results{
     font-size: 1.1rem;
     color:rgba(255, 255, 255, 0.755);

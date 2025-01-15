@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { RouterView } from 'vue-router';  
-import Layout from '@layouts/Layout.vue';
+import Layout from '@/layouts/Layout.vue';
 </script>
 <!-- template renderiza el html  -->
 <template> 
@@ -11,6 +11,7 @@ import Layout from '@layouts/Layout.vue';
 <style>
 :root{
     --main-color: #0D151A;
+    --line-color: rgba(255, 255, 255, 0.502);
 }
 *{
     box-sizing: border-box;

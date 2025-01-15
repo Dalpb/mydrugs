@@ -30,7 +30,6 @@ const {name,description,recomendation,image,priceBTC,priceETH,rating,drugColor} 
             @mouseover="(e)=>changeFirstChildColor(e,drugColor)"
             @mouseleave="(e)=>changeFirstChildColor(e,'white')">
                 <plus-icon id="plus" class="plus"/>
-                <!-- <PlusIcon id="plus" class="plus"/> -->
             </div>
         </article>
     </section>

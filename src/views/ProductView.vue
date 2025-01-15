@@ -3,7 +3,7 @@
         <picture>
             <img :src="drug.image" :alt="drug.name" />
         </picture>
-        
+
         <section class="others-products">
 
         </section>
@@ -42,6 +42,6 @@ onBeforeRouteUpdate(async(to,from)=>{
 <style lang="css" scoped>
 main{
     display: grid;
-
+    
 }
 </style>

@@ -101,7 +101,6 @@ watch(data,(newData,oldData) =>{
             :key="currentScreen.name"
             :changing="changing"
             :drug-info="currentScreen"
-
             </drug-section>
         </slider-container>
     </main>
