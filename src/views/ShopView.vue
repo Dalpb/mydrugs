@@ -84,8 +84,8 @@ const manageSort =(value : string)=>{
                 <Option 
                 v-for="clr in DrugColor"
                 :key="clr" 
-                :value="Object.entries(DrugColor).find(entry => entry[1] === clr)[1]"
-                :label="Object.entries(DrugColor).find(entry => entry[1] === clr)[0]" />
+                :value="Object.entries(DrugColor).find(entry => entry[1] === clr)?.[1]!"
+                :label="Object.entries(DrugColor).find(entry => entry[1] === clr)?.[0]!" />
             </Select>
             <Select class-new="add" name="filter" :onchange="manageSort">
                 <Option value="1" label="Most Popular"/>
