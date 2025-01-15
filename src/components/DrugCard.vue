@@ -1,9 +1,7 @@
 <script lang="ts" setup>
-/// <reference types="../../node_modules/.vue-global-types/vue_3.5_false.d.ts" />
 import type { Drug } from '@/interfaces/models/Drug.interface';
 import RangeStar from './RangeStar.vue';
 import { changeColorPropety } from '@/utils/colorHandlers';
-import type { onMounted, ref, Ref } from 'vue';
 import { useRouter } from 'vue-router';
 interface Props{
     drug: Drug

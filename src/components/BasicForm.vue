@@ -1,41 +1,43 @@
 <script setup lang="ts">
-import { defineProps } from 'vue';
+// import { defineProps } from 'vue';
 
-const { title } = defineProps({
-    title: {
-        type: String,
-        default: 'Iniciar sesión',
-    },
-    inputs: {
-        type: Array,
-        default: () => [],
-    },
-});
+// const { title } = defineProps({
+//     title: {
+//         type: String,
+//         default: 'Iniciar sesión',
+//     },
+//     inputs: {
+//         type: Array,
+//         default: () => [],
+//     },
+// });
 
-const submitHandler = (event: Event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target as HTMLFormElement);
-    const data = Object.fromEntries(formData.entries());
-    console.log('Form data:', data);
-    alert("Check out inspector console");
-};
+// const submitHandler = (event: Event) => {
+//     event.preventDefault();
+//     const formData = new FormData(event.target as HTMLFormElement);
+//     const data = Object.fromEntries(formData.entries());
+//     console.log('Form data:', data);
+//     alert("Check out inspector console");
+// };
 
 </script>
 
 <template>
-    <!-- <form method="post" @submit.prevent="submitHandler">
-        <h2>
-            {{ title }}
-        </h2>
-        <div v-for="(input, index) in inputs" :key="index" class="input-group">
-            <input :id="'input-' + index" :name="input.name" :type="input.type" placeholder=" " required/>
-            <label :for="'input-' + index">{{ input.label }}</label>
-        </div>
-        <slot/>
-        <button type="submit">
-            Enviar
-        </button>
-    </form> -->
+    <!--
+        <form method="post" @submit.prevent="submitHandler">
+            <h2>
+                {{ title }}
+            </h2>
+            <div v-for="(input, index) in inputs" :key="index" class="input-group">
+                <input :id="'input-' + index" :name="input.name" :type="input.type" placeholder=" " required/>
+                <label :for="'input-' + index">{{ input.label }}</label>
+            </div>
+            <slot/>
+            <button type="submit">
+                Enviar
+            </button>
+        </form>
+    -->
 </template>
 
 <style>

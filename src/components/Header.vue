@@ -45,7 +45,7 @@ const getNewColor =(e:Event)=>{
                 </li>
             </ul>
         </nav>
-            <bars-3-icon class="shop-car"></bars-3-icon>
+        <Bars3Icon class="shop-car"></Bars3Icon>
     </header>
 
 </template>
