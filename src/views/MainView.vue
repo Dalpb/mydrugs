@@ -85,6 +85,7 @@ watch(data,(newData) =>{
     <main>
         <slider-container
         v-if="totalPage! > 0"
+        has-slider
         :actual-index="currentPage"
         :quantity="totalPage!"
         :callback="doTransition"
@@ -110,7 +111,6 @@ watch(data,(newData) =>{
 <style lang="css" scoped>
 main{
     margin: 1rem 0rem 1rem;
-    width: 100%;
     height: calc(100% - 8rem);
     display: flex;
     justify-content: space-between;

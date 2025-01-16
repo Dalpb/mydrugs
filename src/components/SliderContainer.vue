@@ -4,6 +4,7 @@
     @click="onclickPrev"/>
         <slot />    
         <slider-dot
+        v-if="hasSlider"
         :callback="callback"
         :quantity="quantity"
         :actual-index="actualIndex" />
@@ -19,13 +20,14 @@ import {
 } from "@heroicons/vue/16/solid"
 import SliderDot from "@/components/SliderDot.vue";
 interface Props{
-    quantity: number,
-    actualIndex: number,
-    onclickNext?: ()=>void
-    onclickPrev?: ()=>void
+    hasSlider?:boolean
+    quantity?: number,
+    actualIndex?: number,
+    onclickNext: ()=>void
+    onclickPrev: ()=>void
     callback? : (n : number) => void,
 }
-const {quantity = 0,actualIndex = 0,callback = ()=>{},onclickNext= ()=>{},onclickPrev= ()=>{}} = defineProps<Props>();
+const {quantity = 0,actualIndex = 0,callback = ()=>{},onclickNext= ()=>{},onclickPrev= ()=>{},hasSlider} = defineProps<Props>();
 
 </script>
 <style lang="css" scoped>

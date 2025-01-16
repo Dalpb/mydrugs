@@ -101,11 +101,11 @@ const {name,description,recomendation,image,priceBTC,priceETH,rating,drugColor} 
 
 /* Decoration for the square */
 .square{
-    height: 4rem;
+    width: 3.6rem;
     aspect-ratio: 1;
     display: flex;
     justify-content: center;
-    outline: 2px solid white;
+    border: 2px solid white;
     cursor: pointer;
 }
 .square:hover{

@@ -1,12 +1,16 @@
 <template>
     <main>
-        <picture>
-            <img :src="drug.image" :alt="drug.name" />
-        </picture>
-
-        <section class="others-products">
-
-        </section>
+        <slider-container
+        :onclick-next="()=>{}"
+        :onclick-prev="()=>{}">
+            <picture>
+                <img :src="drug.image" :alt="drug.name" />
+            </picture>
+            
+            <!-- <section class="others-products">
+                
+            </section> -->
+        </slider-container>
     </main>
 </template>
 
@@ -16,6 +20,7 @@ import {onMounted, ref,type Ref} from "vue"
 import DrugService from '@/service/drug.service';
 import { type Drug } from "@/interfaces/models/Drug.interface";
 import { useRoute,onBeforeRouteUpdate } from 'vue-router';
+import SliderContainer from "@/components/SliderContainer.vue";
 const route = useRoute();
 const drug : Ref<Drug> = ref<Drug>({});
 
@@ -42,6 +47,7 @@ onBeforeRouteUpdate(async(to,from)=>{
 <style lang="css" scoped>
 main{
     display: grid;
-    
+    margin: 1rem 2rem;
+    grid-template-columns: repeat(3,minmax(300px,1fr));
 }
 </style>

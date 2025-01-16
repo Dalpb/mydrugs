@@ -158,6 +158,7 @@ section{
     display: grid;
     margin-top: 1rem;
     grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    justify-items: center;
     gap:2rem 3rem;
 }
 

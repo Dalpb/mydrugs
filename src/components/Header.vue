@@ -27,10 +27,10 @@ const getNewColor =(e:Event)=>{
         <nav class="navbar">
             <ul class="nav-list">
                 <li>
-                    <router-link to="/shop">SHOP</router-link>
+                    <router-link to="/shop" active-class="active">SHOP</router-link>
                 </li>
                 <li>
-                    <router-link to="/faq">FAQ</router-link>
+                    <router-link to="/faq" active-class="active">FAQ</router-link>
                 </li>
                 <li class="logo">
                     <router-link to="/">
@@ -38,10 +38,10 @@ const getNewColor =(e:Event)=>{
                     </router-link>
                 </li>
                 <li>
-                    <router-link to="/safety">SAFETY</router-link>
+                    <router-link to="/safety" active-class="active">SAFETY</router-link>
                 </li>
                 <li>
-                    <router-link to="/contact">CONTACT</router-link>
+                    <router-link to="/contact" active-class="active">CONTACT</router-link>
                 </li>
             </ul>
         </nav>
@@ -117,6 +117,17 @@ const getNewColor =(e:Event)=>{
         background-color: white;
         transition: width ease-in-out .3s;
     }
+ 
+    .active::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 1.5px;
+        background-color: white;
+        width: 100%;
+    }
+
     .nav-list li:hover::after{
         width: 100%;
     }

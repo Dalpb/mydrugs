@@ -1,5 +1,4 @@
 import type { Drug } from "@/interfaces/models/Drug.interface";
-
 class DrugService{
 
     public static async getDrugById(drugId: string) : Promise<Drug>{
@@ -15,15 +14,25 @@ class DrugService{
     }
     
     public static async getDrugs() : Promise<Drug []>{
-        const response = await fetch("/mocks/drugs.json");
-        const drugs : Drug[] = (await response.json()).data.drugs;
-        return drugs;
+        try{
+            const response = await fetch("/mocks/drugs.json");
+            const drugs : Drug[] = (await response.json()).data.drugs;
+            return drugs;
+        }
+        catch(e){
+            throw new Error();
+        }
     }
 
     public static async getDrugFamous(): Promise<Drug []>{
-        const response = await fetch("/mocks/drugsPopularity.json");
-        const drugs : Drug[] = (await response.json()).data.drugs;
-        return drugs;
+        try{
+            const response = await fetch("/mocks/drugsPopularity.json");
+            const drugs : Drug[] = (await response.json()).data.drugs;
+            return drugs;
+        }
+        catch(e){
+            throw new Error();
+        }
     }
     
 }
