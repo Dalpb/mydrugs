@@ -35,7 +35,7 @@ const {quantity = 0,actualIndex = 0,callback = ()=>{},onclickNext= ()=>{},onclic
     flex-shrink: 0;
     height: 5rem;
     aspect-ratio: 2/3;
-    position:relative;
+    position:sticky;
     cursor:pointer;
     color:rgba(255, 255, 255, 0.657);   
     transition: color ease-in-out .2s;
@@ -44,7 +44,8 @@ const {quantity = 0,actualIndex = 0,callback = ()=>{},onclickNext= ()=>{},onclic
     color:white;
 }
 .left,.right{
-    top:35%;
+    top:50%;
+    transform: translate(0%, -50%);
 }
 .left{
     left:0;

@@ -32,7 +32,7 @@ clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 0, 67% 0, 67% 100%, 67% 0); /
 
 @keyframes show{
     from{
-        transform: translateY(100px);
+        transform: translateY(50px);
         opacity: 0;
     }
     to{
@@ -46,7 +46,7 @@ clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 0, 67% 0, 67% 100%, 67% 0); /
         opacity: 1;
     }
     100%{
-        transform: translateY(100px);
+        transform: translateY(50px);
         opacity: 0;
     }
 }

@@ -3,13 +3,12 @@
         <slider-container
         :onclick-next="()=>{}"
         :onclick-prev="()=>{}">
+        <section class="product">
             <picture>
                 <img :src="drug.image" :alt="drug.name" />
             </picture>
             
-            <!-- <section class="others-products">
-                
-            </section> -->
+        </section>
         </slider-container>
     </main>
 </template>
@@ -46,8 +45,9 @@ onBeforeRouteUpdate(async(to,from)=>{
 </script>
 <style lang="css" scoped>
 main{
-    display: grid;
-    margin: 1rem 2rem;
-    grid-template-columns: repeat(3,minmax(300px,1fr));
+    margin: 1rem 0rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
 }
 </style>
