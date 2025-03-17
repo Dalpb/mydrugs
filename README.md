@@ -1,20 +1,19 @@
-# MyDrugs - Replica basada en la serie de Netflix  How to Sell Drugs Online (Fast)🤑😈🤑
+# MyDrugs - Based on Netflix'serie How to Sell Drugs Online (Fast)🤑😈🤑
 
-## ¡Bienvenido a MyDrugs! 🚀
-Este es un proyecto personal que replica el estilo y concepto ficticio inspirado en la serie de Netflix How to Sell Drugs Online (Fast). Aclaro que este proyecto es solamente por mi afición  a la serie, y no promuevo ni vendo drogas , no tengo problemas amorosos como Moritz Zimmermman. Es una plataforma ficticia creada para practicar y demostrar habilidades de desarrollo web.
+## ¡Welcome to MyDrugs! 🚀
+I was boring when I found this incredible serie from Netflix so I've been thinking if someone tryed to build that website from the serie and This is what i did. This is a personal project that replicates the style and fictional concept inspired by the Netflix series How to Sell Drugs Online (Fast). I want to clarify that this project is solely due to my love of the series, and I don't promote or sell drugs XD. It's a fictional platform created to practice and demonstrate my web development skills.
 
-## En proceso 🛠️
-Este proyecto aún se encuentra en proceso de desarrollo... PAM PIM PAM
+## In progress 🛠️
+This project is still in development... PAM PIM PAM
 
-## 📸 Vista Previa
-Now you can see my proyect here!! : [https://mydrugsv1.vercel.app/]
+## Preview 📸 
+Now you can see my project in progress here!! : [https://mydrugsv1.vercel.app/]
 
-## Dale un vistaso :D :
-- **Clonación:**
-  - `git clone https://github.com/Dalpb/mydrugs.git `
-- **Instalación:**
-  - `npm install`
-  
-- **Ejecución del proyecto**
-  - `npm run dev`.
+## Check out :D :
+- **Cloning:**
+- `git clone https://github.com/Dalpb/mydrugs.git`
+- **Installing:**
+- `npm install`
 
+- **Running the project**
+- `npm run dev`
