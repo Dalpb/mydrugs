@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { Bars3Icon} from '@heroicons/vue/16/solid';
-
 import { changeFirstChildColor } from '@/utils/colorHandlers';
 import { RouterLink } from 'vue-router';
 import Button from '@/components/Button.vue';
@@ -66,7 +65,7 @@ const getNewColor =(e:Event)=>{
         font-size: 1.2rem;
         padding: 0.5rem 1rem;
         border: 1px solid white;
-        border-radius: 1.5rem;
+        border-radius: 1.5rem ;
         cursor: pointer;
         background-color: transparent;
         transition: background-color ease-in-out .15s, color ease-in-out .15s;

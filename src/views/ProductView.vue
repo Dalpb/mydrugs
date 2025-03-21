@@ -1,15 +1,13 @@
 <template>
     <main>
-        <slider-container
-        :onclick-next="()=>{}"
-        :onclick-prev="()=>{}">
         <section class="product">
             <picture>
                 <img :src="drug.image" :alt="drug.name" />
             </picture>
-            
+            <card title="Buy Now">
+                <check-out-button></check-out-button>
+            </card>
         </section>
-        </slider-container>
     </main>
 </template>
 
@@ -19,7 +17,8 @@ import {onMounted, ref,type Ref} from "vue"
 import DrugService from '@/service/drug.service';
 import { type Drug } from "@/interfaces/models/Drug.interface";
 import { useRoute,onBeforeRouteUpdate } from 'vue-router';
-import SliderContainer from "@/components/SliderContainer.vue";
+import Card from "@/components/UI/Card.vue";
+import CheckOutButton from "@/components/UI/CheckOutButton.vue";
 const route = useRoute();
 const drug : Ref<Drug> = ref<Drug>({});
 

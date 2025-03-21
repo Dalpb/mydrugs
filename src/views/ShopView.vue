@@ -1,14 +1,14 @@
 <script lang="ts" setup>
+import Input from '@/components/Input.vue';
+import Select from '@/components/Select.vue';
+import Option from '@/components/Option.vue';
 import DrugCard from '@/components/DrugCard.vue';
 import type { Drug } from '@/interfaces/models/Drug.interface';
 import { DrugColor } from '@/interfaces/enums/DrugColor';
 import { onMounted,ref } from 'vue';
-import Input from '@/components/Input.vue';
-import Select from '@/components/Select.vue';
-import Option from '@/components/Option.vue';
 import { MagnifyingGlassIcon } from '@heroicons/vue/24/outline';
-import { useFilterDrug } from '@/hooks/useDrugFilter';
-import { useSortDrug } from '@/hooks/useDrugSort';
+import { useFilterDrug } from '@/composables/useDrugFilter';
+import { useSortDrug } from '@/composables/useDrugSort';
 import DrugService from '@/service/drug.service';
 let data = ref<Drug[]>([]);
 //copio el mismo codigo ,por ahora 

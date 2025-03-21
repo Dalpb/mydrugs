@@ -6,7 +6,7 @@ import {
     onMounted,
     onUnmounted,
 } from 'vue';
-import { usePagination } from '@/hooks/usePagination';
+import { usePagination } from '@/composables/usePagination';
 import DrugSection from "@/components/DrugSection.vue"
 import MainSection from '@/components/MainSection.vue';
 import DrugService from '@/service/drug.service';
@@ -29,6 +29,7 @@ const {
 
 
 const data: Ref< Array<Drug> > = ref([{image:"/images/main_page.png",drugColor:DrugColor.DARK}]);
+    
 const fechData = async () =>{
    try{
     let drugs : Drug[] = (await DrugService.getDrugFamous()).map((item : Drug) =>({
@@ -45,10 +46,8 @@ const fechData = async () =>{
 
 const doTransition = (index : number): void  =>{
     if(index === currentPage.value)return;
-
     const oldColor = currentScreen.value.drugColor!;
     const newColor = data.value[index]?.drugColor!;
-
     doTransitionLeftColor(id.value!,oldColor,newColor,3,index !==0);
     changePage(index);
     changeColorPropety(window.document.documentElement,"--main-color",newColor);
