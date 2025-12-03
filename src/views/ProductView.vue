@@ -17,6 +17,13 @@
         <buy-card />
       </div>
     </section>
+    <hr />
+    <section class="other_products">
+      <p>Customers who bought this product also bought:</p>
+      <div>
+        <drug-card v-for="drug in data" :drug="drug" />
+      </div>
+    </section>
   </main>
 </template>
 
@@ -27,14 +34,37 @@ import { type Drug } from "@/interfaces/models/Drug.interface";
 import { useRoute, onBeforeRouteUpdate } from "vue-router";
 import BuyCard from "@/components/BuyCard.vue";
 import RangeStar from "@/components/RangeStar.vue";
+import DrugCard from "@/components/DrugCard.vue";
+import { DrugColor } from "@/interfaces/enums/DrugColor";
 const route = useRoute();
 const drug = ref<Drug>({});
-
+const data = ref<Drug[]>([]);
 const EUR = 79929.74; // jeje
 
 const transformBTCtoEUR = (btc: number) => {
   return (btc * EUR).toFixed(2);
 };
+
+const fechData = async () => {
+  try {
+    let drugs: Drug[] = (await DrugService.getDrugs()).map((item: Drug) => ({
+      ...item,
+      drugColor:
+        item.drugColor! in DrugColor
+          ? DrugColor[item.drugColor as unknown as keyof typeof DrugColor]
+          : DrugColor.DARK,
+    }));
+    let drugRandom: Drug[] = [];
+    for (let i = 0; i < 4; i++) {
+      let number = Math.round(Math.random() * drugs.length);
+      drugRandom = [...drugRandom, drugs[number]];
+    }
+    data.value = [...data.value, ...drugRandom];
+  } catch (error) {
+    console.log("Error al cargar el JSON");
+  }
+};
+onMounted(fechData);
 
 onMounted(async () => {
   try {
@@ -60,16 +90,36 @@ onBeforeRouteUpdate(async (to, from) => {
 }
 
 main {
+  color: #fff;
   margin: 1rem 0rem 0rem;
   justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   position: relative;
   padding: 0 11rem;
 }
-
+main hr {
+  border-color: #ebe8e818;
+  border-width: 0.4px;
+  width: 100%;
+}
 section {
   & span {
     color: rgb(28, 216, 216);
     font-weight: 700;
+  }
+}
+.other_products {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  & > p {
+    font-size: 1.5rem;
+  }
+  & > div {
+    display: flex;
+    gap: 1rem;
   }
 }
 .product {
