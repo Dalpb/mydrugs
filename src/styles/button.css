@@ -1,21 +1,22 @@
-.btn{
-    padding: 9px .9rem;
-    height: 2.4rem;
-    color:white;
-    border:1.8px solid white;
-    border-radius: 2rem;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: large;
-    background-color: transparent;
-    transition-property: background-color  transform;
-    transition-timing-function: ease-in-out;
-    transition-duration: .1s;
-    cursor: pointer;
-    &:hover{
-        background-color: white;
-    }
-    &:active{
-        transform: scale(.95);
-    }
+.btn {
+  padding: 9px 0.9rem;
+  height: 2.4rem;
+  color: white;
+  border: 1.8px solid white;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: large;
+  background-color: transparent;
+  transition-property: background-color transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.1s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: white;
+  }
+  &:active {
+    transform: scale(0.95);
+  }
 }

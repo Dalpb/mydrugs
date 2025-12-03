@@ -1,174 +1,163 @@
 {
-    "status": "success",
-    "data": {
-      "drugs": [
-        {
-          "id":"p6",
-          "name": "100",
-          "description": "100% satisfaction guaranteed",
-          "priceBTC": 0.0015,
-          "priceETH": 0.058,
-          "recomendation": "Perfect for newcomers seeking a mild yet enjoyable experience. The 100 Pill offers a gentle introduction with a balanced effect that enhances your mood without overwhelming intensity. Ideal for social gatherings or a relaxed evening, this pill provides a steady and safe journey into euphoria. Highly recommended for those trying MDMA for the first time.",
-          "composition": 100,
-          "rating": 5,
-          "drugColor": "WHITE",
-          "image": "/images/100.png",
-          "isNew": true
-
-        },
-        {
-          "id":"p11",
-          "name": "Stable Genius",
-          "description": "Premium Line",
-          "priceBTC": 0.0030,
-          "priceETH": 0.115,
-          "recomendation": "For those who want to feel unstoppable, the America Great Again Pill delivers an electrifying boost of energy and confidence. Perfect for large events, festivals, or intense dance parties. Experience the rush of euphoria while staying in control. A favorite among thrill-seekers who crave excitement and boldness.",
-          "composition": 120,
-          "rating": 5,
-          "drugColor": "PINK",
-          "image": "/images/america_great_again.png",
-          "isNew": true
-
-        },
-        {
-          "id":"p10",
-          "name": "Blue cover",
-          "description": "The king of ecstasy",
-          "priceBTC": 0.0029,
-          "priceETH": 0.1114,
-          "recomendation": "You want to party all night long, and the following day as well? check out the blue cover our best-selling and highest-rated product. we are the only resellers of this premium pill, so don't miss out on this opportunity!",
-          "composition": 100,
-          "rating": 5,
-          "drugColor": "BLUE",
-          "image": "/images/bluePill.png",
-          "isNew": false
-
-        },
-        {
-          "id":"p7",
-          "name": "Big boomer",
-          "description": "Explosive energy boost",
-          "priceBTC": 0.0040,
-          "priceETH": 0.153,
-          "recomendation": "Unleash your wild side with the big boomer. Not for the faint-hearted, this explosive option provides an intense and thrilling experience like no other. Designed for seasoned users who crave an adrenaline-filled night. Expect waves of powerful sensations and a ride full of surprises. Handle with care, as this pill is as strong as it sounds!",
-          "composition": 140,
-          "rating": 5,
-          "drugColor": "YELLOW",
-          "image": "/images/granade_pill2.png",
-          "isNew": true
-
-        },
-        {
-          "id":"p3",
-          "name": "Green snowflake",
-          "description": "Packs a powerful punch",
-          "priceBTC": 0.0044,
-          "priceETH": 0.1667,
-          "recomendation": "The green clover is only recommended for experienced users, as it is the strongest pill in our selection. if you feel ready for it though, it will be an experience like nothing else",
-          "composition": 150,
-          "rating": 5,
-          "drugColor": "GREEN",
-          "image": "/images/green_pill.png",
-          "isNew": false
-
-        },
-        {
-          "id":"p8",
-          "name": "Blue Mario",
-          "description": "Here we GOO!",
-          "priceBTC": 0.0035,
-          "priceETH": 0.134,
-          "recomendation": "Step into the world of Mario with this playful and energizing pill. Packed with a balanced blend of joy and vigor, it's a fun choice for nostalgic partygoers or anyone looking for a memorable adventure. Turn your night into a video game-inspired journey, where each moment feels like a power-up.",
-          "composition": 110,
-          "rating": 5,
-          "drugColor": "BLUE",
-          "image": "/images/mario_pill.png",
-          "isNew": false
-
-        },
-        {
-          "id":"p9",
-          "name": "Little Pink Devil",
-          "description": "Soft and sweet",
-          "priceBTC": 0.0018,
-          "priceETH": 0.069,
-          "recomendation": "The Pink Pill is perfect for a gentle and heartwarming experience. Its soft touch enhances your mood, making it a fantastic option for cozy nights, romantic evenings, or small social gatherings. Expect a wave of sweet sensations that will leave you with a warm, fuzzy feeling.",
-          "composition": 50,
-          "rating": 4,
-          "drugColor": "PINK",
-          "image": "/images/pink_pill.png",
-          "isNew": false
-
-        },
-        {
-            "id":"p1",
-            "name": "Red pill",
-            "description": "Your ticket to wonderland",
-            "priceBTC": 0.0013,
-            "priceETH": 0.0523,
-            "recomendation": "Great quality at an affordable price recommended for beginners, the red pill will take you to wonderland, and offer you a great first experience find out how deep the rabbit hole goes!, high quality",
-            "composition": 60,
-            "rating": 4,
-            "drugColor": "PINK",
-            "image": "/images/pink_pill2.png",
-            "isNew": false
-          },
-          {
-            "id":"p2",
-            "name": "Purple flower",
-            "description": "A night of fluffy happiness",
-            "priceBTC": 0.0021,
-            "priceETH": 0.0802,
-            "recomendation": "The purple flower is our go to recommendation for a night full of fluffy happiness, with it's dose optimized for around six hours of perfect ecstasy experience.",
-            "composition": 70,
-            "rating": 4,
-            "drugColor": "PURPLE",
-            "image": "/images/purple_pill2.png",
-            "isNew": false
-          },
-        {
-          "id":"p4",
-          "name": "Red Heart",
-          "description": "Your ticket to wonderland",
-          "priceBTC": 0.0013,
-          "priceETH": 0.052,
-          "recomendation":  "A vibrant choice for those seeking to explore new horizons. The Red Heart offers a captivating experience that combines quality and adventure, perfect for anyone ready to embark on a journey of discovery and passion.",
-          "composition": 60,
-          "rating": 4,
-          "drugColor": "RED",
-          "image": "/images/Red Heart.png",
-          "isNew": true
-
-        },
-        {
-          "id":"p0",
-          "name": "SuperJAK",
-          "description": "Feel invincible",
-          "priceBTC": 0.0038,
-          "priceETH": 0.145,
-          "recomendation": "Elevate your experience to superhuman levels. Designed for high-energy parties and intense dance floors, this pill unleashes your full potential, making you the life of the party. Its powerful effects ensure an unforgettable night filled with confidence and euphoria.",
-          "composition": 90,
-          "rating": 5,
-          "drugColor": "BLUE",
-          "image": "/images/super_man_pill.png",
-          "isNew": false
-
-        },
-        {
-          "id":"p5",
-          "name": "Yellow Dont Matter ",
-          "description": "Sunshine Thinking",
-          "priceBTC": 0.0023,
-          "priceETH": 0.087,
-          "recomendation": "Brighten up your mood with the Dont Matter Yellow. A burst of energy and happiness awaits as this pill fills your evening with vibrant positivity. Perfect for daytime festivals or casual get-togethers, it guarantees a cheerful and lighthearted experience from start to finish.",
-          "composition": 70,
-          "rating": 4,
-          "drugColor": "YELLOW",
-          "image": "/images/yellow_pill.png",
-          "isNew": false
-
-        }
-      ]
-    }
+  "status": "success",
+  "data": {
+    "drugs": [
+      {
+        "id": "p6",
+        "name": "100",
+        "description": "100% satisfaction guaranteed",
+        "priceBTC": 0.0015,
+        "priceETH": 0.058,
+        "recomendation": "Perfect for newcomers seeking a mild yet enjoyable experience. The 100 Pill offers a gentle introduction with a balanced effect that enhances your mood without overwhelming intensity. Ideal for social gatherings or a relaxed evening, this pill provides a steady and safe journey into euphoria. Highly recommended for those trying MDMA for the first time.",
+        "composition": 100,
+        "rating": 5,
+        "drugColor": "WHITE",
+        "image": "/images/100.png",
+        "isNew": true
+      },
+      {
+        "id": "p11",
+        "name": "Stable Genius",
+        "description": "Premium Line",
+        "priceBTC": 0.003,
+        "priceETH": 0.115,
+        "recomendation": "For those who want to feel unstoppable, the America Great Again Pill delivers an electrifying boost of energy and confidence. Perfect for large events, festivals, or intense dance parties. Experience the rush of euphoria while staying in control. A favorite among thrill-seekers who crave excitement and boldness.",
+        "composition": 120,
+        "rating": 5,
+        "drugColor": "PINK",
+        "image": "/images/america_great_again.png",
+        "isNew": true
+      },
+      {
+        "id": "p10",
+        "name": "Blue cover",
+        "description": "The king of ecstasy",
+        "priceBTC": 0.0029,
+        "priceETH": 0.1114,
+        "recomendation": "You want to party all night long, and the following day as well? check out the blue cover our best-selling and highest-rated product. we are the only resellers of this premium pill, so don't miss out on this opportunity!",
+        "composition": 100,
+        "rating": 5,
+        "drugColor": "BLUE",
+        "image": "/images/bluePill2.png",
+        "isNew": false
+      },
+      {
+        "id": "p7",
+        "name": "Big boomer",
+        "description": "Explosive energy boost",
+        "priceBTC": 0.004,
+        "priceETH": 0.153,
+        "recomendation": "Unleash your wild side with the big boomer. Not for the faint-hearted, this explosive option provides an intense and thrilling experience like no other. Designed for seasoned users who crave an adrenaline-filled night. Expect waves of powerful sensations and a ride full of surprises. Handle with care, as this pill is as strong as it sounds!",
+        "composition": 140,
+        "rating": 5,
+        "drugColor": "YELLOW",
+        "image": "/images/granade_pill2.png",
+        "isNew": true
+      },
+      {
+        "id": "p3",
+        "name": "Green snowflake",
+        "description": "Packs a powerful punch",
+        "priceBTC": 0.0044,
+        "priceETH": 0.1667,
+        "recomendation": "The green clover is only recommended for experienced users, as it is the strongest pill in our selection. if you feel ready for it though, it will be an experience like nothing else",
+        "composition": 150,
+        "rating": 5,
+        "drugColor": "GREEN",
+        "image": "/images/green_pill2.png",
+        "isNew": false
+      },
+      {
+        "id": "p8",
+        "name": "Blue Mario",
+        "description": "Here we GOO!",
+        "priceBTC": 0.0035,
+        "priceETH": 0.134,
+        "recomendation": "Step into the world of Mario with this playful and energizing pill. Packed with a balanced blend of joy and vigor, it's a fun choice for nostalgic partygoers or anyone looking for a memorable adventure. Turn your night into a video game-inspired journey, where each moment feels like a power-up.",
+        "composition": 110,
+        "rating": 5,
+        "drugColor": "BLUE",
+        "image": "/images/mario_pill.png",
+        "isNew": false
+      },
+      {
+        "id": "p9",
+        "name": "Little Pink Devil",
+        "description": "Soft and sweet",
+        "priceBTC": 0.0018,
+        "priceETH": 0.069,
+        "recomendation": "The Pink Pill is perfect for a gentle and heartwarming experience. Its soft touch enhances your mood, making it a fantastic option for cozy nights, romantic evenings, or small social gatherings. Expect a wave of sweet sensations that will leave you with a warm, fuzzy feeling.",
+        "composition": 50,
+        "rating": 4,
+        "drugColor": "PINK",
+        "image": "/images/pink_pill.png",
+        "isNew": false
+      },
+      {
+        "id": "p1",
+        "name": "Red pill",
+        "description": "Your ticket to wonderland",
+        "priceBTC": 0.0013,
+        "priceETH": 0.0523,
+        "recomendation": "Great quality at an affordable price recommended for beginners, the red pill will take you to wonderland, and offer you a great first experience find out how deep the rabbit hole goes!, high quality",
+        "composition": 60,
+        "rating": 4,
+        "drugColor": "PINK",
+        "image": "/images/red_pill3.png",
+        "isNew": false
+      },
+      {
+        "id": "p2",
+        "name": "Purple flower",
+        "description": "A night of fluffy happiness",
+        "priceBTC": 0.0021,
+        "priceETH": 0.0802,
+        "recomendation": "The purple flower is our go to recommendation for a night full of fluffy happiness, with it's dose optimized for around six hours of perfect ecstasy experience.",
+        "composition": 70,
+        "rating": 4,
+        "drugColor": "PURPLE",
+        "image": "/images/purple_pill3.png",
+        "isNew": false
+      },
+      {
+        "id": "p4",
+        "name": "Red Heart",
+        "description": "Your ticket to wonderland",
+        "priceBTC": 0.0013,
+        "priceETH": 0.052,
+        "recomendation": "A vibrant choice for those seeking to explore new horizons. The Red Heart offers a captivating experience that combines quality and adventure, perfect for anyone ready to embark on a journey of discovery and passion.",
+        "composition": 60,
+        "rating": 4,
+        "drugColor": "RED",
+        "image": "/images/Red Heart.png",
+        "isNew": true
+      },
+      {
+        "id": "p0",
+        "name": "SuperJAK",
+        "description": "Feel invincible",
+        "priceBTC": 0.0038,
+        "priceETH": 0.145,
+        "recomendation": "Elevate your experience to superhuman levels. Designed for high-energy parties and intense dance floors, this pill unleashes your full potential, making you the life of the party. Its powerful effects ensure an unforgettable night filled with confidence and euphoria.",
+        "composition": 90,
+        "rating": 5,
+        "drugColor": "BLUE",
+        "image": "/images/super_man_pill.png",
+        "isNew": false
+      },
+      {
+        "id": "p5",
+        "name": "Yellow Dont Matter ",
+        "description": "Sunshine Thinking",
+        "priceBTC": 0.0023,
+        "priceETH": 0.087,
+        "recomendation": "Brighten up your mood with the Dont Matter Yellow. A burst of energy and happiness awaits as this pill fills your evening with vibrant positivity. Perfect for daytime festivals or casual get-togethers, it guarantees a cheerful and lighthearted experience from start to finish.",
+        "composition": 70,
+        "rating": 4,
+        "drugColor": "YELLOW",
+        "image": "/images/yellow_pill.png",
+        "isNew": false
+      }
+    ]
   }
-  
+}
