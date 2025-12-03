@@ -95,19 +95,21 @@ const handleLowerQuantity = () => {
 }
 .btn_fix {
   text-transform: capitalize;
+  height: 2.8rem;
   &:hover {
     color: black;
   }
 }
 .card {
-  padding: 1rem 2rem;
-  border: white 1px solid;
+  padding: 1.5rem 2rem;
+  border: white 0.2px solid;
   border-radius: 0.5rem;
   color: white;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   width: 21.5rem;
+  height: 100%;
 }
 .card-head {
   font-size: xx-large;
