@@ -17,7 +17,7 @@ import { changeColorPropety,doTransitionLeftColor } from '@/utils/colorHandlers'
 
 const id : Ref<number | null> = ref(null); 
 const changing : Ref<boolean> = ref(false);
-const currentScreen : Ref<Drug> = ref({image:"/images/main_page.png",drugColor:DrugColor.DARK});
+const currentScreen : Ref<Drug> = ref({image:"/images/main_page1.png",drugColor:DrugColor.DARK});
 
 const {
    currentPage,
@@ -28,7 +28,7 @@ const {
 } =usePagination(0);
 
 
-const data: Ref< Array<Drug> > = ref([{image:"/images/main_page.png",drugColor:DrugColor.DARK}]);
+const data: Ref< Array<Drug> > = ref([{image:"/images/main_page1.png",drugColor:DrugColor.DARK}]);
     
 const fechData = async () =>{
    try{
