@@ -1,0 +1,69 @@
+<template>
+  <main>
+    <div class="sf-card">
+      <h2>MyDrugs Replica made by Dalpb</h2>
+      <div class="sf-c-box">
+        <div class="sf-box github">
+          <img src="/images/github.png" />
+          <p>Dalpb</p>
+        </div>
+        <div class="sf-box lkldn">
+          <img src="/images/lkdn.png" />
+          <p>Diego Palomino</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</template>
+<style lang="css" scoped>
+main {
+  margin: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+.sf-card {
+  width: 70%;
+  padding: 1.5rem;
+  border: solid 0.4rem;
+  max-width: 65rem;
+  border-radius: 2rem;
+  border-color: white;
+  color: white;
+  text-align: center;
+}
+.sf-c-box {
+  justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.sf-box {
+  width: 15rem;
+  border-radius: 1rem;
+  height: 6rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  & > img {
+    height: 100%;
+    object-fit: fill;
+  }
+  & > p {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+}
+
+.github {
+  background-color: #484f58;
+}
+.lkldn {
+  background-color: #007fbc;
+}
+</style>
