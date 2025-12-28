@@ -3,14 +3,21 @@
     <div class="sf-card">
       <h2>MyDrugs Replica made by Dalpb</h2>
       <div class="sf-c-box">
-        <div class="sf-box github">
-          <img src="/images/github.png" />
-          <p>Dalpb</p>
-        </div>
-        <div class="sf-box lkldn">
-          <img src="/images/lkdn.png" />
-          <p>Diego Palomino</p>
-        </div>
+        <a href="https://github.com/Dalpb" target="_blank">
+          <button class="sf-box github">
+            <img src="/images/github.png" />
+            <p>Dalpb</p>
+          </button>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/diegopalominobarrientos/"
+          target="_blank"
+        >
+          <button class="sf-box lkldn">
+            <img src="/images/lkdn.png" />
+            <p>Diego Palomino</p>
+          </button>
+        </a>
       </div>
     </div>
   </main>
@@ -40,6 +47,7 @@ main {
   gap: 1rem;
 }
 .sf-box {
+  border: none;
   width: 15rem;
   border-radius: 1rem;
   height: 6rem;
@@ -47,6 +55,8 @@ main {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
+  color: white;
 
   & > img {
     height: 100%;
