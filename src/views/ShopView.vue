@@ -10,7 +10,6 @@ import { MagnifyingGlassIcon } from "@heroicons/vue/24/outline";
 import DrugService from "@/service/drug.service";
 const data = ref<Drug[]>([]);
 
-// filtros
 const nameFilter = ref("");
 const colorFilter = ref("");
 const sortOption = ref("1");
