@@ -1,36 +1,53 @@
-import { type Ref,ref,watch } from "vue";
+import { type Ref, ref, watch } from "vue";
 import { type Drug } from "@/interfaces/models/Drug.interface";
 
-export function useFilterDrug(data: Ref<Drug[]>){
-    const filterData = ref<Drug []>([...data.value]);
+export function useFilterDrug(data: Ref<Drug[]>) {
+  const filterData = ref<Drug[]>([]);
+  const nameFilter = ref<string>("");
+  const colorFilter = ref<string>("");
 
-    const resetData = () =>{
-        filterData.value = [...data.value];
+  // Función que aplica TODOS los filtros desde el origen
+  const applyFilters = () => {
+    let result = [...data.value];
+
+    // Filtrar por nombre si existe
+    if (nameFilter.value) {
+      const txt = nameFilter.value.toLowerCase();
+      result = result.filter((elem) => elem.name?.toLowerCase().includes(txt));
     }
 
-    const filterByName = (txt: string) =>{
-        if(!txt){
-            resetData();
-            return;
-        }
-        txt = txt.toLowerCase();
-        filterData.value = filterData.value.filter( elem => elem.name?.toLowerCase().includes(txt));
+    // Filtrar por color si existe
+    if (colorFilter.value) {
+      result = result.filter((elem) => elem.drugColor === colorFilter.value);
     }
-    const filterByColor = (clr:string) =>{
-        if(!clr){
-            resetData();
-            return;
-        }
-        filterData.value = data.value.filter( elem => elem.drugColor === clr);
-    }
-    
-    watch(data, (newData) => {
-        if (newData.length > 0)filterByName('');
-    });
 
-    return{
-        filterData,
-        filterByName,
-        filterByColor
-    }
+    filterData.value = result;
+  };
+
+  const filterByName = (txt: string) => {
+    nameFilter.value = txt;
+    applyFilters();
+  };
+
+  const filterByColor = (clr: string) => {
+    colorFilter.value = clr;
+    applyFilters();
+  };
+
+  // Inicializar cuando data tenga valores
+  watch(
+    data,
+    (newData) => {
+      if (newData.length > 0) {
+        applyFilters();
+      }
+    },
+    { immediate: true }
+  );
+
+  return {
+    filterData,
+    filterByName,
+    filterByColor,
+  };
 }

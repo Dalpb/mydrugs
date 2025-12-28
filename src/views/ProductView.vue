@@ -20,7 +20,7 @@
     <hr />
     <section class="other_products">
       <p>Customers who bought this product also bought:</p>
-      <div>
+      <div @click="handleClickDrugCard">
         <drug-card v-for="drug in data" :drug="drug" />
       </div>
     </section>
@@ -39,37 +39,58 @@ import { DrugColor } from "@/interfaces/enums/DrugColor";
 const route = useRoute();
 const drug = ref<Drug>({});
 const data = ref<Drug[]>([]);
-const EUR = 79929.74; // jeje
+const EUR = 3929.74; // jeje
+
+const handleClickDrugCard = () => fechData(drug.value.id);
 
 const transformBTCtoEUR = (btc: number) => {
   return (btc * EUR).toFixed(2);
 };
 
-const fechData = async () => {
+const getRandomProducts = (drugs: Drug[], currentDrugId: string) => {
+  let drugRandom = Array<Drug>();
+  let i = 0;
+  let limit = drugs.length > 3 ? 4 : drugs.length;
+  while (i < limit) {
+    let number = Math.round(Math.random() * drugs.length);
+    let drugRandomId = drugs[number].id;
+    if (
+      drugRandomId == currentDrugId ||
+      drugRandom.some((drug) => drug.id == drugRandomId)
+    ) {
+      console.log("Es igual", currentDrugId);
+      console.log("Es igual", drugRandomId);
+
+      continue;
+    }
+    drugRandom = [...drugRandom, drugs[number]];
+    i++;
+  }
+  return drugRandom;
+};
+
+const fechData = async (id) => {
   try {
-    let drugs: Drug[] = (await DrugService.getDrugs()).map((item: Drug) => ({
+    let drugs: Drug[] = (await DrugService.getDrugs()).map((item) => ({
       ...item,
       drugColor:
         item.drugColor! in DrugColor
           ? DrugColor[item.drugColor as unknown as keyof typeof DrugColor]
           : DrugColor.DARK,
     }));
-    let drugRandom: Drug[] = [];
-    for (let i = 0; i < 4; i++) {
-      let number = Math.round(Math.random() * drugs.length);
-      drugRandom = [...drugRandom, drugs[number]];
-    }
-    data.value = [...data.value, ...drugRandom];
+    const drugsRandom = getRandomProducts(drugs, id);
+    console.log("duradasd", drugsRandom);
+    data.value = drugsRandom;
   } catch (error) {
     console.log("Error al cargar el JSON");
   }
 };
-onMounted(fechData);
 
 onMounted(async () => {
   try {
     if (!route.params.id || Array.isArray(route.params.id)) return;
     drug.value = await DrugService.getDrugById(route.params.id);
+    await fechData(drug.value.id);
   } catch (e) {
     console.log((e as Error).message);
   }
@@ -172,7 +193,7 @@ section {
 }
 
 .recommendation {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   line-height: 1.3;
   color: #b0b0b0;
   margin-top: 1rem;

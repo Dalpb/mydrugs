@@ -1,6 +1,2 @@
-<script lang="ts">
-
-</script>
-<template>
-
-</template>
+<template></template>
+<script lang="ts"></script>
