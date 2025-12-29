@@ -15,7 +15,6 @@ import { ref } from "vue";
 import { ShoppingCartIcon } from "@heroicons/vue/16/solid";
 
 const isOpen = ref<boolean>(false);
-const isClosing = ref<boolean>(false);
 const animModal = ref("modal-content");
 const openDialog = () => (isOpen.value = true);
 const closeDialog = () => {

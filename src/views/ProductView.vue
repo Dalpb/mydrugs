@@ -69,7 +69,7 @@ const getRandomProducts = (drugs: Drug[], currentDrugId: string) => {
   return drugRandom;
 };
 
-const fechData = async (id) => {
+const fechData = async (id: string | undefined) => {
   try {
     let drugs: Drug[] = (await DrugService.getDrugs()).map((item) => ({
       ...item,
@@ -78,7 +78,7 @@ const fechData = async (id) => {
           ? DrugColor[item.drugColor as unknown as keyof typeof DrugColor]
           : DrugColor.DARK,
     }));
-    const drugsRandom = getRandomProducts(drugs, id);
+    const drugsRandom = getRandomProducts(drugs, id!);
     console.log("duradasd", drugsRandom);
     data.value = drugsRandom;
   } catch (error) {

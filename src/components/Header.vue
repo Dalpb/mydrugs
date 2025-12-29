@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ShoppingCartIcon } from "@heroicons/vue/16/solid";
 import { changeFirstChildColor } from "@/utils/colorHandlers";
 import { RouterLink } from "vue-router";
 import Button from "@/components/Button.vue";
@@ -11,10 +10,6 @@ const getNewColor = (e: Event) => {
   changeFirstChildColor(e, color);
 };
 const openShopcart = ref<boolean>(false);
-
-const tooglePopUp = () => {
-  openShopcart.value = !openShopcart.value;
-};
 </script>
 
 <template>
