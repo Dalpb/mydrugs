@@ -14,14 +14,15 @@
         <p>In stock</p>
       </div>
       <div class="quantity_shop">
-        <div class="circle" @click="handleUpperQuantity">
-          <plus-icon />
+        <div class="circle" @click="handleLowerQuantity">
+          <minus-icon />
         </div>
+
         <div class="quantity_display">
           {{ quantity }}
         </div>
-        <div class="circle" @click="handleLowerQuantity">
-          <minus-icon />
+        <div class="circle" @click="handleUpperQuantity">
+          <plus-icon />
         </div>
       </div>
     </div>
@@ -94,6 +95,10 @@ const addToCart = () => {
 
   &:active {
     transform: scale(0.95);
+  }
+  & > svg {
+    width: 50%;
+    height: 50%;
   }
 }
 

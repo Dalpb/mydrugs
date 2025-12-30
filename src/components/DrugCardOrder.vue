@@ -58,7 +58,7 @@ const totalByDrug = computed(() =>
   width: 100%;
   display: grid;
   grid-template-columns: minmax(120px, 140px) repeat(2, 1fr) min-content;
-  grid-template-rows: 130px 80px;
+  grid-template-rows: 100px 80px;
 }
 .img-c {
   width: 100%;
@@ -67,8 +67,8 @@ const totalByDrug = computed(() =>
   align-items: center;
   justify-content: center;
   & > img {
-    width: 80%;
-    height: 80%;
+    width: 95%;
+    height: 95%;
     object-fit: contain;
   }
 }
@@ -95,6 +95,7 @@ img {
   grid-column: 1/3;
   display: flex;
   z-index: 10;
+  align-self: first baseline;
   gap: 1rem;
   align-items: center;
   & > p {
