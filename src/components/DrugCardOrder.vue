@@ -59,6 +59,8 @@ const totalByDrug = computed(() =>
   display: grid;
   grid-template-columns: minmax(120px, 140px) repeat(2, 1fr) min-content;
   grid-template-rows: 100px 80px;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid #ffffff18;
 }
 .img-c {
   width: 100%;

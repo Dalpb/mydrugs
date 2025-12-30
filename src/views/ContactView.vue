@@ -19,6 +19,24 @@
           </button>
         </a>
       </div>
+      <h2>Collaborators who show me how wonderful Vue is:</h2>
+      <div class="sf-c-box">
+        <a href="https://github.com/Fidnix" target="_blank">
+          <button class="sf-box github">
+            <img src="/images/github.png" />
+            <p>Fidnix</p>
+          </button>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/fidel-apari-189164359/"
+          target="_blank"
+        >
+          <button class="sf-box lkldn">
+            <img src="/images/lkdn.png" />
+            <p>Fidnix</p>
+          </button>
+        </a>
+      </div>
     </div>
   </main>
 </template>

@@ -1,5 +1,10 @@
 <template>
-  <ShoppingCartIcon class="shop-car" @click="openDialog" />
+  <div class="shop-car-container" @click="openDialog">
+    <ShoppingCartIcon class="shop-car" />
+    <div v-if="totalOrder > 0" :key="totalOrder" class="badge-order">
+      {{ totalOrder }}
+    </div>
+  </div>
   <Teleport to="body">
     <div v-if="isOpen" class="sh-overlay" @click="closeDialog">
       <div :class="animModal" @click.stop>
@@ -26,6 +31,9 @@ import DrugCardOrder from "./DrugCardOrder.vue";
 
 const store = useStore(key);
 const myOrder = computed(() => store.state.moduleShopcart.items);
+const totalOrder = computed(
+  () => store.getters["moduleShopcart/itemCount"]
+) as ComputedRef<number>;
 //const myTotal = computed(
 //  () => store.getters["moduleShopcart/cartTotal"]
 //) as ComputedRef<number>;
@@ -47,9 +55,46 @@ const closeDialog = () => {
   flex-direction: column;
   gap: 1rem;
 }
-.shop-car {
-  height: 60%;
+
+.shop-car-container {
+  height: 100%;
   cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+
+  &:hover .shop-car {
+    transform: scale(1.1);
+  }
+}
+
+.shop-car {
+  height: 2.2rem;
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.badge-order {
+  position: absolute;
+  top: 5px;
+  right: -2px;
+  background-color: #00ffff;
+  color: #000;
+  font-weight: bold;
+  font-size: 0.75rem;
+
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #0e0e0e;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+  pointer-events: none;
 }
 
 .sh-overlay {
