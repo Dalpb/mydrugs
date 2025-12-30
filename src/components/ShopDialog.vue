@@ -5,14 +5,23 @@
       <div :class="animModal" @click.stop>
         <button class="close-btn" @click="closeDialog">×</button>
         <h1>Review your order.</h1>
-        <p>Contenido del carrito aquí...</p>
+        <div v-if="myOrder?.length" class="orders">
+          <DrugCardOrder v-for="drugOrder in myOrder" :item="drugOrder" />
+        </div>
+        <h2 v-else class="empty-msg">You dont have any drugs in your cart.</h2>
       </div>
     </div>
   </Teleport>
 </template>
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { ShoppingCartIcon } from "@heroicons/vue/16/solid";
+import { useStore } from "vuex";
+import { key } from "@/store";
+import DrugCardOrder from "./DrugCardOrder.vue";
+
+const store = useStore(key);
+const myOrder = computed(() => store.state.moduleShopcart.items);
 
 const isOpen = ref<boolean>(false);
 const animModal = ref("modal-content");
@@ -26,6 +35,11 @@ const closeDialog = () => {
 };
 </script>
 <style lang="css" scoped>
+.orders {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 .shop-car {
   height: 60%;
   cursor: pointer;
@@ -38,7 +52,7 @@ const closeDialog = () => {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 99999999;
+  z-index: 99999999; /*neot god pracitce ndeah*/
 }
 
 .modal-content {
@@ -50,7 +64,7 @@ const closeDialog = () => {
   max-width: 90vw;
   background-color: #0e0e0e;
   color: white;
-  border-left: 0.15rem solid rgba(59, 104, 78, 0.474);
+  border-left: 0.13rem solid rgba(59, 104, 78, 0.474);
   padding: 2rem 1.5rem;
   overflow-y: auto;
   animation: slideIn 0.4s ease-out;
@@ -93,5 +107,10 @@ const closeDialog = () => {
   to {
     transform: translateX(100%);
   }
+}
+/*------------- */
+.empty-msg {
+  text-align: center;
+  line-height: 2rem;
 }
 </style>

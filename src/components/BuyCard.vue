@@ -1,20 +1,3 @@
-<script setup lang="ts">
-import { ref } from "vue";
-import MinusIcon from "./minusIcon.vue";
-import PlusIcon from "./plusIcon.vue";
-import CheckOutButton from "./UI/CheckOutButton.vue";
-
-const quantity = ref<number>(0);
-
-const handleUpperQuantity = () => {
-  quantity.value++;
-};
-const handleLowerQuantity = () => {
-  if (quantity.value - 1 < 0) return;
-  quantity.value--;
-};
-</script>
-
 <template>
   <div class="card">
     <div class="card-head">Buy Now</div>
@@ -43,11 +26,42 @@ const handleLowerQuantity = () => {
       </div>
     </div>
     <div class="card_footer">
-      <button class="btn btn_fix">Add to Car</button>
+      <button class="btn btn_fix" @click="addToCart">Add to Car</button>
       <check-out-button />
     </div>
   </div>
 </template>
+<script setup lang="ts">
+import { ref } from "vue";
+import MinusIcon from "./minusIcon.vue";
+import PlusIcon from "./plusIcon.vue";
+import CheckOutButton from "./UI/CheckOutButton.vue";
+import { useStore } from "vuex";
+import type { Drug } from "@/interfaces/models/Drug.interface";
+import { key } from "@/store";
+interface Props {
+  drug: Drug;
+}
+const { drug } = defineProps<Props>();
+const store = useStore(key);
+
+const quantity = ref<number>(0);
+
+const handleUpperQuantity = () => {
+  quantity.value++;
+};
+const handleLowerQuantity = () => {
+  if (quantity.value - 1 < 0) return;
+  quantity.value--;
+};
+
+const addToCart = () => {
+  store.dispatch("moduleShopcart/addToCart", {
+    item: drug,
+    quantity: quantity.value,
+  });
+};
+</script>
 <style lang="css" scoped>
 .quantity_shop {
   display: flex;

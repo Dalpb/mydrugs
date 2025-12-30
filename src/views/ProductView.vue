@@ -14,7 +14,7 @@
         <p class="recommendation">{{ drug.recomendation }}</p>
       </section>
       <div>
-        <buy-card />
+        <buy-card :key="drug.id" :drug="drug" />
       </div>
     </section>
     <hr />
