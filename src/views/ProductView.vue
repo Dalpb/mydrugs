@@ -36,16 +36,12 @@ import BuyCard from "@/components/BuyCard.vue";
 import RangeStar from "@/components/RangeStar.vue";
 import DrugCard from "@/components/DrugCard.vue";
 import { DrugColor } from "@/interfaces/enums/DrugColor";
+import { transformBTCtoEUR } from "@/utils/helper";
 const route = useRoute();
 const drug = ref<Drug>({});
 const data = ref<Drug[]>([]);
-const EUR = 3929.74; // jeje
 
 const handleClickDrugCard = () => fechData(drug.value.id);
-
-const transformBTCtoEUR = (btc: number) => {
-  return (btc * EUR).toFixed(2);
-};
 
 const getRandomProducts = (drugs: Drug[], currentDrugId: string) => {
   let drugRandom = Array<Drug>();

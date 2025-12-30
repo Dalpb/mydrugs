@@ -6,7 +6,11 @@
         <button class="close-btn" @click="closeDialog">×</button>
         <h1>Review your order.</h1>
         <div v-if="myOrder?.length" class="orders">
-          <DrugCardOrder v-for="drugOrder in myOrder" :item="drugOrder" />
+          <DrugCardOrder
+            v-for="drugOrder in myOrder"
+            :item="drugOrder"
+            :key="drugOrder.id"
+          />
         </div>
         <h2 v-else class="empty-msg">You dont have any drugs in your cart.</h2>
       </div>
@@ -14,7 +18,7 @@
   </Teleport>
 </template>
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref, computed, type ComputedRef } from "vue";
 import { ShoppingCartIcon } from "@heroicons/vue/16/solid";
 import { useStore } from "vuex";
 import { key } from "@/store";
@@ -22,6 +26,9 @@ import DrugCardOrder from "./DrugCardOrder.vue";
 
 const store = useStore(key);
 const myOrder = computed(() => store.state.moduleShopcart.items);
+const myTotal = computed(
+  () => store.getters["moduleShopcart/cartTotal"]
+) as ComputedRef<number>;
 
 const isOpen = ref<boolean>(false);
 const animModal = ref("modal-content");

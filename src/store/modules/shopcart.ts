@@ -21,9 +21,14 @@ const moduleShopcart = {
     totalItems(state: ShopcartState) {
       return state.items.reduce((acc, i) => acc + i.quantity, 0);
     },
+    cartTotalByDrug: (state: ShopcartState) => (id: string) => {
+      const found = state.items.find((p) => p.id === id);
+      if (!found) return 0;
+      return found.quantity * found.priceBTC!;
+    },
   },
   mutations: {
-    incrementItem(state: ShopcartState, item: Drug) {
+    incrementItem(state: ShopcartState, item: DrugProduct) {
       const found = state.items.find((p) => p.id === item.id);
       if (!found) {
         state.items.push({ ...item, quantity: 1 });
