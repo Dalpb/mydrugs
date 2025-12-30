@@ -3,6 +3,7 @@
   "data": {
     "drugs": [
       {
+        "id": "p1",
         "name": "Red Pill",
         "description": "Your ticket to\nwonderland",
         "priceBTC": 0.0013,
@@ -15,6 +16,7 @@
         "isNew": false
       },
       {
+        "id": "p10",
         "name": "Blue\ncover",
         "description": "The king\nof ecstasy",
         "priceBTC": 0.0029,
@@ -27,6 +29,7 @@
         "isNew": false
       },
       {
+        "id": "p3",
         "name": "Green\nsnowflake",
         "description": "Packs a\npowerful punch",
         "priceBTC": 0.0044,
@@ -39,6 +42,7 @@
         "isNew": false
       },
       {
+        "id": "p2",
         "name": "Purple\nflower",
         "description": "A night of\nfluffy happiness",
         "priceBTC": 0.0021,
