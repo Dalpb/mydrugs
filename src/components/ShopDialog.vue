@@ -26,9 +26,9 @@ import DrugCardOrder from "./DrugCardOrder.vue";
 
 const store = useStore(key);
 const myOrder = computed(() => store.state.moduleShopcart.items);
-const myTotal = computed(
-  () => store.getters["moduleShopcart/cartTotal"]
-) as ComputedRef<number>;
+//const myTotal = computed(
+//  () => store.getters["moduleShopcart/cartTotal"]
+//) as ComputedRef<number>;
 
 const isOpen = ref<boolean>(false);
 const animModal = ref("modal-content");
