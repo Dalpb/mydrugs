@@ -60,7 +60,7 @@ const closeDialog = () => {
   top: 0;
   right: 0;
   height: 100vh;
-  width: 400px;
+  width: 500px;
   max-width: 90vw;
   background-color: #0e0e0e;
   color: white;
