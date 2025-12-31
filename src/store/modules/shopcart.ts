@@ -3,6 +3,7 @@ import type { ActionContext } from "vuex";
 
 export interface ShopcartState {
   items: DrugProduct[];
+  checkoutOrder: DrugProduct[];
 }
 
 const moduleShopcart = {
@@ -10,6 +11,7 @@ const moduleShopcart = {
 
   state: (): ShopcartState => ({
     items: [],
+    checkoutOrder: [],
   }),
   getters: {
     itemCount(state: ShopcartState) {
@@ -25,6 +27,12 @@ const moduleShopcart = {
       const found = state.items.find((p) => p.id === id);
       if (!found) return 0;
       return found.quantity * found.priceBTC!;
+    },
+    orderTotal(state: ShopcartState) {
+      return state.checkoutOrder.reduce(
+        (ac, i) => ac + i.priceBTC! * i.quantity,
+        0
+      );
     },
   },
   mutations: {
@@ -57,6 +65,12 @@ const moduleShopcart = {
     removeItem(state: ShopcartState, id: string) {
       state.items = state.items.filter((p) => p.id !== id);
     },
+    removeAllItems(state: ShopcartState) {
+      state.items = [];
+    },
+    passToOrder(state: ShopcartState) {
+      state.checkoutOrder = [...state.items];
+    },
   },
   actions: {
     incrementToCart({ commit }: ActionContext<ShopcartState, any>, item: Drug) {
@@ -76,6 +90,12 @@ const moduleShopcart = {
     },
     removeFromCart({ commit }: ActionContext<ShopcartState, any>, id: string) {
       commit("removeItem", id);
+    },
+    removeCart({ commit }: ActionContext<ShopcartState, any>) {
+      commit("removeAllItems");
+    },
+    AddToOrder({ commit }: ActionContext<ShopcartState, any>) {
+      commit("passToOrder");
     },
   },
 };

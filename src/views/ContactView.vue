@@ -37,6 +37,15 @@
           </button>
         </a>
       </div>
+      <h2>What the hell is MyDrugs?</h2>
+      <div class="sf-c-box">
+        <a href="https://www.netflix.com/title/80218448" target="_blank">
+          <button class="sf-box netflix">
+            <img src="/images/netflix.webp" />
+            <p>Netflix serie</p>
+          </button>
+        </a>
+      </div>
     </div>
   </main>
 </template>
@@ -93,5 +102,8 @@ main {
 }
 .lkldn {
   background-color: #007fbc;
+}
+.netflix {
+  background-color: black;
 }
 </style>

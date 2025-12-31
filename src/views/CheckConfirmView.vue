@@ -51,15 +51,18 @@ import { useStore } from "vuex";
 const store = useStore(key);
 const isPaying = ref(true);
 const router = useRouter();
-const items = computed(() => store.state.moduleShopcart.items);
+const items = computed(() => store.state.moduleShopcart.checkoutOrder);
+
 const myTotal = computed(
-  () => store.getters["moduleShopcart/cartTotal"]
+  () => store.getters["moduleShopcart/orderTotal"]
 ) as ComputedRef<number>;
 
 const gotoShop = () => {
   router.push({ name: "Shop" });
 };
 onMounted(() => {
+  store.dispatch("moduleShopcart/AddToOrder");
+  store.dispatch("moduleShopcart/removeCart");
   setTimeout(() => {
     isPaying.value = false;
   }, 5000);
