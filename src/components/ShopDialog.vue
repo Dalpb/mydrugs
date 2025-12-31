@@ -16,6 +16,21 @@
             :item="drugOrder"
             :key="drugOrder.id"
           />
+          <div class="check-out-order">
+            <p>Free Shipping</p>
+            <div class="order-total">
+              <p>Total:</p>
+              <p>{{ myTotal.toFixed(5) }} BTC</p>
+              <p>{{ transformBTCtoEUR(myTotal || 0) }}€</p>
+            </div>
+            <p class="b">Change BTC wallet</p>
+            <p class="b">Change shipping address</p>
+          </div>
+          <div class="ck-btn">
+            <div>
+              <check-out-button />
+            </div>
+          </div>
         </div>
         <h2 v-else class="empty-msg">You dont have any drugs in your cart.</h2>
       </div>
@@ -28,15 +43,17 @@ import { ShoppingCartIcon } from "@heroicons/vue/16/solid";
 import { useStore } from "vuex";
 import { key } from "@/store";
 import DrugCardOrder from "./DrugCardOrder.vue";
+import { transformBTCtoEUR } from "@/utils/helper";
+import CheckOutButton from "./UI/CheckOutButton.vue";
 
 const store = useStore(key);
 const myOrder = computed(() => store.state.moduleShopcart.items);
 const totalOrder = computed(
   () => store.getters["moduleShopcart/itemCount"]
 ) as ComputedRef<number>;
-//const myTotal = computed(
-//  () => store.getters["moduleShopcart/cartTotal"]
-//) as ComputedRef<number>;
+const myTotal = computed(
+  () => store.getters["moduleShopcart/cartTotal"]
+) as ComputedRef<number>;
 
 const isOpen = ref<boolean>(false);
 const animModal = ref("modal-content");
@@ -164,5 +181,43 @@ const closeDialog = () => {
 .empty-msg {
   text-align: center;
   line-height: 2rem;
+}
+.check-out-order {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  & .b {
+    color: #2ab1d6;
+  }
+}
+.order-total {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  & p:nth-of-type(1),
+  & p:nth-of-type(2) {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  & p:nth-of-type(3),
+  & p:nth-of-type(2) {
+    justify-self: end;
+  }
+  & p:nth-of-type(3) {
+    grid-column: 1/3;
+  }
+}
+.ck-btn {
+  display: flex;
+  justify-content: center;
+
+  /*Disgusting*/
+  & > div {
+    width: 45%;
+    & > * {
+      width: 100%;
+    }
+  }
 }
 </style>

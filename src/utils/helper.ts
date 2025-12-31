@@ -1,4 +1,4 @@
-const EUR = 3929.74; // jeje
+const EUR = 25171.01; // jeje
 export const transformBTCtoEUR = (btc: number) => {
   return (btc * EUR).toFixed(2);
 };
