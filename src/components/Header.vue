@@ -13,7 +13,7 @@ const openShopcart = ref<boolean>(false);
 
 <template>
   <header class="header">
-    <div></div>
+    <div class="header-left"></div>
     <nav class="navbar">
       <ul class="nav-list">
         <li>
@@ -47,6 +47,9 @@ const openShopcart = ref<boolean>(false);
   font-family: "Roboto", sans-serif;
   font-weight: 800;
   color: white;
+}
+.header-left {
+  width: 90px;
 }
 a {
   align-self: center;
@@ -128,7 +131,9 @@ a {
   .nav-list {
     justify-content: space-between;
   }
-
+  .header-left {
+    width: 0;
+  }
   .btn-log,
   a {
     display: none;
@@ -141,6 +146,7 @@ a {
   }
   .header {
     height: 4rem;
+    justify-content: space-between;
   }
 }
 </style>
