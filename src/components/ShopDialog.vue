@@ -27,8 +27,8 @@
             <p class="b">Change shipping address</p>
           </div>
           <div class="ck-btn">
-            <div>
-              <check-out-button />
+            <div @click="goToCheckout">
+              <check-out-button>Check Out</check-out-button>
             </div>
           </div>
         </div>
@@ -45,8 +45,10 @@ import { key } from "@/store";
 import DrugCardOrder from "./DrugCardOrder.vue";
 import { transformBTCtoEUR } from "@/utils/helper";
 import CheckOutButton from "./UI/CheckOutButton.vue";
+import { useRouter } from "vue-router";
 
 const store = useStore(key);
+const router = useRouter();
 const myOrder = computed(() => store.state.moduleShopcart.items);
 const totalOrder = computed(
   () => store.getters["moduleShopcart/itemCount"]
@@ -64,6 +66,11 @@ const closeDialog = () => {
     isOpen.value = false;
     animModal.value = "modal-content";
   }, 400);
+};
+const goToCheckout = () => {
+  if (totalOrder.value <= 0) return;
+  closeDialog();
+  router.push({ name: "CheckConfirm" });
 };
 </script>
 <style lang="css" scoped>

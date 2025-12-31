@@ -8,6 +8,7 @@ import ProductView from "@/views/ProductView.vue";
 import RegisterView from "@/views/RegisterView.vue";
 import SafetyView from "@/views/SafetyView.vue";
 import ContactView from "@/views/ContactView.vue";
+import CheckConfirmView from "@/views/CheckConfirmView.vue";
 
 const routes = [
   { path: "/", name: "Home", component: MainView },
@@ -18,6 +19,11 @@ const routes = [
   { path: "/login", name: "Login", component: LoginView },
   { path: "/register", name: "Register", component: RegisterView },
   { path: "/products/:id", name: "Products", component: ProductView },
+  {
+    path: "/checkout/confirmation",
+    name: "CheckConfirm",
+    component: CheckConfirmView,
+  },
 ];
 
 const router = createRouter({

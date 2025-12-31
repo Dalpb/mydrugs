@@ -1,29 +1,19 @@
 <script setup lang="ts">
-import { changeFirstChildColor } from "@/utils/colorHandlers";
 import { RouterLink } from "vue-router";
-import Button from "@/components/Button.vue";
 import { ref } from "vue";
 import ShopDialog from "./ShopDialog.vue";
-const getNewColor = (e: Event) => {
-  const color =
-    window.document.documentElement.style.getPropertyValue("--main-color");
-  changeFirstChildColor(e, color);
-};
+//const getNewColor = (e: Event) => {
+//  const color =
+//  window.document.documentElement.style.getPropertyValue("--main-color");
+//changeFirstChildColor(e, color);
+//};
 const openShopcart = ref<boolean>(false);
+//TODO: implement the login
 </script>
 
 <template>
   <header class="header">
-    <router-link to="/login">
-      <Button
-        add-class="btn-login"
-        :onmouseleave="(e) => changeFirstChildColor(e, 'white')"
-        :onmouseover="getNewColor"
-        class="btn-log"
-      >
-        Login
-      </Button>
-    </router-link>
+    <div></div>
     <nav class="navbar">
       <ul class="nav-list">
         <li>

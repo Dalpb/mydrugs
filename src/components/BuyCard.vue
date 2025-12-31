@@ -28,24 +28,30 @@
     </div>
     <div class="card_footer">
       <button class="btn btn_fix" @click="addToCart">Add to Car</button>
-      <check-out-button />
+      <div class="fx" @click="goToCheckout">
+        <check-out-button>Check Out</check-out-button>
+      </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref, type ComputedRef } from "vue";
 import MinusIcon from "./minusIcon.vue";
 import PlusIcon from "./plusIcon.vue";
 import CheckOutButton from "./UI/CheckOutButton.vue";
 import { useStore } from "vuex";
 import type { Drug } from "@/interfaces/models/Drug.interface";
 import { key } from "@/store";
+import { useRouter } from "vue-router";
 interface Props {
   drug: Drug;
 }
 const { drug } = defineProps<Props>();
 const store = useStore(key);
-
+const totalOrder = computed(
+  () => store.getters["moduleShopcart/itemCount"]
+) as ComputedRef<number>;
+const router = useRouter();
 const quantity = ref<number>(0);
 
 const handleUpperQuantity = () => {
@@ -56,7 +62,14 @@ const handleLowerQuantity = () => {
   quantity.value--;
 };
 
+const goToCheckout = () => {
+  if (totalOrder.value <= 0) return;
+  //TODO: implement error msg
+  router.push({ name: "CheckConfirm" });
+};
+
 const addToCart = () => {
+  if (quantity.value === 0) return;
   store.dispatch("moduleShopcart/addToCart", {
     item: drug,
     quantity: quantity.value,
